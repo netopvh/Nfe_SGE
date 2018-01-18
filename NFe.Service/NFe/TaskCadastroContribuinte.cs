@@ -1,32 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
-using System.IO;
-using System.Xml;
-
+﻿using NFe.Certificado;
 using NFe.Components;
 using NFe.Settings;
-using NFe.Certificado;
-using NFe.Exceptions;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Xml;
 
 namespace NFe.Service
 {
     public class TaskCadastroContribuinte : TaskAbst
     {
-        public TaskCadastroContribuinte()
+        public TaskCadastroContribuinte(string arquivo)
         {
             Servico = Servicos.ConsultaCadastroContribuinte;
+            NomeArquivoXML = arquivo;
+            if (vXmlNfeDadosMsgEhXML)
+            {
+                ConteudoXML.PreserveWhitespace = false;
+                ConteudoXML.Load(arquivo);
+            }
         }
 
         #region Classe com os Dados do XML da Consulta Cadastro do Contribuinte
+
         /// <summary>
         /// Esta herança que deve ser utilizada fora da classe para obter os valores das tag´s da consulta do cadastro do contribuinte
         /// </summary>
         private DadosConsCad dadosConsCad;
-        #endregion
+
+        #endregion Classe com os Dados do XML da Consulta Cadastro do Contribuinte
 
         #region Execute
+
         public override void Execute()
         {
             int emp = Empresas.FindEmpresaByThread();
@@ -35,20 +40,25 @@ namespace NFe.Service
             {
                 dadosConsCad = new DadosConsCad();
                 //Ler o XML para pegar parâmetros de envio
-                ConsCad(NomeArquivoXML);
+                ConsCad(emp);
 
-                if (this.vXmlNfeDadosMsgEhXML)  //danasa 12-9-2009
+                if (vXmlNfeDadosMsgEhXML)  //danasa 12-9-2009
                 {
                     //Definir o objeto do WebService
-                    WebServiceProxy wsProxy = ConfiguracaoApp.DefinirWS(Servico, emp, dadosConsCad.cUF, dadosConsCad.tpAmb, (int)NFe.Components.TipoEmissao.teNormal, dadosConsCad.versao);
+                    WebServiceProxy wsProxy = ConfiguracaoApp.DefinirWS(Servico, emp, dadosConsCad.cUF, dadosConsCad.tpAmb, (int)TipoEmissao.teNormal, dadosConsCad.versao, 0);
+                    System.Net.SecurityProtocolType securityProtocolType = WebServiceProxy.DefinirProtocoloSeguranca(dadosConsCad.cUF, dadosConsCad.tpAmb, (int)TipoEmissao.teNormal, Servico);
 
                     //Criar objetos das classes dos serviços dos webservices do SEFAZ
                     object oConsCad = wsProxy.CriarObjeto(wsProxy.NomeClasseWS);
-                    object oCabecMsg = wsProxy.CriarObjeto(NomeClasseCabecWS(dadosConsCad.cUF, Servico));
+                    object oCabecMsg = null;
 
-                    //Atribuir conteúdo para duas propriedades da classe nfeCabecMsg
-                    wsProxy.SetProp(oCabecMsg, NFe.Components.TpcnResources.cUF.ToString(), dadosConsCad.cUF.ToString());
-                    wsProxy.SetProp(oCabecMsg, NFe.Components.TpcnResources.versaoDados.ToString(), this.dadosConsCad.versao);
+                    try
+                    {
+                        oCabecMsg = wsProxy.CriarObjeto(NomeClasseCabecWS(dadosConsCad.cUF, Servico));
+                        wsProxy.SetProp(oCabecMsg, TpcnResources.cUF.ToString(), dadosConsCad.cUF.ToString());
+                        wsProxy.SetProp(oCabecMsg, TpcnResources.versaoDados.ToString(), dadosConsCad.versao);
+                    }
+                    catch { }
 
                     new AssinaturaDigital().CarregarPIN(emp, NomeArquivoXML, Servico);
 
@@ -58,8 +68,10 @@ namespace NFe.Service
                                         wsProxy.NomeMetodoWS[0],
                                         oCabecMsg,
                                         this,
-                                        NFe.Components.Propriedade.ExtEnvio.ConsCad_XML.Replace(".xml", ""),
-                                        NFe.Components.Propriedade.ExtRetorno.ConsCad_XML.Replace(".xml", ""));//"-cons-cad", "-ret-cons-cad");
+                                        Propriedade.Extensao(Propriedade.TipoEnvio.ConsCad).EnvioXML,
+                                        Propriedade.Extensao(Propriedade.TipoEnvio.ConsCad).RetornoXML,
+                                        true,
+                                        securityProtocolType);
                 }
                 else
                 {
@@ -75,17 +87,17 @@ namespace NFe.Service
             }
             catch (Exception ex)
             {
-                string ExtRet = string.Empty;
+                string ExtEnvio = string.Empty;
 
-                if (this.vXmlNfeDadosMsgEhXML) //Se for XML
-                    ExtRet = Propriedade.ExtEnvio.ConsCad_XML;
+                if (vXmlNfeDadosMsgEhXML) //Se for XML
+                    ExtEnvio = Propriedade.Extensao(Propriedade.TipoEnvio.ConsCad).EnvioXML;
                 else //Se for TXT
-                    ExtRet = Propriedade.ExtEnvio.ConsCad_TXT;
+                    ExtEnvio = Propriedade.Extensao(Propriedade.TipoEnvio.ConsCad).EnvioTXT;
 
                 try
                 {
                     //Gravar o arquivo de erro de retorno para o ERP, caso ocorra
-                    TFunctions.GravarArqErroServico(NomeArquivoXML, ExtRet, Propriedade.ExtRetorno.ConsCad_ERR, ex);
+                    TFunctions.GravarArqErroServico(NomeArquivoXML, ExtEnvio, Propriedade.ExtRetorno.ConsCad_ERR, ex);
                 }
                 catch
                 {
@@ -102,16 +114,18 @@ namespace NFe.Service
                 }
                 catch
                 {
-                    //Se falhou algo na hora de deletar o XML de solicitação do serviço, 
-                    //infelizmente não posso fazer mais nada, o UniNFe vai tentar mandar 
+                    //Se falhou algo na hora de deletar o XML de solicitação do serviço,
+                    //infelizmente não posso fazer mais nada, o UniNFe vai tentar mandar
                     //o arquivo novamente para o webservice
                     //Wandrey 09/03/2010
                 }
             }
         }
-        #endregion
+
+        #endregion Execute
 
         #region Gravar consCad
+
         public string GravarXml(string arquivo)
         {
             return oGerarXML.ConsultaCadastro(arquivo,
@@ -121,50 +135,52 @@ namespace NFe.Service
                 dadosConsCad.CPF,
                 dadosConsCad.versao);
         }
-        #endregion
+
+        #endregion Gravar consCad
 
         #region ConsCad()
+
         /// <summary>
         /// Faz a leitura do XML de consulta do cadastro do contribuinte e disponibiliza os valores de algumas tag´s
         /// </summary>
         /// <param name="cArquivoXML">Caminho e nome do arquivo XML da consulta do cadastro do contribuinte a ser lido</param>
-        private void ConsCad(string cArquivoXML)
+        private void ConsCad(int emp)
         {
-            this.dadosConsCad.CNPJ = string.Empty;
-            this.dadosConsCad.IE = string.Empty;
-            this.dadosConsCad.UF = string.Empty;
-            this.dadosConsCad.versao = "";
+            dadosConsCad.CNPJ =
+                dadosConsCad.IE =
+                dadosConsCad.UF =
+                dadosConsCad.versao = string.Empty;
 
-            if (Path.GetExtension(cArquivoXML).ToLower() == ".txt")
+            dadosConsCad.tpAmb = Empresas.Configuracoes[emp].AmbienteCodigo;
+
+            if (Path.GetExtension(NomeArquivoXML).ToLower() == ".txt")
             {
-                List<string> cLinhas = Functions.LerArquivo(cArquivoXML);
-                Functions.PopulateClasse(this.dadosConsCad, cLinhas);
+                List<string> cLinhas = Functions.LerArquivo(NomeArquivoXML);
+                Functions.PopulateClasse(dadosConsCad, cLinhas);
             }
             else
             {
-                XmlDocument doc = new XmlDocument();
-                doc.Load(cArquivoXML);
-
-                XmlNodeList ConsCadList = doc.GetElementsByTagName("ConsCad");
+                XmlNodeList ConsCadList = ConteudoXML.GetElementsByTagName("ConsCad");
                 foreach (XmlNode ConsCadNode in ConsCadList)
                 {
                     XmlElement ConsCadElemento = (XmlElement)ConsCadNode;
 
-                    this.dadosConsCad.versao = ConsCadElemento.Attributes[NFe.Components.TpcnResources.versao.ToString()].InnerText;
+                    dadosConsCad.versao = ConsCadElemento.Attributes[TpcnResources.versao.ToString()].InnerText;
 
                     XmlNodeList infConsList = ConsCadElemento.GetElementsByTagName("infCons");
 
                     foreach (XmlNode infConsNode in infConsList)
                     {
                         XmlElement infConsElemento = (XmlElement)infConsNode;
-                        Functions.PopulateClasse(this.dadosConsCad, infConsElemento);
+                        Functions.PopulateClasse(dadosConsCad, infConsElemento);
                     }
                 }
             }
-            if (this.dadosConsCad.versao == "")
+
+            if (dadosConsCad.versao == "")
                 throw new Exception(NFeStrConstants.versaoError);
         }
-        #endregion
 
+        #endregion ConsCad()
     }
 }

@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Security.Cryptography;
-using System.Security.Cryptography.X509Certificates;
-using System.Windows.Forms;
-using NFe.Settings;
+﻿using Microsoft.Win32;
 using NFe.Components;
 using NFe.Exceptions;
-using System.Security;
-using Microsoft.Win32;
+using NFe.Settings;
+using System;
+using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
+using System.Windows.Forms;
 
 namespace NFe.Certificado
 {
@@ -23,23 +20,26 @@ namespace NFe.Certificado
         /// Certificado selecionado pelo método SelecionarCertificado()
         /// </summary>
         public X509Certificate2 oCertificado { get; private set; }
+
         /// <summary>
         /// Data inicial da validade do certificado
         /// </summary>
         public DateTime dValidadeInicial { get; private set; }
+
         /// <summary>
         /// Data final da validade do certificado
         /// </summary>
         public DateTime dValidadeFinal { get; private set; }
+
         /// <summary>
         /// Subject do Certificado, Razão Social da Empresa Certificada, CNPJ, etc...
         /// </summary>
         public string sSubject { get; private set; }
 
-        #endregion
+        #endregion Propriedades da classe
 
         /// <summary>
-        /// Método responsável por abrir um browse para selecionar o 
+        /// Método responsável por abrir um browse para selecionar o
         /// certificado digital que será utilizado para autenticação
         /// dos WebServices e gravar ele no atributo oCertificado
         /// </summary>
@@ -57,9 +57,9 @@ namespace NFe.Certificado
             X509Certificate2 oX509Cert = new X509Certificate2();
             X509Store store = new X509Store("MY", StoreLocation.CurrentUser);
             store.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);
-            X509Certificate2Collection collection = (X509Certificate2Collection)store.Certificates;
-            X509Certificate2Collection collection1 = (X509Certificate2Collection)collection.Find(X509FindType.FindByTimeValid, DateTime.Now, false);
-            X509Certificate2Collection collection2 = (X509Certificate2Collection)collection.Find(X509FindType.FindByKeyUsage, X509KeyUsageFlags.DigitalSignature, false);
+            X509Certificate2Collection collection = store.Certificates;
+            X509Certificate2Collection collection1 = collection.Find(X509FindType.FindByTimeValid, DateTime.Now, false);
+            X509Certificate2Collection collection2 = collection.Find(X509FindType.FindByKeyUsage, X509KeyUsageFlags.DigitalSignature, false);
             X509Certificate2Collection scollection = X509Certificate2UI.SelectFromCollection(collection2, "Certificado(s) Digital(is) disponível(is)", "Selecione o certificado digital para uso no aplicativo", X509SelectionFlag.SingleSelection);
 
             if (scollection.Count == 0)
@@ -86,7 +86,7 @@ namespace NFe.Certificado
         /// <date>04/06/2008</date>
         public void ExibirCertSel()
         {
-            if (this.oCertificado == null)
+            if (oCertificado == null)
             {
                 MessageBox.Show("Nenhum certificado foi selecionado.", "Advertência", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -104,15 +104,14 @@ namespace NFe.Certificado
         public bool PrepInfCertificado(Empresa empresa)
         {
             bool localizouCertificado;
-            X509Certificate2 x509Cert = empresa.BuscaConfiguracaoCertificado();
 
-            if (x509Cert == null)
+            if (empresa.X509Certificado == null)
                 localizouCertificado = false;
             else
             {
-                sSubject = x509Cert.Subject;
-                dValidadeInicial = x509Cert.NotBefore;
-                dValidadeFinal = x509Cert.NotAfter;
+                sSubject = empresa.X509Certificado.Subject;
+                dValidadeInicial = empresa.X509Certificado.NotBefore;
+                dValidadeFinal = empresa.X509Certificado.NotAfter;
                 localizouCertificado = true;
             }
 
@@ -130,12 +129,12 @@ namespace NFe.Certificado
 
             if (Empresas.Configuracoes[emp].UsaCertificado)
             {
-                if (PrepInfCertificado(Empresas.Configuracoes[emp]))
+                if (Empresas.Configuracoes[emp].X509Certificado == null)
+                    throw new ExceptionCertificadoDigital(ErroPadrao.ErroNaoDetectado);// Certificado inválido");
+
+                if (DateTime.Compare(DateTime.Now, Empresas.Configuracoes[emp].X509Certificado.NotAfter) > 0)
                 {
-                    if (DateTime.Compare(DateTime.Now, dValidadeFinal) > 0)
-                    {
-                        retorna = true;
-                    }
+                    retorna = true;
                 }
             }
 

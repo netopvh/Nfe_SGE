@@ -35,7 +35,8 @@ namespace NFe.UI.Formularios
             tbSenhaConfig2.Text = ConfiguracaoApp.SenhaConfig;
             cbChecaConexaoInternet.Checked = ConfiguracaoApp.ChecarConexaoInternet;
             chkGravarLogOperacao.Checked = ConfiguracaoApp.GravarLogOperacoesRealizadas;
-
+            chkConfProxyAuto.Checked = ConfiguracaoApp.DetectarConfiguracaoProxyAuto;
+            chkConfirmaSaida.Checked = ConfiguracaoApp.ConfirmaSaida;
             cbProxy_CheckedChanged(null, null);
 
             this.tbUsuario.Focus();
@@ -51,15 +52,17 @@ namespace NFe.UI.Formularios
                 tbSenhaConfig.Focus();
                 throw new Exception("As senhas de acesso a tela de configurações devem ser idênticas.");
             }
-            if (cbProxy.Checked && 
-                (Convert.ToInt32("0" + nudPorta.Text) == 0 || 
-                string.IsNullOrEmpty(tbServidor.Text) || 
-                string.IsNullOrEmpty(tbUsuario.Text) || 
+            if (cbProxy.Checked &&
+                ((Convert.ToInt32("0" + nudPorta.Text) == 0 && !ConfiguracaoApp.DetectarConfiguracaoProxyAuto) ||
+                //Caso a propriedade referente a detecção de proxy automatico esteja selecionada
+                (string.IsNullOrEmpty(tbServidor.Text) && !ConfiguracaoApp.DetectarConfiguracaoProxyAuto) ||
+                string.IsNullOrEmpty(tbUsuario.Text) ||
                 string.IsNullOrEmpty(tbSenha.Text)))
             {
                 tbServidor.Focus();
                 throw new Exception(NFeStrConstants.proxyError);
             }
+            ConfiguracaoApp.DetectarConfiguracaoProxyAuto = chkConfProxyAuto.Checked;
             ConfiguracaoApp.Proxy = cbProxy.Checked;
             ConfiguracaoApp.ProxyServidor = tbServidor.Text;
             ConfiguracaoApp.ProxyUsuario = tbUsuario.Text;
@@ -68,6 +71,7 @@ namespace NFe.UI.Formularios
             ConfiguracaoApp.SenhaConfig = tbSenhaConfig2.Text;
             ConfiguracaoApp.ChecarConexaoInternet = cbChecaConexaoInternet.Checked;
             ConfiguracaoApp.GravarLogOperacoesRealizadas = chkGravarLogOperacao.Checked;
+            ConfiguracaoApp.ConfirmaSaida = chkConfirmaSaida.Checked;
         }
 
         public void FocusFirstControl()
@@ -134,7 +138,24 @@ namespace NFe.UI.Formularios
                 tbUsuario.Enabled =
                 tbSenha.Enabled =
                 nudPorta.Enabled =
-                tbServidor.Enabled = cbProxy.Checked;
+                tbServidor.Enabled = chkConfProxyAuto.Enabled = cbProxy.Checked;
+        }
+
+        private void chkConfProxyAuto_CheckedChanged(object sender, EventArgs e)
+        {
+            ConfiguracaoApp.DetectarConfiguracaoProxyAuto = chkConfProxyAuto.Checked;
+            if (chkConfProxyAuto.Checked)
+            {
+                nudPorta.Clear();
+                tbServidor.Clear();
+                nudPorta.Enabled = false;
+                tbServidor.Enabled = false;
+            }
+            else
+            {
+                nudPorta.Enabled = true;
+                tbServidor.Enabled = true;
+            }
         }
     }
 }

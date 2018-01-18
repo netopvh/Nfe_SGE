@@ -47,6 +47,8 @@
             this.cbProxy = new MetroFramework.Controls.MetroCheckBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.chkConfProxyAuto = new MetroFramework.Controls.MetroCheckBox();
+            this.chkConfirmaSaida = new MetroFramework.Controls.MetroCheckBox();
             this.metroPanel2.SuspendLayout();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -114,7 +116,7 @@
             this.tbSenhaConfig2.Location = new System.Drawing.Point(11, 81);
             this.tbSenhaConfig2.MaxLength = 32767;
             this.tbSenhaConfig2.Name = "tbSenhaConfig2";
-            this.tbSenhaConfig2.PasswordChar = '#';
+            this.tbSenhaConfig2.PasswordChar = '*';
             this.tbSenhaConfig2.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbSenhaConfig2.SelectedText = "";
             this.tbSenhaConfig2.Size = new System.Drawing.Size(403, 22);
@@ -147,7 +149,7 @@
             this.tbSenhaConfig.Location = new System.Drawing.Point(11, 27);
             this.tbSenhaConfig.MaxLength = 32767;
             this.tbSenhaConfig.Name = "tbSenhaConfig";
-            this.tbSenhaConfig.PasswordChar = '#';
+            this.tbSenhaConfig.PasswordChar = '*';
             this.tbSenhaConfig.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbSenhaConfig.SelectedText = "";
             this.tbSenhaConfig.Size = new System.Drawing.Size(403, 22);
@@ -161,7 +163,7 @@
             // chkGravarLogOperacao
             // 
             this.chkGravarLogOperacao.AutoSize = true;
-            this.chkGravarLogOperacao.Location = new System.Drawing.Point(6, 165);
+            this.chkGravarLogOperacao.Location = new System.Drawing.Point(6, 162);
             this.chkGravarLogOperacao.Name = "chkGravarLogOperacao";
             this.chkGravarLogOperacao.Size = new System.Drawing.Size(209, 15);
             this.chkGravarLogOperacao.TabIndex = 2;
@@ -189,7 +191,7 @@
             this.lblServidor.Location = new System.Drawing.Point(281, 85);
             this.lblServidor.Margin = new System.Windows.Forms.Padding(3);
             this.lblServidor.Name = "lblServidor";
-            this.lblServidor.Size = new System.Drawing.Size(48, 15);
+            this.lblServidor.Size = new System.Drawing.Size(49, 15);
             this.lblServidor.TabIndex = 7;
             this.lblServidor.Text = "Servidor";
             // 
@@ -248,7 +250,7 @@
             this.tbSenha.Location = new System.Drawing.Point(281, 53);
             this.tbSenha.MaxLength = 32767;
             this.tbSenha.Name = "tbSenha";
-            this.tbSenha.PasswordChar = '#';
+            this.tbSenha.PasswordChar = '*';
             this.tbSenha.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbSenha.SelectedText = "";
             this.tbSenha.Size = new System.Drawing.Size(267, 22);
@@ -314,6 +316,7 @@
             // 
             this.metroPanel1.BackColor = System.Drawing.Color.Transparent;
             this.metroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroPanel1.Controls.Add(this.chkConfProxyAuto);
             this.metroPanel1.Controls.Add(this.lblSenha);
             this.metroPanel1.Controls.Add(this.tbUsuario);
             this.metroPanel1.Controls.Add(this.lblUsuario);
@@ -334,10 +337,35 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // chkConfProxyAuto
+            // 
+            this.chkConfProxyAuto.AutoSize = true;
+            this.chkConfProxyAuto.Enabled = false;
+            this.chkConfProxyAuto.Location = new System.Drawing.Point(192, 4);
+            this.chkConfProxyAuto.Name = "chkConfProxyAuto";
+            this.chkConfProxyAuto.Size = new System.Drawing.Size(285, 15);
+            this.chkConfProxyAuto.TabIndex = 9;
+            this.chkConfProxyAuto.Text = "Detectar configuração de proxy automaticamente";
+            this.chkConfProxyAuto.UseSelectable = true;
+            this.chkConfProxyAuto.CheckedChanged += new System.EventHandler(this.chkConfProxyAuto_CheckedChanged);
+            // 
+            // chkConfirmaSaida
+            // 
+            this.chkConfirmaSaida.AutoSize = true;
+            this.chkConfirmaSaida.Location = new System.Drawing.Point(6, 181);
+            this.chkConfirmaSaida.Name = "chkConfirmaSaida";
+            this.chkConfirmaSaida.Size = new System.Drawing.Size(340, 15);
+            this.chkConfirmaSaida.TabIndex = 6;
+            this.chkConfirmaSaida.Text = "Exibir tela de confirmação ao fechar manualmente o UniNFe";
+            this.chkConfirmaSaida.UseSelectable = true;
+            this.chkConfirmaSaida.CheckedChanged += new System.EventHandler(this.tbUsuario_TextChanged);
+            this.chkConfirmaSaida.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbUsuario_KeyDown);
+            // 
             // userConfiguracao_geral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.chkConfirmaSaida);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.metroLabel16);
             this.Controls.Add(this.metroPanel2);
@@ -376,5 +404,7 @@
         private MetroFramework.Controls.MetroCheckBox cbProxy;
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroPanel metroPanel1;
+        private MetroFramework.Controls.MetroCheckBox chkConfProxyAuto;
+        private MetroFramework.Controls.MetroCheckBox chkConfirmaSaida;
     }
 }

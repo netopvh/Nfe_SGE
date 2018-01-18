@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -31,7 +26,7 @@ namespace NFe.UI
             if (cbArquivos.Items.Count > 0)
             {
                 cbArquivos.Enabled = true;
-                string fileName = (NFe.Components.Propriedade.TipoAplicativo == NFe.Components.TipoAplicativo.Nfse ? "uninfse_" : "uninfe_") + DateTime.Now.ToString("yyyy-MMM-dd") + ".log";
+                string fileName = "uninfe_" + DateTime.Now.ToString("yyyy-MMM-dd") + ".log";
                 int pos;
                 if ((pos = this.cbArquivos.Items.IndexOf(fileName)) >= 0)
                     cbArquivos.SelectedIndex = pos;
@@ -56,7 +51,7 @@ namespace NFe.UI
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            if (MetroFramework.MetroMessageBox.Show(uninfeDummy.mainForm, "Confirma a exclusão deste arquivo de log?","", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MetroFramework.MetroMessageBox.Show(uninfeDummy.mainForm, "Confirma a exclusão deste arquivo de log?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 var fn = System.IO.Path.Combine(NFe.Components.Propriedade.PastaLog, cbArquivos.Text);
                 if (System.IO.File.Exists(fn))

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -61,7 +61,7 @@ namespace NFe.UI.Formularios
         /// </summary>
         private bool Cancelado = true;
         #endregion
-        
+
         public FormUpdate()
         {
             InitializeComponent();
@@ -69,9 +69,13 @@ namespace NFe.UI.Formularios
 
         private void FormUpdate_Load(object sender, EventArgs e)
         {
-            this.Text = "Atualização do " + NFe.Components.Propriedade.NomeAplicacao;
+            ShowTitle();
 
-            string NomeInstalador = "i" + NFe.Components.Propriedade.NomeAplicacao.ToLower() + ".exe";
+            string NomeInstalador = "i" + NFe.Components.Propriedade.NomeAplicacao.ToLower() + "5.exe";
+#if _fw35
+            NomeInstalador = "i" + NFe.Components.Propriedade.NomeAplicacao.ToLower() + "5_fw35.exe";
+#endif                        
+
             this.PastaInstalar = Application.StartupPath;
             this.LocalArq = Application.StartupPath + "\\" + NomeInstalador;
             this.URL = "http://www.unimake.com.br/downloads/" + NomeInstalador;
@@ -82,10 +86,16 @@ namespace NFe.UI.Formularios
             uninfeDummy.ClearControls(this, true, true);
         }
 
+        private void ShowTitle()
+        {
+            this.Text = "Atualização do " + NFe.Components.Propriedade.NomeAplicacao;
+            Application.DoEvents();
+        }
+
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            if(MetroFramework.MetroMessageBox.Show(null, 
-                "Após o download, a aplicação será encerrada para a execução do instalador do aplicativo.\r\n\r\nDeseja continuar com a atualização?", "", 
+            if (MetroFramework.MetroMessageBox.Show(null,
+                "Após o download, a aplicação será encerrada para a execução do instalador do aplicativo.\r\n\r\nDeseja continuar com a atualização?", "",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
             {
                 Auxiliar.WriteLog("Iniciado o processo de Atualização do UniNFe pelo Usuário.", false);
@@ -95,27 +105,36 @@ namespace NFe.UI.Formularios
 
                 // Habilitar alguns controles
                 prgDownload.Visible = true;
-                Application.DoEvents();
 
                 //Executar o download
+                this.Text = "Baixando a atualização do " + NFe.Components.Propriedade.NomeAplicacao;
+                Application.DoEvents();
                 this.Download();
+
+                this.metroButton1.Enabled = true;
 
                 //Executar o instalador do uninfe
                 if (File.Exists(LocalArq) && !Cancelado)
                 {
+                    NFe.UI.uninfeDummy.mainForm.PararServicos(true);
+
                     System.Diagnostics.Process.Start(this.LocalArq, "/SILENT /DIR=" + this.PastaInstalar);
 
-                    //Forçar o encerramento da aplicação
-                    Propriedade.EncerrarApp = true;
+                    Auxiliar.WriteLog("Processo de download da atualização do UniNFe pelo foi concluído.", false);
+                    //Forçar o encerramento da aplicação                    
+                    Application.Exit();
+
+                    this.Close();
                 }
                 else if (!Cancelado)
                 {
-                    MetroFramework.MetroMessageBox.Show(null, "Não foi possível localizar o instalador da atualização", "");
-                    this.metroButton1.Enabled =
-                        this.btnAtualizar.Enabled = true;
-                }
+                    ShowTitle();
 
-                Auxiliar.WriteLog("Processo de download da atualização do UniNFe pelo foi concluído.", false);
+                    string msg = "Não foi possível localizar o instalador da atualização";
+                    MetroFramework.MetroMessageBox.Show(null, msg, "");
+                    this.btnAtualizar.Enabled = true;
+                    Auxiliar.WriteLog(msg, false);
+                }
             }
         }
 
@@ -151,13 +170,17 @@ namespace NFe.UI.Formularios
                     // Criar um pedido do arquivo que será baixado
                     webRequest = (HttpWebRequest)WebRequest.Create(URL);
 
+                    // Definir dados da conexao do proxy
+                    if (ConfiguracaoApp.Proxy)
+                    {
+                        webRequest.Proxy = NFe.Components.Proxy.DefinirProxy(ConfiguracaoApp.ProxyServidor, ConfiguracaoApp.ProxyUsuario, ConfiguracaoApp.ProxySenha, ConfiguracaoApp.ProxyPorta, ConfiguracaoApp.DetectarConfiguracaoProxyAuto);
+                    }
+
                     // Atribuir autenticação padrão para a recuperação do arquivo
                     webRequest.Credentials = CredentialCache.DefaultCredentials;
 
                     // Obter a resposta do servidor
                     webResponse = (HttpWebResponse)webRequest.GetResponse();
-
-                    //TODO: Fazer a parte do proxy da atualização do UNINFE
 
                     // Perguntar ao servidor o tamanho do arquivo que será baixado
                     Int64 fileSize = webResponse.ContentLength;

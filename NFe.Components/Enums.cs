@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Specialized;
 using System.Collections.Generic;
-using System.Text;
 using System.ComponentModel;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -10,6 +8,7 @@ using System.Runtime.CompilerServices;
 namespace NFe.Components
 {
     #region SubPastas da pasta de enviados
+
     /// <summary>
     /// SubPastas da pasta de XML´s enviados para os webservices
     /// </summary>
@@ -19,349 +18,570 @@ namespace NFe.Components
         Autorizados,
         Denegados
     }
-    #endregion
+
+    #endregion SubPastas da pasta de enviados
 
     #region Servicos
+
     /// <summary>
     /// Serviços executados pelo Aplicativo
     /// </summary>
     public enum Servicos
     {
         #region NFe
+
         /// <summary>
         /// Consulta status serviço NFe
         /// </summary>
         NFeConsultaStatusServico,
+
         /// <summary>
         /// Somente converter TXT da NFe para XML de NFe
         /// </summary>
         NFeConverterTXTparaXML,
+
         /// <summary>
-        /// Envia os lotes de NFe para os webservices (NfeRecepcao)
+        /// Envia os lotes de NFe para os webservices
         /// </summary>
         NFeEnviarLote,
-        /// <summary>
-        /// Envia os lotes de NFe para os webservices (NFeAutorizacao)
-        /// </summary>
-        NFeEnviarLote2,
+
         /// <summary>
         /// Envia os lotes de NFe para os webservices de forma Compactada (NFeAutorizacao)
         /// </summary>
-        NFeEnviarLoteZip2,
+        NFeEnviarLoteZip,
+
         /// <summary>
         /// Envia XML de Inutilização da NFe
         /// </summary>
         NFeInutilizarNumeros,
+
         /// <summary>
         /// Assinar e montar lote de uma NFe
         /// </summary>
         NFeMontarLoteUma,
+
         /// <summary>
         /// Consulta situação da NFe
         /// </summary>
         NFePedidoConsultaSituacao,
+
         /// <summary>
-        /// Consulta recibo do lote nfe (NFeRetRecepcao)
+        /// Consulta recibo do lote nfe
         /// </summary>
         NFePedidoSituacaoLote,
-        /// <summary>
-        /// Consulta recibo do lote nfe (NFeRetAutorizacao)
-        /// </summary>
-        NFePedidoSituacaoLote2,
 
         #region Eventos NFe
+
         /// <summary>
         /// Enviar XML Evento - Cancelamento
         /// </summary>
         EventoCancelamento,
+
         /// <summary>
         /// Enviar XML Evento - Carta de Correção
         /// </summary>
         EventoCCe,
+
         /// <summary>
         /// Enviar um evento de EPEC
         /// </summary>
         EventoEPEC,
+
         /// <summary>
         /// Enviar um evento de manifestacao
         /// </summary>
         EventoManifestacaoDest,
+
         /// <summary>
         /// Enviar XML de Evento NFe
         /// </summary>
         EventoRecepcao,
-        #endregion
+
+        #endregion Eventos NFe
 
         /// <summary>
         /// Assinar e validar um XML de NFe no envio em Lote
         /// </summary>
         NFeAssinarValidarEnvioEmLote,
-        /// <summary>
-        /// Enviar uma consulta de nfe de destinatario
-        /// </summary>
-        NFeConsultaNFDest,
+
         /// <summary>
         /// Enviar solicitacao de download de nfe
         /// </summary>
         NFeDownload,
+
         /// <summary>
         /// Monta chave de acesso
         /// </summary>
         NFeGerarChave,
+
         /// <summary>
         /// Assinar e montar lote de várias NFe
         /// </summary>
         NFeMontarLoteVarias,
-        /// <summary>
-        /// Consultar o registro do DPEC no SCE - Sistema de Contingência Eletrônica        
-        /// </summary>
-        DPECConsultar,
-        /// <summary>
-        /// Enviar o XML do DPEC para o SCE - Sistema de Contingência Eletrônica
-        /// </summary>
-        DPECEnviar,
-        #endregion
+
+        #endregion NFe
 
         #region CTe
+
         /// <summary>
         /// Assinar e validar um XML de CTe no envio em Lote
         /// </summary>
         CTeAssinarValidarEnvioEmLote,
+
         /// <summary>
         /// Consulta Status Serviço CTe
         /// </summary>
         CTeConsultaStatusServico,
+
         /// <summary>
         /// Envia os lotes de CTe para os webservices
         /// </summary>
         CTeEnviarLote,
+
         /// <summary>
         /// Envia XML de Inutilização da CTe
         /// </summary>
         CTeInutilizarNumeros,
+
         /// <summary>
         /// Montar lote de um CTe
         /// </summary>
         CTeMontarLoteUm,
+
         /// <summary>
         /// Assinar e montar lote de várias CTe
         /// </summary>
         CTeMontarLoteVarios,
+
         /// <summary>
         /// Consulta situação da CTe
         /// </summary>
         CTePedidoConsultaSituacao,
+
         /// <summary>
         /// Consulta recibo do lote CTe
         /// </summary>
         CTePedidoSituacaoLote,
+
         /// <summary>
         /// Enviar XML Evento CTe
         /// </summary>
         CTeRecepcaoEvento,
-        #endregion
+
+        /// <summary>
+        /// Enviar XML de distribuição de DFe de interesses de autores (CTe)
+        /// </summary>
+        CTeDistribuicaoDFe,
+
+        /// <summary>
+        /// Enviar XML de CTe modelo 67
+        /// </summary>
+        CteRecepcaoOS,
+
+        #endregion CTe
 
         #region NFSe
+
         /// <summary>
         /// Cancelar NFS-e
         /// </summary>
         [Description("Cancelar NFS-e")]
         NFSeCancelar,
+
         /// <summary>
         /// Consultar NFS-e por Data
         /// </summary>
         [Description("Consultar NFS-e por Data")]
         NFSeConsultar,
+
         /// <summary>
         /// Consultar lote RPS
         /// </summary>
         [Description("ConsultarLoteRPS")]
         NFSeConsultarLoteRps,
+
         /// <summary>
         /// Consultar NFS-e por RPS
         /// </summary>
         [Description("Consultar NFS-e por RPS")]
         NFSeConsultarPorRps,
+
         /// <summary>
         /// Consultar Situação do lote RPS NFS-e
         /// </summary>
         [Description("Consultar Situação do lote RPS NFS-e")]
         NFSeConsultarSituacaoLoteRps,
+
         /// <summary>
         /// Consultar a URL de visualização da NFSe
         /// </summary>
         [Description("Consultar a URL de Visualização da NFS-e")]
         NFSeConsultarURL,
+
         /// <summary>
         /// Consultar a URL de visualização da NFSe
         /// </summary>
         [Description("Consultar a URL de Visualização da NFS-e com a Série")]
         NFSeConsultarURLSerie,
+
         /// <summary>
-        /// Enviar Lote RPS NFS-e 
+        /// Enviar Lote RPS NFS-e
         /// </summary>
         [Description("Enviar Lote RPS NFS-e ")]
         NFSeRecepcionarLoteRps,
+
         /// <summary>
-        /// Enviar Lote RPS NFS-e de forma sincrona 
+        /// Enviar Lote RPS NFS-e de forma sincrona
         /// Criado inicialmente para ser utilizado para o padrão BHIss, pois é necessario utilizar a recepção de lote das duas formas.
         /// </summary>
         [Description("Enviar Lote RPS NFS-e Sincrono")]
         NFSeRecepcionarLoteRpsSincrono,
+
+        /// <summary>
+        /// Enviar Lote RPS NFS-e de forma sincrona
+        /// Criado inicialmente para ser utilizado para o padrão BHIss, pois é necessario utilizar a recepção de lote das duas formas.
+        /// </summary>
+        [Description("Enviar Lote RPS NFS-e Sincrono")]
+        NFSeGerarNfse,
+
         /// <summary>
         /// Consulta da imagem de uma NFS-e em formato PNG
         /// Criado inicialmente para ser utilizado para o padrão INFISC para a Prefeitura de Caxias do Sul - RS
         /// </summary>
         [Description("Consulta da imagem de uma NFS-e em formato PNG")]
         NFSeConsultarNFSePNG,
+
         /// <summary>
-        /// Consulta da imagem de uma NFS-e em formato 
+        /// Consulta da imagem de uma NFS-e em formato
         /// Criado inicialmente para ser utilizado para o padrão INFISC para a Prefeitura de Caxias do Sul - RS
         /// </summary>
         [Description("Inutilização de uma NFS-e")]
         NFSeInutilizarNFSe,
 
-        #endregion
+        /// <summary>
+        /// Consulta da imagem de uma NFS-e em formato PDF
+        /// Criado inicialmente para ser utilizado para o padrão INFISC para a Prefeitura de Caxias do Sul - RS
+        /// </summary>
+        [Description("Consulta da imagem de uma NFS-e em formato PDF")]
+        NFSeConsultarNFSePDF,
+
+        /// <summary>
+        /// Baixar o XML da NFSe
+        /// </summary>
+        [Description("Obter o XML da NFS-e")]
+        NFSeObterNotaFiscal,
+
+        /// <summary>
+        /// Consulta Sequencia do Lote da Nota RPS
+        /// </summary>
+        [Description("Consulta Sequencia do Lote da Nota RPS")]
+        NFSeConsultaSequenciaLoteNotaRPS,
+
+        #endregion NFSe
+
+        #region CFSe
+
+        /// <summary>
+        /// Enviar Lote CFS-e
+        /// </summary>
+        [Description("Enviar Lote CFS-e")]
+        RecepcionarLoteCfse,
+
+        /// <summary>
+        /// Enviar Lote CFS-e Sincrono
+        /// </summary>
+        [Description("Enviar Lote CFS-e")]
+        RecepcionarLoteCfseSincrono,
+
+        /// <summary>
+        /// Cancelar CFS-e
+        /// </summary>
+        [Description("Enviar Cancelamento CFS-e")]
+        CancelarCfse,
+
+        /// <summary>
+        /// Consultar Lote CFS-e
+        /// </summary>
+        [Description("Enviar consulta do lote CFS-e")]
+        ConsultarLoteCfse,
+
+        /// <summary>
+        /// Consultar CFS-e
+        /// </summary>
+        [Description("Enviar consulta do CFS-e")]
+        ConsultarCfse,
+
+        /// <summary>
+        /// Configurar/Ativar Terminal CFS-e
+        /// </summary>
+        [Description("Enviar XML de configuração/ativação de terminal CFS-e")]
+        ConfigurarTerminalCfse,
+
+        /// <summary>
+        /// Informar terminal CFS-e em manutenção
+        /// </summary>
+        [Description("Enviar XML para informar que o terminal de CFS-e está em manutenção")]
+        EnviarInformeManutencaoCfse,
+
+        /// <summary>
+        /// Informar data sem movimento de CFS-e
+        /// </summary>
+        [Description("Enviar XML para informar que não teve movimento de CFS-e no dia")]
+        InformeTrasmissaoSemMovimentoCfse,
+
+        /// <summary>
+        /// Consulta dados cadastro terminal CFS-e
+        /// </summary>
+        [Description("Enviar XML para consultar dados cadastros terminal CFS-e")]
+        ConsultarDadosCadastroCfse,
+
+        #endregion CFSe
 
         #region MDFe
+
         /// <summary>
         /// Assinar e validar um XML de MDFe no envio em Lote
         /// </summary>
         MDFeAssinarValidarEnvioEmLote,
+
         /// <summary>
         /// Consulta MDFe nao encerrados
         /// </summary>
         MDFeConsultaNaoEncerrado,
+
         /// <summary>
         /// Consulta Status Serviço MDFe
         /// </summary>
         MDFeConsultaStatusServico,
+
         /// <summary>
         /// Envia os lotes de MDFe para os webservices
         /// </summary>
         MDFeEnviarLote,
+
         /// <summary>
         /// Montar lote de um MDFe
         /// </summary>
         MDFeMontarLoteUm,
+
         /// <summary>
         /// Assinar e montar lote de várias MDFe
         /// </summary>
         MDFeMontarLoteVarios,
+
         /// <summary>
         /// Consulta situação da MDFe
         /// </summary>
         MDFePedidoConsultaSituacao,
+
         /// <summary>
         /// Consulta recibo do lote MDFe
         /// </summary>
         MDFePedidoSituacaoLote,
+
         /// <summary>
         /// Enviar XML Evento MDFe
         /// </summary>
         MDFeRecepcaoEvento,
-        #endregion
+
+        #endregion MDFe
+
+        #region SAT/CFe
+
+        /// <summary>
+        /// Consultar SAT
+        /// </summary>
+        SATConsultar,
+
+        SATExtrairLogs,
+        SATConsultarStatusOperacional,
+        SATTesteFimAFim,
+        SATTrocarCodigoDeAtivacao,
+        SATEnviarDadosVenda,
+        SATConverterNFCe,
+        SATCancelarUltimaVenda,
+        SATConfigurarInterfaceDeRede,
+        SATAssociarAssinatura,
+        SATAtivar,
+        SATBloquear,
+        SATDesbloquear,
+        SATConsultarNumeroSessao,
+
+        #endregion SAT/CFe
 
         #region Serviços em comum NFe, CTe, MDFe e NFSe
+
         /// <summary>
         /// Valida e envia o XML de pedido de Consulta do Cadastro do Contribuinte para o webservice
         /// </summary>
         ConsultaCadastroContribuinte,
+
         /// <summary>
         /// Efetua verificações nas notas em processamento para evitar algumas falhas e perder retornos de autorização de notas
         /// </summary>
         EmProcessamento,
+
         /// <summary>
         /// Somente assinar e validar o XML
         /// </summary>
         AssinarValidar,
-        #endregion
+
+        #endregion Serviços em comum NFe, CTe, MDFe e NFSe
 
         #region Serviços gerais
+
         /// <summary>
         /// Consultar Informações Gerais do UniNFe
         /// </summary>
         UniNFeConsultaInformacoes,
+
         /// <summary>
         /// Solicitar ao UniNFe que altere suas configurações
         /// </summary>
         UniNFeAlterarConfiguracoes,
+
         /// <summary>
         /// Efetua uma limpeza das pastas que recebem arquivos temporários
         /// </summary>
         UniNFeLimpezaTemporario,
+
         /// <summary>
         /// Consultas efetuadas pela pasta GERAL.
         /// </summary>
         UniNFeConsultaGeral,
+
         /// <summary>
         /// Consulta Certificados Instalados na estação do UniNFe.
         /// </summary>
         UniNFeConsultaCertificados,
-        #endregion
+
+        #endregion Serviços gerais
 
         #region Não sei para que serve - Wandrey
+
         /// <summary>
         /// WSExiste
         /// </summary>
         WSExiste,
-        #endregion
+
+        #endregion Não sei para que serve - Wandrey
 
         #region Impressao do DANFE
+
         DANFEImpressao,
         DANFEImpressao_Contingencia,
-        #endregion
+
+        #endregion Impressao do DANFE
 
         #region Impressao do relatorio de e-mails do DANFE
+
         DANFERelatorio,
-        #endregion
+
+        #endregion Impressao do relatorio de e-mails do DANFE
+
+        #region LMC
+
+        /// <summary>
+        /// Envio do XML de LMC
+        /// </summary>
+        LMCAutorizacao,
+
+        #endregion LMC
 
         DFeEnviar,
 
+        #region EFDReinf
+
+        RecepcaoLoteReinf,
+
+        #endregion EFDReinf
+
+        #region eSocial
+
+        RecepcaoLoteeSocial,
+
+        ConsultarLoteeSocial,
+
+        #endregion eSocial
+
         /// <summary>
         /// Nulo / Nenhum serviço em execução
-        /// </summary>        
+        /// </summary>
         Nulo
     }
-    #endregion
+
+    #endregion Servicos
 
     #region TipoAplicativo
+
     public enum TipoAplicativo
     {
         /// <summary>
         /// Aplicativo ou serviços para processamento dos XMLs da NF-e e NFC-e
         /// </summary>
-        /// 
+        ///
         [Description("NF-e e NFC-e")]
         Nfe = 0,
+
         /// <summary>
         /// Aplicativo ou serviços para processamento dos XMLs do CT-e
         /// </summary>
         [Description("CT-e")]
         Cte = 1,
+
         /// <summary>
         /// Aplicativo ou servicos para processamento dos XMLs da NFS-e
         /// </summary>
         [Description("NFS-e")]
         Nfse = 2,
+
         /// <summary>
         /// Aplicativo ou serviços para processamento dos XMLs do MDF-e
         /// </summary>
         [Description("MDF-e")]
         MDFe = 3,
+
         /// <summary>
         /// Aplicativo ou serviços para processamento dos XMLs da NFC-e
         /// </summary>
         [Description("NFC-e")]
         NFCe = 4,
-        [Description("NF-e, NFC-e, CT-e e MDF-e")]
+
+        /// <summary>
+        /// Aplicativo ou serviços para processamento dos XMLs do SAT
+        /// </summary>
+        [Description("SAT")]
+        SAT = 5,
+
+        /// <summary>
+        /// Aplicativo ou serviços para processamento dos XMLs do EFD Reinf
+        /// </summary>
+        [Description("EFD Reinf")]
+        EFDReinf = 6,
+
+        /// <summary>
+        /// Aplicativo ou serviços para processamento dos XMLs do eSocial
+        /// </summary>
+        [Description("eSocial")]
+        eSocial = 7,
+
+        /// <summary>
+        /// Aplicativo ou seviços para processamento dos XMLs de EFD Reinf e eSocial
+        /// </summary>
+        [Description("EFD Reinf e eSocial")]
+        EFDReinfeSocial = 8,
+
+        [Description("NF-e, NFC-e, CT-e, MDF-e, EFD Reinf e eSocial")]
         Todos = 10,
+
         [Description("")]
         Nulo = 100
     }
-    #endregion
+
+    #endregion TipoAplicativo
 
     #region Padrão NFSe
+
     public enum PadroesNFSe
     {
         /// <summary>
@@ -369,190 +589,454 @@ namespace NFe.Components
         /// </summary>
         [Description("Não identificado")]
         NaoIdentificado,
+
         /// <summary>
         /// Padrão GINFES
         /// </summary>
         [Description("GINFES")]
         GINFES,
+
         /// <summary>
         /// Padrão da BETHA Sistemas
         /// </summary>
         [Description("BETHA")]
         BETHA,
+
+        /// <summary>
+        /// Padrão da BETHA versão 2.02
+        /// </summary>
+        [Description("BETHA 2.02")]
+        BETHA202,
+
         /// <summary>
         /// Padrão da THEMA Informática
         /// </summary>
         [Description("THEMA")]
         THEMA,
+
         /// <summary>
         /// Padrão da prefeitura de Salvador-BA
         /// </summary>
         [Description("Salvador-BA")]
         SALVADOR_BA,
+
         /// <summary>
         /// Padrão da prefeitura de Canoas-RS
         /// </summary>
         [Description("Canoas-RS")]
         CANOAS_RS,
+
         /// <summary>
         /// Padrão da ISS Net
-        /// </summary>    
+        /// </summary>
         [Description("ISS Net")]
         ISSNET,
+
         /// <summary>
-        /// Padrão da prefeitura de Apucarana-PR
-        /// Padrão da prefeitura de Aracatuba-SP
+        /// Padrão ISS On-Line/Assessor Público
+        /// Padrão da prefeitura de Barra Mansa-RJ
         /// </summary>
-        [Description("ISS On-line")]
-        ISSONLINE,
+        [Description("ISS On-line/Assessor Público")]
+        ISSONLINE_ASSESSORPUBLICO,
+
         /// <summary>
         /// Padrão da prefeitura de Blumenau-SC
         /// </summary>
         [Description("Blumenau-SC")]
         BLUMENAU_SC,
+
         /// <summary>
         /// Padrão da prefeitura de Juiz de Fora-MG
         /// </summary>
         [Description("BHISS")]
         BHISS,
+
         /// <summary>
         /// Padrao GIF
         /// Prefeitura de Campo Bom-RS
         /// </summary>
         [Description("GIF/Infisc")]
         GIF,
+
         /// <summary>
         /// Padrão IPM
         /// <para>Prefeitura de Campo Mourão.</para>
         /// </summary>
         [Description("IPM")]
         IPM,
+
         /// <summary>
         /// Padrão DUETO
         /// Prefeitura de Nova Santa Rita - RS
         /// </summary>
         [Description("Dueto")]
         DUETO,
+
         /// <summary>
         /// Padrão WEB ISS
         /// Prefeitura de Feira de Santana - BA
         /// </summary>
         [Description("Web ISS")]
         WEBISS,
+
+        /// <summary>
+        /// Padrão WEB ISS
+        /// Versão do XML 2.02
+        /// </summary>
+        [Description("Web ISS")]
+        WEBISS_202,
+
         /// <summary>
         /// Padrão Nota Fiscal Eletrônica Paulistana -
         /// Prefeitura São Paulo - SP
         /// </summary>
         [Description("Paulistana")]
         PAULISTANA,
+
         /// <summary>
         /// Padrão Nota Fiscal Eletrônica Porto Velhense
         /// Prefeitura de Porto Velho - RO
         /// </summary>
         [Description("Portovelhense")]
         PORTOVELHENSE,
+
         /// <summary>
         /// Padrão Nota Fiscal Eletrônica da PRONIN (GovBR)
         /// Prefeitura de Mirassol - SP
         /// </summary>
         [Description("Pronin")]
         PRONIN,
+
         /// <summary>
         /// Padrão Nota Fiscal Eletrônica ISS-ONline da 4R Sistemas
         /// Prefeitura de Governador Valadares - SP
         /// </summary>
         [Description("ISS On-Line/4R")]
         ISSONLINE4R,
+
         /// <summary>
-        /// Padrão Nota Fiscal eletrônica DSF 
+        /// Padrão Nota Fiscal eletrônica DSF
         /// Prefeitura de Campinas - SP
         /// Prefeitura de Campo Grande - MS
         /// </summary>
         [Description("DSF")]
         DSF,
+
         /// <summary>
         /// Padrão Tecno Sistemas
         /// Prefeitura de Portão - RS
         /// </summary>
         [Description("Tecno Sistemas")]
         TECNOSISTEMAS,
+
         /// <summary>
         /// Padrão System-PRO
         /// Prefeitura de Erechim - RS
         /// </summary>
         [Description("System-Pro")]
         SYSTEMPRO,
+
         /// <summary>
         /// Preifetura de Macaé - RJ
         /// </summary>
         [Description("Tiplan")]
         TIPLAN,
+
         /// <summary>
         /// Prefeitura do Rio de Janeiro - RJ
         /// </summary>
         [Description("Carioca")]
         CARIOCA,
+
         /// <summary>
         /// Prefeitura de Bauru - SP
         /// </summary>
         [Description("SigCorp/SigISS")]
         SIGCORP_SIGISS,
+
         /// <summary>
         /// Padrão SmaraPD
         /// Prefeitura de Sertãozinho - SP
         /// </summary>
         [Description("SmaraPD")]
         SMARAPD,
+
         /// <summary>
         /// Padrão Fiorilli
         /// Prefeitura de Taquara - SP
         /// </summary>
         [Description("Fiorilli")]
         FIORILLI,
+
         /// <summary>
         /// Padrão Fintel
         /// Prefeitura de Ponta Grossa - PR
         /// </summary>
         [Description("Fintel")]
         FINTEL,
+
         /// <summary>
         /// Padrão ISSWEB
         /// Prefeitura de Mairipora - SP
         /// </summary>
         [Description("ISSWeb")]
         ISSWEB,
+
         /// <summary>
         /// Padrão SimplIss
         /// Prefeitura de Piracicaba - SP
         /// </summary>
         [Description("SimplIss")]
         SIMPLISS,
+
         /// <summary>
         /// Padrão Conam
         /// Prefeitura de Varginha - MG
         /// </summary>
         [Description("CONAM")]
         CONAM,
+
         /// <summary>
         /// Padrão Rlz Informatica
         /// Prefeitura de Santa Fé do Sul - PR
         /// </summary>
         [Description("Rlz Informática")]
         RLZ_INFORMATICA,
+
         /// <summary>
         /// Padrão E-Governe
         /// Prefeitura de Curitiba - PR
         /// </summary>
         [Description("E-Governe")]
-        EGOVERNE
+        EGOVERNE,
 
-        ///Atencao Wandrey.
+        /// <summary>
+        /// Padrão E-Governe
+        /// Prefeitura de Osasco - SP
+        /// </summary>
+        [Description("EGoverne ISS")]
+        EGOVERNEISS,
+
+        /// <summary>
+        /// Padrão E&L
+        /// Prefeitura de Simões Filho - BA
+        /// </summary>
+        [Description("E&L")]
+        EL,
+
+        /// <summary>
+        /// Padrao GOV-Digital
+        /// Prefeitura de Divinopolis-MG
+        /// </summary>
+        [Description("Gov-Digital")]
+        GOVDIGITAL,
+
+        /// <summary>
+        /// Padrão Equiplano
+        /// Prefeitura de Toledo - PR
+        /// </summary>
+        [Description("Equiplano")]
+        EQUIPLANO,
+
+        /// <summary>
+        /// Padrão Prodata
+        /// Prefeitura de Itumbiara - GO
+        /// </summary>
+        [Description("Prodata")]
+        PRODATA,
+
+        /// <summary>
+        /// Padrão VVISS
+        /// Prefeitura de Vila Velha - ES
+        /// </summary>
+        [Description("VVISS")]
+        VVISS,
+
+        /// <summary>
+        /// Padrão FISSLEX
+        /// Prefeitura Sinop - MT
+        /// </summary>
+        [Description("FISSLEX")]
+        FISSLEX,
+
+        /// <summary>
+        /// Padrão EloTech
+        /// Prefeitura de Quatro Barras - PR
+        /// </summary>
+        [Description("EloTech")]
+        ELOTECH,
+
+        /// <summary>
+        /// Padrão MGM
+        /// Prefeitura de Penapolis - SP
+        /// </summary>
+        [Description("MGM")]
+        MGM,
+
+        /// <summary>
+        /// Padrão Natalense
+        /// Prefeitura de Natal - RN
+        /// </summary>
+        [Description("Natalense")]
+        NATALENSE,
+
+        /// <summary>
+        /// Padrão Consist
+        /// Prefeitura de Patos de Minas - MG
+        /// </summary>
+        [Description("Consist")]
+        CONSIST,
+
+        /// <summary>
+        /// Padrão de Goiania
+        /// </summary>
+        [Description("Goiania")]
+        GOIANIA,
+
+        /// <summary>
+        /// Padrão Nota Inteligente
+        /// Prefeitura de Claudio - MG
+        /// </summary>
+        [Description("Nota Inteligente")]
+        NOTAINTELIGENTE,
+
+        /// <summary>
+        /// Padrão Freire Informática
+        /// Prefeitura de Alagoinhas - BA
+        /// </summary>
+        [Description("Freire Informática")]
+        FREIRE_INFORMATICA,
+
+        /// <summary>
+        /// Padrão Memory
+        /// Prefeitura de Ponte Nova - MG
+        /// </summary>
+        [Description("Memory")]
+        MEMORY,
+
+        /// <summary>
+        /// Prefeitura de Camaçari - BA
+        /// </summary>
+        [Description("Camaçari-BA")]
+        CAMACARI_BA,
+
+        /// <summary>
+        /// Padrão N&A Informática
+        /// </summary>
+        [Description("N&A Informática")]
+        NA_INFORMATICA,
+
+        /// <summary>
+        /// PAdrão ABACO
+        /// Prefeitura de Rondonópolis - MT
+        /// </summary>
+        [Description("ABACO")]
+        ABACO,
+
+        /// <summary>
+        /// Padrão Metrópolis
+        /// </summary>
+        [Description("Metrópolis")]
+        METROPOLIS,
+
+        /// <summary>
+        /// Padrão Actcon
+        /// </summary>
+        [Description("Portal Fácil/Actcon")]
+        PORTALFACIL_ACTCON,
+
+        /// <summary>
+        /// Padrão Actcon
+        /// </summary>
+        [Description("Portal Fácil/Actcon")]
+        PORTALFACIL_ACTCON_202,
+
+        /// <summary>
+        /// Padrão Pública
+        /// </summary>
+        [Description("Pública")]
+        PUBLICA,
+
+        /// <summary>
+        /// Padrão BSIT-BR
+        /// </summary>
+        [Description("BSIT-BR")]
+        BSITBR,
+
+        /// <summary>
+        /// Padrão ABASE Sistemas
+        /// </summary>
+        [Description("ABASE")]
+        ABASE,
+
+        /// <summary>
+        /// Lexsom
+        /// </summary>
+        [Description("LEXSOM")]
+        LEXSOM,
+
+        /// <summary>
+        /// SH3
+        /// </summary>
+        [Description("SH3")]
+        SH3,
+
+        /// <summary>
+        /// Coplan
+        /// </summary>
+        [Description("Coplan")]
+        COPLAN,
+
+        /// <summary>
+        /// Super Nova
+        /// </summary>
+        [Description("Super Nova")]
+        SUPERNOVA,
+
+        /// <summary>
+        /// DBSELLER
+        /// </summary>
+        [Description("DBSELLER")]
+        DBSELLER,
+
+        /// <summary>
+        /// Prefeitura de Maringá-PR
+        /// </summary>
+        [Description("MARINGA_PR")]
+        MARINGA_PR,
+
+        /// <summary>
+        /// Padrão utilizado pela prefeitura de Bauru-SP
+        /// </summary>
+        [Description("BAURU_SP")]
+        BAURU_SP,
+
+        /// <summary>
+        /// Padrão utilizado pela prefeitura de Jaboatão dos Guararapes-PE
+        /// </summary>
+        [Description("TINUS")]
+        TINUS,
+
+        /// <summary>
+        /// Padrão utilizado pela prefeitura de Eusébio-CE
+        /// </summary>
+        [Description("INTERSOL")]
+        INTERSOL,
+
+        /// <summary>
+        /// Padrão utilizado pela prefeitura de Florianópolis-SC
+        /// </summary>
+        [Description("SOFTPLAN")]
+        SOFTPLAN
+
+        ///***ATENÇÃO***
         ///o nome deste enum tem que coincidir com o nome da url, pq faço um "IndexOf" deste enum para pegar o padrao
-
     }
-    #endregion
+
+    #endregion Padrão NFSe
 
     #region Classe dos tipos de ambiente da NFe
+
     /// <summary>
     /// Tipo de ambiente
     /// </summary>
@@ -560,12 +1044,50 @@ namespace NFe.Components
     {
         [Description("Produção")]
         taProducao = 1,
+
         [Description("Homologação")]
         taHomologacao = 2
     }
-    #endregion
+
+    #endregion Classe dos tipos de ambiente da NFe
+
+    /// <summary>
+    /// Regime tributação ISSQN
+    /// </summary>
+    public enum RegTribISSQN
+    {
+        [Description("1 - Micro Empresa Municipal")]
+        MicroEmpresaMunicipal = 1,
+
+        [Description("2 - Estimativa")]
+        Estimativa = 2,
+
+        [Description("3 - Sociedade de Profissionais")]
+        SociedadeDeProfissionais = 3,
+
+        [Description("4 - Cooperativa")]
+        Cooperativa = 4,
+
+        [Description("5 - Micro Empresário Individual (MEI)")]
+        MicroEmpresarioIndividual = 5
+    }
+
+    /// <summary>
+    /// Informa se o Desconto sobre
+    /// subtotal deve ser rateado entre
+    /// os itens sujeitos à tributação pelo ISSQN.
+    /// </summary>
+    public enum IndRatISSQN
+    {
+        [Description("Sim")]
+        S,
+
+        [Description("Não")]
+        N
+    }
 
     #region TipoEmissao
+
     /// <summary>
     /// TipoEmissao
     /// </summary>
@@ -573,36 +1095,46 @@ namespace NFe.Components
     {
         [Description("")]
         teNone = 0,
+
         [Description("Normal")]
         teNormal = 1,
-        [Description("Contingência com formulário de segurança (FS)")]
+
+        [Description("Contingência com FS")]
         teFS = 2,
-        [Description("Contingência com EPEC / DPEC")]
-        teEPECeDPEC = 4,
-        [Description("Contingência com formulário de segurança (FS-DA)")]
+
+        [Description("Contingência com EPEC")]
+        teEPEC = 4,
+
+        [Description("Contingência com FS-DA")]
         teFSDA = 5,
+
         [Description("Contingência com SVC-AN")]
         teSVCAN = 6,
+
         [Description("Contingência com SVC-RS")]
         teSVCRS = 7,
+
         [Description("Contingência com SVC-SP")]
         teSVCSP = 8,
+
         [Description("Contingência Off-Line (NFC-e)")]
         teOffLine = 9
     }
-    #endregion
+
+    #endregion TipoEmissao
 
     #region Erros Padrões
+
     public enum ErroPadrao
     {
         ErroNaoDetectado = 0,
         FalhaInternet = 1,
         FalhaEnvioXmlWS = 2,
         CertificadoVencido = 3,
-        FalhaEnvioXmlWSDPEC = 4, //danasa 21/10/2010
         FalhaEnvioXmlNFeWS = 5
     }
-    #endregion
+
+    #endregion Erros Padrões
 
     #region EnumHelper
 
@@ -611,19 +1143,20 @@ ComboBox combo = new ComboBox();
 combo.DataSource = EnumHelper.ToList(typeof(SimpleEnum));
 combo.DisplayMember = "Value";
 combo.ValueMember = "Key";
-    
+
         foreach (string value in Enum.GetNames(typeof(Model.TipoCampanhaSituacao)))
         {
             Model.TipoCampanhaSituacao stausEnum = (Model.TipoCampanhaSituacao)Enum.Parse(typeof(Model.TipoCampanhaSituacao), value);
             Console.WriteLine(" Description: " + value+"  "+ Model.EnumHelper.GetDescription(stausEnum));
         }
-     
+
  */
 
     [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
     public sealed class AttributeTipoAplicacao : Attribute
     {
         private TipoAplicativo aplicacao;
+
         public TipoAplicativo Aplicacao
         {
             get
@@ -643,6 +1176,7 @@ combo.ValueMember = "Key";
     public sealed class EnumDescriptionAttribute : Attribute
     {
         private string description;
+
         public string Description
         {
             get
@@ -679,10 +1213,10 @@ combo.ValueMember = "Key";
             return attribute == null ? value.ToString() : attribute.Description;
         }*/
 
-
-
-
-        public static T StringToEnum<T>(string name) { return (T)Enum.Parse(typeof(T), name, true); }
+        public static T StringToEnum<T>(string name)
+        {
+            return (T)Enum.Parse(typeof(T), name, true);
+        }
 
         /// <summary>
         /// Gets the <see cref="DescriptionAttribute"/> of an <see cref="Enum"/> type value.
@@ -780,5 +1314,5 @@ combo.ValueMember = "Key";
         }
     }
 
-    #endregion
+    #endregion EnumHelper
 }

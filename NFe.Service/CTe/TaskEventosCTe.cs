@@ -1,27 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
-using System.IO;
-using System.Xml;
+﻿using NFe.Certificado;
 using NFe.Components;
 using NFe.Settings;
-using NFe.Certificado;
+using System;
+using System.Xml;
 
 namespace NFe.Service
 {
     public class TaskCTeEventos : TaskAbst
     {
-        public TaskCTeEventos()
+        public TaskCTeEventos(string arquivo)
         {
             Servico = Servicos.CTeRecepcaoEvento;
+            NomeArquivoXML = arquivo;
+            ConteudoXML.PreserveWhitespace = false;
+            ConteudoXML.Load(arquivo);
         }
 
         #region Classe com os dados do XML do registro de eventos
+
         private DadosenvEvento dadosEnvEvento;
-        #endregion
+
+        #endregion Classe com os dados do XML do registro de eventos
 
         #region Execute
+
         public override void Execute()
         {
             int emp = Empresas.FindEmpresaByThread();
@@ -30,21 +32,20 @@ namespace NFe.Service
             {
                 dadosEnvEvento = new DadosenvEvento();
                 //Ler o XML para pegar parâmetros de envio
-                EnvEvento(emp, NomeArquivoXML);
+                EnvEvento(emp, dadosEnvEvento);
 
                 ValidaEvento(emp, dadosEnvEvento);
-                int tpEmis = Convert.ToInt32(this.dadosEnvEvento.eventos[0].chNFe.Substring(34, 1)); //vai pegar o ambiente da Chave da Nfe autorizada p/ corrigir tpEmis
 
-                /*
-                int currentEvento = Convert.ToInt32(dadosEnvEvento.eventos[0].tpEvento);
-                foreach (Evento item in dadosEnvEvento.eventos)
+                //vai pegar o ambiente da Chave da Nfe autorizada p/ corrigir tpEmis
+                int tpEmis = dadosEnvEvento.eventos[0].tpEmis;
+
+                //Se for carta de correção eletrônica, só aceita envio no ambiente normal.
+                if (dadosEnvEvento.eventos[0].tpEvento == ((int)ConvertTxt.tpEventos.tpEvCCe).ToString())
                 {
-                    tpEmis = Convert.ToInt32(item.chNFe.Substring(34, 1)); //vai pegar o ambiente da Chave da Nfe autorizada p/ corrigir 
-                    if (currentEvento != Convert.ToInt32(item.tpEvento))
-                        throw new Exception(string.Format("Não é possivel mesclar tipos de eventos dentro de um mesmo xml/txt de eventos. O tipo de evento neste xml/txt é {0}", currentEvento));
+                    tpEmis = (int)TipoEmissao.teNormal;
                 }
-                */
-                //Pegar o estado da chave, pois na cOrgao pode vir o estado 91 - Wandreuy 22/08/2012
+
+                //Pegar o estado da chave, pois na cOrgao pode vir o estado 91 - Wandrey 22/08/2012
                 int cOrgao = dadosEnvEvento.eventos[0].cOrgao;
                 int ufParaWS = cOrgao;
 
@@ -53,27 +54,30 @@ namespace NFe.Service
                     ufParaWS = Convert.ToInt32(dadosEnvEvento.eventos[0].chNFe.Substring(0, 2));
 
                 //Definir o objeto do WebService
-                WebServiceProxy wsProxy = ConfiguracaoApp.DefinirWS(Servico, emp, ufParaWS, dadosEnvEvento.eventos[0].tpAmb, tpEmis);
+                WebServiceProxy wsProxy = ConfiguracaoApp.DefinirWS(Servico, emp, ufParaWS, dadosEnvEvento.eventos[0].tpAmb, tpEmis, 0);
+                System.Net.SecurityProtocolType securityProtocolType = WebServiceProxy.DefinirProtocoloSeguranca(ufParaWS, dadosEnvEvento.eventos[0].tpAmb, tpEmis, Servico);
 
-                object oRecepcaoEvento = wsProxy.CriarObjeto(wsProxy.NomeClasseWS);//NomeClasseWS(Servico, ufParaWS));
+                object oRecepcaoEvento = wsProxy.CriarObjeto(wsProxy.NomeClasseWS);
                 object oCabecMsg = wsProxy.CriarObjeto(NomeClasseCabecWS(cOrgao, Servico));
 
                 wsProxy.SetProp(oCabecMsg, TpcnResources.cUF.ToString(), cOrgao.ToString());
-                wsProxy.SetProp(oCabecMsg, TpcnResources.versaoDados.ToString(), NFe.ConvertTxt.versoes.VersaoXMLCTeEvento);
+                wsProxy.SetProp(oCabecMsg, TpcnResources.versaoDados.ToString(), dadosEnvEvento.versao);
 
                 //Criar objeto da classe de assinatura digital
                 AssinaturaDigital oAD = new AssinaturaDigital();
 
                 //Assinar o XML
-                oAD.Assinar(NomeArquivoXML, emp, cOrgao);
+                oAD.Assinar(ConteudoXML, emp, cOrgao);
 
                 oInvocarObj.Invocar(wsProxy,
                                     oRecepcaoEvento,
-                                    wsProxy.NomeMetodoWS[0],//NomeMetodoWS(Servico, ufParaWS), 
+                                    wsProxy.NomeMetodoWS[0],
                                     oCabecMsg,
                                     this,
-                                    Propriedade.ExtEnvio.PedEve.Replace(".xml", ""),
-                                    Propriedade.ExtRetorno.Eve.Replace(".xml", ""));
+                                    Propriedade.Extensao(Propriedade.TipoEnvio.PedEve).EnvioXML,
+                                    Propriedade.Extensao(Propriedade.TipoEnvio.PedEve).RetornoXML,
+                                    true,
+                                    securityProtocolType);
 
                 //Ler o retorno
                 LerRetornoEvento(emp);
@@ -83,7 +87,7 @@ namespace NFe.Service
                 try
                 {
                     //Gravar o arquivo de erro de retorno para o ERP, caso ocorra
-                    TFunctions.GravarArqErroServico(NomeArquivoXML, Propriedade.ExtEnvio.PedEve, Propriedade.ExtRetorno.Eve_ERR, ex);
+                    TFunctions.GravarArqErroServico(NomeArquivoXML, Propriedade.Extensao(Propriedade.TipoEnvio.PedEve).EnvioXML, Propriedade.ExtRetorno.Eve_ERR, ex);
                 }
                 catch
                 {
@@ -105,72 +109,58 @@ namespace NFe.Service
                 }
             }
         }
-        #endregion
 
-        #region EnvEvento()
-        /// <summary>
-        /// Fazer a leitura dos dados do XML
-        /// </summary>
-        /// <param name="emp">Código da Empresa</param>
-        /// <param name="arquivoXML">Arquivo XML</param>
-        private void EnvEvento(int emp, string arquivoXML)
+        #endregion Execute
+
+        #region EnvEvento
+
+        protected override void EnvEvento(int emp, DadosenvEvento dadosEnvEvento)
         {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(arquivoXML);
+            XmlNodeList eventoCTeList = ConteudoXML.GetElementsByTagName("eventoCTe");
+            XmlElement eventoCTeElemento = (XmlElement)eventoCTeList[0];
+            dadosEnvEvento.versao = eventoCTeElemento.Attributes[TpcnResources.versao.ToString()].InnerText;
 
-            XmlNodeList envEventoList = doc.GetElementsByTagName("infEvento");
-
-            foreach (XmlNode envEventoNode in envEventoList)
-            {
-                XmlElement envEventoElemento = (XmlElement)envEventoNode;
-
-                dadosEnvEvento.eventos.Add(new Evento());
-                dadosEnvEvento.eventos[this.dadosEnvEvento.eventos.Count - 1].tpEvento = envEventoElemento.GetElementsByTagName(TpcnResources.tpEvento.ToString())[0].InnerText;
-                dadosEnvEvento.eventos[this.dadosEnvEvento.eventos.Count - 1].tpAmb = Convert.ToInt32("0" + envEventoElemento.GetElementsByTagName(TpcnResources.tpAmb.ToString())[0].InnerText);
-                dadosEnvEvento.eventos[this.dadosEnvEvento.eventos.Count - 1].cOrgao = Convert.ToInt32("0" + envEventoElemento.GetElementsByTagName(TpcnResources.cOrgao.ToString())[0].InnerText);
-                dadosEnvEvento.eventos[this.dadosEnvEvento.eventos.Count - 1].chNFe = envEventoElemento.GetElementsByTagName(TpcnResources.chCTe.ToString())[0].InnerText;
-                dadosEnvEvento.eventos[this.dadosEnvEvento.eventos.Count - 1].nSeqEvento = Convert.ToInt32("0" + envEventoElemento.GetElementsByTagName(TpcnResources.nSeqEvento.ToString())[0].InnerText);
-            }
+            base.EnvEvento(emp, dadosEnvEvento);
         }
-        #endregion
+
+        #endregion EnvEvento
 
         #region LerRetornoEvento
+
         private void LerRetornoEvento(int emp)
         {
-            //<<<UTF8 -> tem acentuacao no retorno
-            TextReader txt = new StreamReader(NomeArquivoXML, Encoding.Default);
-            XmlDocument docEventoOriginal = new XmlDocument();
-            docEventoOriginal.Load(Functions.StringXmlToStreamUTF8(txt.ReadToEnd()));
-            txt.Close();
+            XmlDocument docEventoOriginal = ConteudoXML;
+            bool autorizou = false;
 
             /*
-            vStrXmlRetorno = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
-                "<retEventoCTe xmlns=\"http://www.portalfiscal.inf.br/cte\" versao=\"2.00\">" +
-                "  <infEvento Id=\"ID342130000096132\">" +
-                "    <tpAmb>2</tpAmb>" +
-                "    <verAplic>RS20130820221405</verAplic>" +
-                "    <cOrgao>42</cOrgao>" +
-                "    <cStat>135</cStat>" +
-                "    <xMotivo>Evento registrado e vinculado a CT-e</xMotivo>" +
-                "    <chCTe>42131175892067000187570040000001091211932160</chCTe>" +
-                "    <tpEvento>110111</tpEvento>" +
-                "    <xEvento>Cancelamento</xEvento>" +
-                "    <nSeqEvento>1</nSeqEvento>" +
-                "    <dhRegEvento>2013-11-13T15:27:12</dhRegEvento>" +
-                "    <nProt>342130000096132</nProt>" +
-                "</infEvento>" +
-                "</retEventoCTe>";
-             */
+                        vStrXmlRetorno = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
+                            "<retEventoCTe xmlns=\"http://www.portalfiscal.inf.br/cte\" versao=\"3.00\">" +
+                            "  <infEvento Id=\"ID342130000096132\">" +
+                            "    <tpAmb>2</tpAmb>" +
+                            "    <verAplic>RS20130820221405</verAplic>" +
+                            "    <cOrgao>43</cOrgao>" +
+                            "    <cStat>136</cStat>" +
+                            "    <xMotivo>Evento registrado e vinculado a CT-e</xMotivo>" +
+                            "    <chCTe>43120178408960000182570010000000041000000047</chCTe>" +
+                            "    <tpEvento>110140</tpEvento>" +
+                            "    <xEvento>Cancelamento</xEvento>" +
+                            "    <nSeqEvento>1</nSeqEvento>" +
+                            "    <dhRegEvento>2013-11-13T15:27:12</dhRegEvento>" +
+                            "    <nProt>342130000096132</nProt>" +
+                            "</infEvento>" +
+                            "</retEventoCTe>";
+            */
 
-            MemoryStream msXml = Functions.StringXmlToStreamUTF8(vStrXmlRetorno);
             XmlDocument doc = new XmlDocument();
-            doc.Load(msXml);
+            doc.Load(Functions.StringXmlToStreamUTF8(vStrXmlRetorno));
 
             XmlNodeList retEnvRetornoList = doc.GetElementsByTagName("retEventoCTe");
 
             foreach (XmlNode retConsSitNode in retEnvRetornoList)
             {
                 XmlElement retConsSitElemento = (XmlElement)retConsSitNode;
+
+                string versao = retConsSitElemento.Attributes[TpcnResources.versao.ToString()].InnerText;
 
                 XmlNodeList envEventosList = doc.GetElementsByTagName("infEvento");
                 for (int i = 0; i < envEventosList.Count; ++i)
@@ -184,7 +174,7 @@ namespace NFe.Service
                         string chCTe = eleRetorno.GetElementsByTagName(TpcnResources.chCTe.ToString())[0].InnerText;
                         Int32 nSeqEvento = Convert.ToInt32("0" + eleRetorno.GetElementsByTagName(TpcnResources.nSeqEvento.ToString())[0].InnerText);
                         string tpEvento = eleRetorno.GetElementsByTagName(TpcnResources.tpEvento.ToString())[0].InnerText;
-                        string Id = NFe.Components.TpcnResources.ID.ToString() + tpEvento + chCTe + nSeqEvento.ToString("00");
+                        string Id = TpcnResources.ID.ToString() + tpEvento + chCTe + nSeqEvento.ToString("00");
                         ///
                         ///procura no Xml de envio pelo Id retornado
                         ///nao sei se a Sefaz retorna na ordem em que foi enviado, então é melhor pesquisar
@@ -193,18 +183,21 @@ namespace NFe.Service
                             string Idd = env.Attributes.GetNamedItem(TpcnResources.Id.ToString()).Value;
                             if (Idd == Id)
                             {
+                                autorizou = true;
+
                                 DateTime dhRegEvento = Functions.GetDateTime(eleRetorno.GetElementsByTagName(TpcnResources.dhRegEvento.ToString())[0].InnerText);
 
                                 //Gerar o arquivo XML de distribuição do evento, retornando o nome completo do arquivo gravado
-                                oGerarXML.XmlDistEventoCTe(emp, chCTe, nSeqEvento, Convert.ToInt32(tpEvento), env.ParentNode.OuterXml, eleRetorno.OuterXml, dhRegEvento);
+                                oGerarXML.XmlDistEventoCTe(emp, chCTe, nSeqEvento, Convert.ToInt32(tpEvento), env.ParentNode.OuterXml, eleRetorno.OuterXml, dhRegEvento, true, versao);
 
-                                switch ((NFe.ConvertTxt.tpEventos)Convert.ToInt32(tpEvento))
+                                switch ((ConvertTxt.tpEventos)Convert.ToInt32(tpEvento))
                                 {
                                     case ConvertTxt.tpEventos.tpEvCancelamentoNFe:
                                     case ConvertTxt.tpEventos.tpEvCCe:
+                                    case ConvertTxt.tpEventos.tpEvEPEC:
                                         try
                                         {
-                                            NFe.Service.TFunctions.ExecutaUniDanfe(oGerarXML.NomeArqGerado, DateTime.Today, Empresas.Configuracoes[emp]);
+                                            TFunctions.ExecutaUniDanfe(oGerarXML.NomeArqGerado, DateTime.Today, Empresas.Configuracoes[emp]);
                                         }
                                         catch (Exception ex)
                                         {
@@ -219,7 +212,11 @@ namespace NFe.Service
                     }
                 }
             }
+
+            if (!autorizou)
+                oAux.MoveArqErro(NomeArquivoXML);
         }
-        #endregion
+
+        #endregion LerRetornoEvento
     }
 }

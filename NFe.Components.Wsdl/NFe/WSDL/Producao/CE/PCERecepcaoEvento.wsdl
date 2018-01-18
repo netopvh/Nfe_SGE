@@ -39,7 +39,7 @@
   </wsdl:message>
   <wsdl:portType name="RecepcaoEventoSoapPort">
     <wsdl:operation name="nfeRecepcaoEvento">
-<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Serviï¿½o destinado ao atendimento de solicitaï¿½ï¿½es de Recepcao de Eventos</wsdl:documentation>
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Serviço destinado ao atendimento de solicitações de Recepcao de Eventos</wsdl:documentation>
       <wsdl:input message="tns:nfeRecepcaoEventoSoapIn">
     </wsdl:input>
       <wsdl:output message="tns:nfeRecepcaoEventoSoapOut">

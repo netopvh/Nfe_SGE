@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Reflection;
 using System.Configuration;
 using System.IO;
+using System.Runtime.InteropServices;
+using System.Text;
 
 namespace NFe.Components
 {
@@ -308,7 +310,13 @@ namespace NFe.Components
             try
             {
                 if (ValueExists(Path, ValueSection))
-                    return Convert.ToInt32("0" + ReadThisValue(Path, ValueSection));
+                {
+                    var val = ReadThisValue(Path, ValueSection);
+                    if (val != "")
+                    {
+                        return Convert.ToInt32(val);
+                    }
+                }
             }
             catch
             {
@@ -725,9 +733,9 @@ namespace NFe.Components
 
 					if (xform.MdiParent==null)
 					{
-						if ((height + top) > SystemInformation.VirtualScreen.Height)
+                        if ((height + top) > SystemInformation.VirtualScreen.Height || top < 0)
 							top = 0;
-						if ((width + left) > SystemInformation.VirtualScreen.Width)
+						if ((width + left) > SystemInformation.VirtualScreen.Width || left < 0)
 							left = 0;
 					}
 					xform.StartPosition = FormStartPosition.Manual;
@@ -842,6 +850,7 @@ namespace NFe.Components
             return result;
         }
 
+        [System.Diagnostics.DebuggerHidden()]
         protected string Translate(string Value)	// OK
 		{
 			int I;
@@ -965,5 +974,49 @@ namespace NFe.Components
 		#endregion
     
 
+    }
+
+    public class IniFile   // revision 10
+    {
+        string Path;
+        string EXE = Assembly.GetExecutingAssembly().GetName().Name;
+
+        [DllImport("kernel32")]
+        static extern long WritePrivateProfileString(string Section, string Key, string Value, string FilePath);
+
+        [DllImport("kernel32")]
+        static extern int GetPrivateProfileString(string Section, string Key, string Default, StringBuilder RetVal, int Size, string FilePath);
+
+        public IniFile(string IniPath = null)
+        {
+            Path = new FileInfo(IniPath ?? EXE + ".ini").FullName.ToString();
+        }
+
+        public string Read(string Key, string Section = null)
+        {
+            var RetVal = new StringBuilder(255);
+            GetPrivateProfileString(Section ?? EXE, Key, "", RetVal, 255, Path);
+            return RetVal.ToString();
+        }
+
+        public void Write(string Key, string Value, string Section = null)
+        {
+            WritePrivateProfileString(Section ?? EXE, Key, Value, Path);
+        }
+
+        public void DeleteKey(string Key, string Section = null)
+        {
+            Write(Key, null, Section ?? EXE);
+        }
+
+        public void DeleteSection(string Section = null)
+        {
+            Write(null, null, Section ?? EXE);
+        }
+
+        public bool KeyExists(string Key, string Section = null)
+        {
+            return Read(Key, Section).Length > 0;
+        }
     }
 }

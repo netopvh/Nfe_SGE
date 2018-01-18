@@ -13,17 +13,10 @@ namespace NFe.ConvertTxt
         public static string VersaoXMLPedSit = "3.10";
         public static string VersaoXMLInut = "3.10";
         public static string VersaoXMLConsCad = "2.00";
-        public static string VersaoXMLEnvDPEC = "1.01";
-        public static string VersaoXMLConsDPEC = "1.01";
         public static string VersaoXMLEvento = "1.00";
         public static string VersaoXMLEnvConsultaNFeDest = "1.01";
         public static string VersaoXMLEnvDownload = "1.00";
         public static string VersaoXMLEnvDFe = "1.00";
-        //public static string VersaoXMLCanc = "3.10";
-        //public static string NFeCCe = "1.00";
-        //public static string NfeAutorizacao = "3.10";
-        //public static string NfeRetAutorizacao = "3.10";
-        //public static string NfeRetRecepcao = "3.10";
         #endregion
 
         #region MDF-e
@@ -31,7 +24,6 @@ namespace NFe.ConvertTxt
         public static string VersaoXMLMDFeStatusServico = "1.00";
         public static string VersaoXMLMDFe = "1.00";
         public static string VersaoXMLMDFePedRec = "1.00";
-        public static string VersaoXMLMDFePedSit = "1.00";
         public static string VersaoXMLMDFeEvento = "1.00";
         public static string VersaoXMLMDFeConsNaoEnc = "1.00";
         #endregion
@@ -41,7 +33,6 @@ namespace NFe.ConvertTxt
         public static string VersaoXMLCTeStatusServico = "2.00";
         public static string VersaoXMLCTe = "2.00";
         public static string VersaoXMLCTePedRec = "2.00";
-        public static string VersaoXMLCTePedSit = "2.00";
         public static string VersaoXMLCTeInut = "2.00";
         public static string VersaoXMLCTeEvento = "2.00";
         #endregion
@@ -59,11 +50,20 @@ namespace NFe.ConvertTxt
         cfConsumidorFinal = 1
     }
     public enum TpcnPresencaComprador {
-        pcNao=0, 
-        pcPresencial=1, 
-        pcInternet=2, 
-        pcTeleatendimento=3, 
-        pcOutros=9
+        [Description("0=Não se aplica (por exemplo, Nota Fiscal complementar ou de ajuste);")]
+        pcNao = 0, 
+        [Description("Operação presencial")]
+        pcPresencial = 1, 
+        [Description("Operação não presencial, pela Internet")]
+        pcInternet = 2, 
+        [Description("Operação não presencial, Teleatendimento")]
+        pcTeleatendimento = 3, 
+        [Description("NFC-e em operação com entrega a domicílio")]
+        pcEntregaDomicilio = 4,
+        [Description("Operação presencial, fora do estabelecimento")]
+        pcPresencialForaEstabelecimento = 5,
+        [Description("Operação não presencial, outros")]
+        pcOutros = 9
     }
     public enum TpcnFormaPagamento {
         fpDinheiro=1, 
@@ -95,9 +95,17 @@ namespace NFe.ConvertTxt
     }
     public enum TpcnModalidadeFrete 
     { 
+        [Description("0=Contratação do Frete por conta do Remetente (CIF)")]
         mfContaEmitente = 0, 
+        [Description("1=Contratação do Frete por conta do Destinatário (FOB)")]
         mfContaDestinatario = 1, 
+        [Description("2=Contratação do Frete por conta de Terceiros")]
         mfContaTerceiros = 2, 
+        [Description("3=Transporte Próprio por conta do Remetente")]
+        mfTranspProprioContaRemetente = 3,
+        [Description("4=Transporte Próprio por conta do Destinatário")]
+        mfTranspProprioContaDestinatario = 4,
+        [Description("9 = Sem Ocorrência de Transporte")]
         mfSemFrete = 9
     }
     public enum TpcnDeterminacaoBaseIcms 
@@ -114,7 +122,8 @@ namespace NFe.ConvertTxt
         dbisListaPositiva = 2, 
         dbisListaNeutra = 3, 
         dbisMargemValorAgregado = 4, 
-        dbisPauta = 5
+        dbisPauta = 5,
+        NaoInserirTagNoXML = 100 //Quando a tag não é obrigatórioa, vamos retornar este valor para termos controle sobre a situação.
     }
     public enum TpcnOrigemMercadoria
     {
@@ -145,10 +154,19 @@ namespace NFe.ConvertTxt
         toVendaDireta = 3, 
         toOutros = 0
     }
-    public enum TpcnIndicadorTotal 
+    public enum TpcnIndicadorEscala 
     { 
-        itNaoSomaTotalNFe = 0, 
-        itSomaTotalNFe = 1 
+        [Description("Nenhum")]
+        ieNenhum = ' ',
+        [Description("S - Produzido em Escala Relevante")]
+        ieNaoSomaTotalNFe = 'S', 
+        [Description("N – Produzido em Escala NÃO Relevante")]
+        ieSomaTotalNFe = 'N' 
+    }
+    public enum TpcnIndicadorTotal
+    {
+        itNaoSomaTotalNFe = 0,
+        itSomaTotalNFe = 1
     }
     public enum TpcnCRT 
     { 
@@ -157,8 +175,9 @@ namespace NFe.ConvertTxt
         crtRegimeNormal = 3
     }
     public enum TpcnTipoCampo 
-    { 
-        tcStr, tcInt, tcDatYYYY_MM_DD, tcDatYYYYMMDD, tcHor, tcDatHor, tcDec2, tcDec3, tcDec4, tcDec10 
+    {
+        tcDec2 = 2, tcDec3 = 3, tcDec4 = 4, tcDec5 = 5, tcDec6 = 6, tcDec7 = 7, tcDec8 = 8, tcDec9 = 9, tcDec10 = 10,
+        tcStr, tcInt, tcDatYYYY_MM_DD, tcDatYYYYMMDD, tcHor, tcDatHor
     }
 
     public enum TpcnIndicadorPagamento 
@@ -181,6 +200,7 @@ namespace NFe.ConvertTxt
         tiDANFENFCe = 4,
         tiDANFENFCe_em_mensagem_eletrônica = 5
     }
+
     public enum TpcnFinalidadeNFe
     {
         fnNormal = 1,
@@ -220,7 +240,25 @@ namespace NFe.ConvertTxt
         [Description("Registro de passagem")]
         tpEvRegistroPassagem = 310620,
         [Description("Registro de passagem-BRid")]
-        tpEvRegistroPassagemBRid = 510620
+        tpEvRegistroPassagemBRid = 510620,
+        [Description("Registro Multimodal")]
+        tpevRegMultimodal = 110160,
+        [Description("Pedido de prorrogação 1º. prazo")]
+        tpEvPedProrrogacao_ICMS_1 = 111500,
+        [Description("Pedido de prorrogação 2º. prazo")]
+        tpEvPedProrrogacao_ICMS_2 = 111501,
+        [Description("Cancelamento de Pedido de Prorrogação 1º. Prazo")]
+        tpEvCancPedProrrogacao_ICMS_1 = 111502,
+        [Description("Cancelamento de Pedido de Prorrogação 2º. Prazo")]
+        tpEvCancPedProrrogacao_ICMS_2 = 111503,
+        [Description("Fisco Resposta ao Pedido de Prorrogação 1º prazo")]
+        tpEvFiscoRespPedProrrogacao_ICMS_1 = 411500,
+        [Description("Fisco Resposta ao Pedido de Prorrogação 2º prazo")]
+        tpEvFiscoRespPedProrrogacao_ICMS_2 = 411501,
+        [Description("Fisco Resposta ao Cancelamento de Prorrogação 1º prazo")]
+        tpEvFiscoRespCancPedProrrogacao_ICMS_1 = 411502,
+        [Description("Fisco Resposta ao Cancelamento de Prorrogação 2º prazo")]
+        tpEvFiscoRespCancPedProrrogacao_ICMS_2 = 411503
     }
 
     public enum TpcnTipoAutor
@@ -272,7 +310,10 @@ namespace NFe.ConvertTxt
     public enum TpcnMod
     {
         modNFe = 55,
-        modNFCe = 65
+        modNFCe = 65,
+        modCTe = 57,
+        modMDFe = 58,
+        modIntefinido = 99
     }
 
     public enum TpcnTipoViaTransp

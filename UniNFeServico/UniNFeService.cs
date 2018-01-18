@@ -24,8 +24,10 @@ namespace UniNFeServico
 
         protected override void OnStart(string[] args)
         {
-            base.OnStart(args);
-
+#if DEBUG
+            System.Diagnostics.Debugger.Launch();
+#endif
+            base.OnStart(args);           
             WriteLog("Serviço iniciado na pasta: " + NFe.Components.Propriedade.PastaExecutavel);
             this.iniciarServicosUniNFe();
         }
@@ -61,18 +63,17 @@ namespace UniNFeServico
 
         private void iniciarServicosUniNFe()
         {
-            Propriedade.TipoAplicativo = TipoAplicativo.Nfe;
+            Propriedade.TipoAplicativo = TipoAplicativo.Todos;
             ConfiguracaoApp.StartVersoes();
+
+            Empresas.CarregaConfiguracao();
 
             string filenameWS1 = Propriedade.NomeArqXMLMunicipios;
             string filenameWS2 = Propriedade.NomeArqXMLWebService_NFSe;
             string filenameWS3 = Propriedade.NomeArqXMLWebService_NFe;
             string msg = "";
-
             bool error = false;
-            error = !System.IO.File.Exists(filenameWS1) || !System.IO.File.Exists(filenameWS2) || !System.IO.File.Exists(filenameWS3);
-            msg = "Arquivos '" + filenameWS1 + "', '" + filenameWS2 + "' e '" + filenameWS3 + "' não encontrados";
-
+            Propriedade.VerificaArquivos(out error, out msg);
             if (error)
             {
                 this.WriteLog(msg);
@@ -86,7 +87,7 @@ namespace UniNFeServico
 
                         string f = Path.Combine(empresa.PastaXmlRetorno,
                                                 "uninfeServico_" + DateTime.Now.ToString("yyyy-MMM-dd_hh-mm-ss") + ".txt");
-                        System.IO.File.WriteAllText(f, msg, Encoding.UTF8);
+                        System.IO.File.WriteAllText(f, msg);
                         error = true;
 
                         WriteLog(msg);

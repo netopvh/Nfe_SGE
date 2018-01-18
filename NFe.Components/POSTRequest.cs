@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Net;
 using System.IO;
+using System.Reflection;
+using Newtonsoft.Json;
+using NFe.Components.SOFTPLAN;
+using System.Xml;
 
 namespace NFSe.Components
 {
@@ -35,9 +39,18 @@ namespace NFSe.Components
             request.KeepAlive = true;
             request.Credentials = System.Net.CredentialCache.DefaultCredentials;
 
-            if (Proxy != null)
+            //ajustar para permitir o cabeçalho HTTP/1.0
+            SetAllowUnsafeHeaderParsing20();
+            //evitar o erro "The remote server returned an error: (417) Expectation Failed."
+            //para caeçalhos HTTP/1.0
+            System.Net.ServicePointManager.Expect100Continue = false;
+
+            if(Proxy != null)
             {
+                request.UseDefaultCredentials = false;
                 request.Proxy = Proxy;
+                request.Proxy.Credentials = Proxy.Credentials;
+                request.Credentials = Proxy.Credentials;
             }
             #endregion
 
@@ -48,7 +61,7 @@ namespace NFSe.Components
 
             string formdataTemplate = "\r\n--" + boundary + "\r\nContent-Disposition: form-data; name=\"{0}\";\r\n\r\n{1}";
 
-            foreach (KeyValuePair<string, string> keyValue in postData)
+            foreach(KeyValuePair<string, string> keyValue in postData)
             {
                 string formitem = string.Format(formdataTemplate, keyValue.Key, keyValue.Value);
                 byte[] formitembytes = System.Text.Encoding.UTF8.GetBytes(formitem);
@@ -71,7 +84,7 @@ namespace NFSe.Components
 
             int bytesRead = 0;
 
-            while ((bytesRead = fileStream.Read(buffer, 0, buffer.Length)) != 0)
+            while((bytesRead = fileStream.Read(buffer, 0, buffer.Length)) != 0)
             {
                 memStream.Write(buffer, 0, bytesRead);
             }
@@ -97,7 +110,10 @@ namespace NFSe.Components
             WebResponse response = request.GetResponse();
 
             Stream stream = response.GetResponseStream();
-            StreamReader reader = new StreamReader(stream, Encoding.GetEncoding(response.ContentType.Substring(response.ContentType.IndexOf("charset=") + 8)));
+            StreamReader reader = response.ContentType.IndexOf("charset=") == -1 ?
+                new StreamReader(stream, Encoding.UTF8) :
+                new StreamReader(stream, Encoding.GetEncoding(response.ContentType.Substring(response.ContentType.IndexOf("charset=") + 8)));
+
             string result = reader.ReadToEnd();
             stream.Dispose();
             reader.Dispose();
@@ -105,9 +121,130 @@ namespace NFSe.Components
             #endregion
         }
 
+
+        /// <summary>
+        /// Faz o post e retorna uma string  com o resultado
+        /// </summary>
+        /// <param name="url">url base para utilizar dentro do post</param>
+        /// <param name="postData">dados a serem enviados junto com o post</param>
+        /// <returns></returns>
+        public string PostForm(string url, IDictionary<string, string> postData = null, IList<string> headers = null)
+        {
+            string result = string.Empty;
+            string postParameter = string.Empty;
+            string xmlFile = "";
+
+            foreach(KeyValuePair<string, string> keyValue in postData.Where(w => w.Key != "f1"))
+                postParameter += $"&{keyValue.Key}={keyValue.Value}";
+
+            if(postParameter.Length > 1)
+            {
+                postParameter = postParameter?.Substring(1);
+                url += $"?{postParameter}";
+            }
+            string accept = null;
+            string contentType = accept;
+
+            if(postData.Keys.Contains("f1"))
+            {
+                xmlFile = postData["f1"];
+                XmlDocument doc = new XmlDocument();
+                doc.Load(xmlFile);
+                xmlFile = doc.InnerXml;
+                contentType = "application/xml";
+                accept = "application/xml";
+            }
+
+            byte[] encode = Encoding.UTF8.GetBytes(xmlFile);
+            var request = WebRequest.CreateHttp(url);
+            request.Method = "POST";
+            request.ContentType = contentType;
+            request.ContentLength = encode.Length;
+            request.KeepAlive = true;
+            request.Credentials = CredentialCache.DefaultCredentials;
+            request.Accept = accept;
+
+            foreach(string header in headers)
+                request.Headers.Add(header);
+
+            if(Proxy != null)
+            {
+                request.UseDefaultCredentials = false;
+                request.Proxy = Proxy;
+                request.Proxy.Credentials = Proxy.Credentials;
+                request.Credentials = Proxy.Credentials;
+            }
+
+            //ajustar para permitir o cabeçalho HTTP/1.0
+            SetAllowUnsafeHeaderParsing20();
+            //evitar o erro "The remote server returned an error: (417) Expectation Failed."
+            //para cabeçalhos HTTP/1.0
+            ServicePointManager.Expect100Continue = false;
+
+            if(encode.Length > 0)
+            {
+                var stream = request.GetRequestStream();
+                stream.Write(encode, 0, encode.Length);
+                stream.Close();
+            }
+
+            WebResponse response = default(WebResponse);
+            bool success = true;
+
+            try
+            {
+                response = request.GetResponse();
+
+            }
+            catch(WebException webEx)
+            {
+                response = webEx.Response;
+                success = false;
+            }
+
+            var streamDados = response.GetResponseStream();
+            StreamReader reader = new StreamReader(streamDados);
+            result = reader.ReadToEnd();
+            streamDados.Close();
+            response.Close();
+            response.Dispose();
+
+            if(!success &&
+                result.StartsWith("\n"))
+                result = result.Substring(1);
+
+            return result;
+        }
+
         public void Dispose()
         {
             Proxy = null;
+        }
+
+        /// <summary>
+        /// Evita o erro de servidor cometeu uma violação de protocolo. 
+        /// </summary>
+        /// <seealso cref="https://msdn.microsoft.com/pt-br/library/system.net.configuration.httpwebrequestelement.useunsafeheaderparsing%28v=vs.110%29.aspx"/>
+        void SetAllowUnsafeHeaderParsing20()
+        {
+            Assembly aNetAssembly = Assembly.GetAssembly(typeof(System.Net.Configuration.SettingsSection));
+            if(aNetAssembly != null)
+            {
+                Type aSettingsType = aNetAssembly.GetType("System.Net.Configuration.SettingsSectionInternal");
+                if(aSettingsType != null)
+                {
+                    object anInstance = aSettingsType.InvokeMember("Section",
+                    BindingFlags.Static | BindingFlags.GetProperty | BindingFlags.NonPublic, null, null, new object[] { });
+                    if(anInstance != null)
+                    {
+                        FieldInfo aUseUnsafeHeaderParsing = aSettingsType.GetField("useUnsafeHeaderParsing", BindingFlags.NonPublic | BindingFlags.Instance);
+                        if(aUseUnsafeHeaderParsing != null)
+                        {
+                            aUseUnsafeHeaderParsing.SetValue(anInstance, true);
+                        }
+                    }
+                }
+            }
         }
     }
 }

@@ -1,8 +1,9 @@
-C:\Sistemas\SGE\Fontes\SgeIBNFe_v3.10\UniNFeServico\obj\Release\UniNFeServico.csprojResolveAssemblyReference.cache
-C:\Sistemas\SGE\Fontes\SgeIBNFe_v3.10\UniNFeServico\obj\Release\UniNFeServico.Installer1.resources
-C:\Sistemas\SGE\Fontes\SgeIBNFe_v3.10\UniNFeServico\obj\Release\UniNFeServico.UniNFeService.resources
-C:\Sistemas\SGE\Fontes\SgeIBNFe_v3.10\UniNFeServico\obj\Release\UniNFeServico.csproj.GenerateResource.Cache
-C:\Sistemas\SGE\Fontes\SgeIBNFe_v3.10\UniNFeServico\obj\Release\UniNFeServico.exe
-C:\Sistemas\SGE\Fontes\SgeIBNFe_v3.10\UniNFeServico\obj\Release\UniNFeServico.pdb
-C:\Sistemas\SGE\Fontes\SgeIBNFe_v3.10\uninfe\bin\Release\UniNFeServico.exe
-C:\Sistemas\SGE\Fontes\SgeIBNFe_v3.10\uninfe\bin\Release\UniNFeServico.pdb
+C:\TortoiseSVN\trunk\fontes\uninfe\bin\Release\UniNFeServico.exe.config
+C:\TortoiseSVN\trunk\fontes\uninfe\bin\Release\UniNFeServico.exe
+C:\TortoiseSVN\trunk\fontes\uninfe\bin\Release\UniNFeServico.pdb
+C:\TortoiseSVN\trunk\fontes\UniNFeServico\obj\Release\UniNFeServico.csprojResolveAssemblyReference.cache
+C:\TortoiseSVN\trunk\fontes\UniNFeServico\obj\Release\UniNFeServico.Installer1.resources
+C:\TortoiseSVN\trunk\fontes\UniNFeServico\obj\Release\UniNFeServico.UniNFeService.resources
+C:\TortoiseSVN\trunk\fontes\UniNFeServico\obj\Release\UniNFeServico.csproj.GenerateResource.Cache
+C:\TortoiseSVN\trunk\fontes\UniNFeServico\obj\Release\UniNFeServico.exe
+C:\TortoiseSVN\trunk\fontes\UniNFeServico\obj\Release\UniNFeServico.pdb

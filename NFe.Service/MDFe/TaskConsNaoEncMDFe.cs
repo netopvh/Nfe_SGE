@@ -1,60 +1,69 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml;
-using System.IO;
-
-using NFe.Components;
+﻿using NFe.Components;
 using NFe.Settings;
+using System;
+using System.Xml;
 
 namespace NFe.Service
 {
     public class TaskMDFeConsNaoEncerrado : TaskAbst
     {
+        public TaskMDFeConsNaoEncerrado(string arquivo)
+        {
+            Servico = Servicos.MDFeConsultaNaoEncerrado;
+            NomeArquivoXML = arquivo;
+            ConteudoXML.PreserveWhitespace = false;
+            ConteudoXML.Load(arquivo);
+        }
+
         public override void Execute()
         {
             int emp = Empresas.FindEmpresaByThread();
-
-            //Definir o serviço que será executado para a classe
-            this.Servico = Components.Servicos.MDFeConsultaNaoEncerrado;
 
             try
             {
                 Int32 tpAmb = Empresas.Configuracoes[emp].AmbienteCodigo;
                 Int32 cUF = Empresas.Configuracoes[emp].UnidadeFederativaCodigo;
+                string versao = string.Empty;
 
-                XmlDocument doc = new XmlDocument();
-                doc.Load(this.NomeArquivoXML);
-                foreach (XmlNode consSitNFeNode in doc.GetElementsByTagName("consMDFeNaoEnc"))
+                foreach (XmlNode consSitNFeNode in ConteudoXML.GetElementsByTagName("consMDFeNaoEnc"))
                 {
                     XmlElement consSitNFeElemento = (XmlElement)consSitNFeNode;
+                    versao = consSitNFeElemento.Attributes[TpcnResources.versao.ToString()].InnerText;
 
-                    tpAmb = Convert.ToInt32("0" + Functions.LerTag(consSitNFeElemento, NFe.Components.TpcnResources.tpAmb.ToString(), false));
+                    tpAmb = Convert.ToInt32("0" + Functions.LerTag(consSitNFeElemento, TpcnResources.tpAmb.ToString(), false));
                 }
 
                 //Definir o objeto do WebService
-                WebServiceProxy wsProxy = ConfiguracaoApp.DefinirWS(Servico, emp, cUF, tpAmb);
+                WebServiceProxy wsProxy = ConfiguracaoApp.DefinirWS(Servico, emp, cUF, tpAmb, 0);
+                System.Net.SecurityProtocolType securityProtocolType = WebServiceProxy.DefinirProtocoloSeguranca(cUF, tpAmb, 1, Servico);
 
                 //Criar objetos das classes dos serviços dos webservices do SEFAZ
                 var oServico = wsProxy.CriarObjeto(wsProxy.NomeClasseWS);
                 var cabecMsg = wsProxy.CriarObjeto(NomeClasseCabecWS(cUF, Servico));
 
                 //Atribuir conteúdo para duas propriedades da classe nfeCabecMsg
-                wsProxy.SetProp(cabecMsg, NFe.Components.TpcnResources.cUF.ToString(), cUF.ToString());
-                wsProxy.SetProp(cabecMsg, NFe.Components.TpcnResources.versaoDados.ToString(), NFe.ConvertTxt.versoes.VersaoXMLMDFeConsNaoEnc);
+                wsProxy.SetProp(cabecMsg, TpcnResources.cUF.ToString(), cUF.ToString());
+                wsProxy.SetProp(cabecMsg, TpcnResources.versaoDados.ToString(), versao);
 
                 //Invocar o método que envia o XML para o SEFAZ
-                oInvocarObj.Invocar(wsProxy, oServico, wsProxy.NomeMetodoWS[0], cabecMsg, this, 
-                                    Propriedade.ExtEnvio.MDFeConsNaoEnc.Replace(".xml",""), 
-                                    Propriedade.ExtRetorno.MDFeConsNaoEnc.Replace(".xml",""));
+                oInvocarObj.Invocar(wsProxy,
+                    oServico,
+                    wsProxy.NomeMetodoWS[0],
+                    cabecMsg,
+                    this,
+                    Propriedade.Extensao(Propriedade.TipoEnvio.MDFeConsNaoEncerrados).EnvioXML,
+                    Propriedade.Extensao(Propriedade.TipoEnvio.MDFeConsNaoEncerrados).RetornoXML,
+                    true,
+                    securityProtocolType);
             }
             catch (Exception ex)
             {
                 try
                 {
                     //Gravar o arquivo de erro de retorno para o ERP, caso ocorra
-                    TFunctions.GravarArqErroServico(NomeArquivoXML, Propriedade.ExtEnvio.MDFeConsNaoEnc, Propriedade.ExtRetorno.MDFeConsNaoEnc_ERR, ex);
+                    TFunctions.GravarArqErroServico(NomeArquivoXML,
+                            Propriedade.Extensao(Propriedade.TipoEnvio.MDFeConsNaoEncerrados).EnvioXML,
+                            Propriedade.ExtRetorno.MDFeConsNaoEnc_ERR, ex);
                 }
                 catch
                 {
@@ -71,8 +80,8 @@ namespace NFe.Service
                 }
                 catch
                 {
-                    //Se falhou algo na hora de deletar o XML de solicitação do serviço, 
-                    //infelizmente não posso fazer mais nada, o UniNFe vai tentar mandar 
+                    //Se falhou algo na hora de deletar o XML de solicitação do serviço,
+                    //infelizmente não posso fazer mais nada, o UniNFe vai tentar mandar
                     //o arquivo novamente para o webservice
                     //Wandrey 09/03/2010
                 }

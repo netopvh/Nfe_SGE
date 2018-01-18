@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
-using System.Xml;
-using System.Linq;
-using System.Threading;
+﻿using NFe.Components;
 using NFe.Settings;
-using NFe.Components;
+using System;
+using System.IO;
+using System.Linq;
+using System.Xml;
 
 namespace NFe.Service
 {
@@ -18,22 +15,19 @@ namespace NFe.Service
         private FluxoNfe fluxo = null;
         private const int _Minutos = 12;  //12 minutos para atender o consumo indevido da SEFAZ
 
-        public void Analisar()
+        public void Analisar(int emp)
         {
-            int emp = Empresas.FindEmpresaByThread();
-
-            this.oAux = new Auxiliar();
+            oAux = new Auxiliar();
 
             try
             {
-                // le todos os arquivos que estão na pasta em processamento
-                //                string[] files = Directory.GetFiles(Empresas.Configuracoes[emp].PastaEnviado + "\\" + PastaEnviados.EmProcessamento.ToString(),
-                //                                                "*" + Propriedade.ExtEnvio.Nfe,
-                //                                                SearchOption.TopDirectoryOnly);
+                if (string.IsNullOrEmpty(Empresas.Configuracoes[emp].PastaXmlEnviado) || !Directory.Exists(Empresas.Configuracoes[emp].PastaXmlEnviado)) return;
 
-                string[] files = Directory.GetFiles(Empresas.Configuracoes[emp].PastaXmlEnviado + "\\" + PastaEnviados.EmProcessamento.ToString()).Where(w => w.EndsWith(Propriedade.ExtEnvio.Nfe, StringComparison.InvariantCultureIgnoreCase) ||
-                                                                                                                                                          w.EndsWith(Propriedade.ExtEnvio.Cte, StringComparison.InvariantCultureIgnoreCase) ||
-                                                                                                                                                          w.EndsWith(Propriedade.ExtEnvio.MDFe, StringComparison.InvariantCultureIgnoreCase)).ToArray<string>();
+                // le todos os arquivos que estão na pasta em processamento
+                string[] files = Directory.GetFiles(Empresas.Configuracoes[emp].PastaXmlEnviado + "\\" +
+                    PastaEnviados.EmProcessamento.ToString()).Where(w => w.EndsWith(Propriedade.Extensao(Propriedade.TipoEnvio.NFe).EnvioXML, StringComparison.InvariantCultureIgnoreCase) ||
+                    w.EndsWith(Propriedade.Extensao(Propriedade.TipoEnvio.CTe).EnvioXML, StringComparison.InvariantCultureIgnoreCase) ||
+                    w.EndsWith(Propriedade.Extensao(Propriedade.TipoEnvio.MDFe).EnvioXML, StringComparison.InvariantCultureIgnoreCase)).ToArray<string>();
 
                 // considera os arquivos em que a data do ultimo acesso é superior a 5 minutos
                 DateTime UltimaData = DateTime.Now.AddMinutes(-_Minutos);
@@ -47,11 +41,11 @@ namespace NFe.Service
                         //usar a última data de acesso, e não a data de criação
                         if (fi.LastWriteTime <= UltimaData)
                         {
-                            if (this.oLerXml == null)
+                            if (oLerXml == null)
                             {
-                                this.oLerXml = new LerXML();
-                                this.oGerarXml = new GerarXML(emp);
-                                this.fluxo = new FluxoNfe(emp);
+                                oLerXml = new LerXML();
+                                oGerarXml = new GerarXML(emp);
+                                fluxo = new FluxoNfe(emp);
                             }
 
                             try
@@ -60,7 +54,7 @@ namespace NFe.Service
                                 doc.Load(file);
 
                                 TipoAplicativo tipoArquivo = TipoAplicativo.Nfe;
-                                string extNFe = Propriedade.ExtEnvio.Nfe;
+                                string extNFe = Propriedade.Extensao(Propriedade.TipoEnvio.NFe).EnvioXML;
                                 string extProcNFe = Propriedade.ExtRetorno.ProcNFe;
                                 string arquivoSit = string.Empty;
                                 string chNFe = string.Empty;
@@ -69,30 +63,30 @@ namespace NFe.Service
                                 {
                                     case "MDFe":
                                         tipoArquivo = TipoAplicativo.MDFe;
-                                        extNFe = Propriedade.ExtEnvio.MDFe;
+                                        extNFe = Propriedade.Extensao(Propriedade.TipoEnvio.MDFe).EnvioXML;
                                         extProcNFe = Propriedade.ExtRetorno.ProcMDFe;
 
-                                        oLerXml.Mdfe(file);
+                                        oLerXml.Mdfe(doc);
                                         arquivoSit = oLerXml.oDadosNfe.chavenfe.Substring(4);
                                         chNFe = oLerXml.oDadosNfe.chavenfe.Substring(4);
                                         break;
 
                                     case "NFe":
                                         tipoArquivo = TipoAplicativo.Nfe;
-                                        extNFe = Propriedade.ExtEnvio.Nfe;
+                                        extNFe = Propriedade.Extensao(Propriedade.TipoEnvio.NFe).EnvioXML;
                                         extProcNFe = Propriedade.ExtRetorno.ProcNFe;
 
-                                        oLerXml.Nfe(file);
+                                        oLerXml.Nfe(doc);
                                         arquivoSit = oLerXml.oDadosNfe.chavenfe.Substring(3);
                                         chNFe = oLerXml.oDadosNfe.chavenfe.Substring(3);
                                         break;
 
                                     case "CTe":
                                         tipoArquivo = TipoAplicativo.Cte;
-                                        extNFe = Propriedade.ExtEnvio.Cte;
+                                        extNFe = Propriedade.Extensao(Propriedade.TipoEnvio.CTe).EnvioXML;
                                         extProcNFe = Propriedade.ExtRetorno.ProcCTe;
 
-                                        oLerXml.Cte(file);
+                                        oLerXml.Cte(doc);
                                         arquivoSit = oLerXml.oDadosNfe.chavenfe.Substring(3);
                                         chNFe = oLerXml.oDadosNfe.chavenfe.Substring(3);
                                         break;
@@ -117,7 +111,7 @@ namespace NFe.Service
                                     }
 
                                     //gera um -ped-sit.xml mesmo sendo autorizada ou denegada, pois assim sendo, o ERP precisaria dele
-                                    oGerarXml.Consulta(tipoArquivo, arquivoSit + Propriedade.ExtEnvio.PedSit_XML,
+                                    oGerarXml.Consulta(tipoArquivo, arquivoSit + Propriedade.Extensao(Propriedade.TipoEnvio.PedSit).EnvioXML,
                                         Convert.ToInt32(oLerXml.oDadosNfe.tpAmb),
                                         Convert.ToInt32(oLerXml.oDadosNfe.tpEmis),
                                         chNFe,
@@ -139,7 +133,7 @@ namespace NFe.Service
                             {
                                 try
                                 {
-                                    // grava o arquivo com extensao .ERR 
+                                    // grava o arquivo com extensao .ERR
                                     oAux.GravarArqErroERP(Path.GetFileNameWithoutExtension(file) + ".err", ex.Message);
                                 }
                                 catch
@@ -155,17 +149,13 @@ namespace NFe.Service
             {
                 try
                 {
-                    // grava o arquivo generico 
+                    // grava o arquivo generico
                     oAux.GravarArqErroERP(string.Format(Propriedade.NomeArqERRUniNFe, DateTime.Now.ToString("yyyyMMddTHHmmss")), ex.Message);
                 }
                 catch
                 {
                     //Se deu erro na hora de gravar o erro para o ERP, infelizmente não posso fazer mais nada. Wandrey 28/04/2011
                 }
-            }
-            finally
-            {
-                Thread.CurrentThread.Abort();
             }
         }
     }

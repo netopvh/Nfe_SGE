@@ -1,24 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Reflection;
-using System.Diagnostics;
-using System.IO;
-using System.Xml;
-using System.Xml.Linq;
-
-using MetroFramework;
-using MetroFramework.Components;
-using MetroFramework.Forms;
-
-using NFe.Settings;
+﻿using MetroFramework.Forms;
 using NFe.Components;
+using NFe.Settings;
 using NFe.Threadings;
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Windows.Forms;
+using static System.Windows.Forms.Design.AxImporter;
 
 namespace NFe.UI
 {
@@ -26,7 +16,7 @@ namespace NFe.UI
     {
         private bool first = false;
         private bool servicoInstaladoErodando = false;
-        private string srvName = Propriedade.ServiceName[Propriedade.TipoAplicativo == NFe.Components.TipoAplicativo.Nfe ? 0 : 1];
+        private string srvName = Propriedade.ServiceName;
         private menu _menu;
         private bool _maximized;
         private bool _formloaded = false;
@@ -37,32 +27,6 @@ namespace NFe.UI
 
             uninfeDummy.mainForm = this;
             uninfeDummy.UltimoAcessoConfiguracao = DateTime.MinValue;
-#if false
-            try
-            {
-                // Executar as conversões de atualizações de versão quando tiver
-                string nomeEmpresa = Auxiliar.ConversaoNovaVersao(string.Empty);
-                if (!string.IsNullOrEmpty(nomeEmpresa))
-                {
-                    /// danasa 20-9-2010
-                    /// exibe a mensagem de erro
-                    Dialogs.ShowMessage("Não foi possível localizar o CNPJ da empresa no certificado configurado", 0, 0, MessageBoxIcon.Error);
-
-                    /// e pede o CNPJ
-                    FormCNPJ fcnpj = new FormCNPJ(nomeEmpresa);
-                    if (fcnpj.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                    {
-                        /// tenta processar já com o CNPJ definido
-                        Auxiliar.ConversaoNovaVersao(fcnpj.Cnpj);
-                        restartServico = true;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Dialogs.ShowMessage(ex.Message, 600, 200, MessageBoxIcon.Error);
-            }
-#endif
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -94,44 +58,22 @@ namespace NFe.UI
                 this.ShowInTaskbar = false;
                 this.notifyIcon1.ShowBalloonTip(6000);
 
-                try
-                {
-                    //this.uTheme = NFe.Components.EnumHelper.StringToEnum<MetroFramework.MetroThemeStyle>(uninfeDummy.xmlParams.ReadValue(this.Name, "Theme", this.metroStyleManager1.Theme.ToString()));
-                    //this.uStyle = NFe.Components.EnumHelper.StringToEnum<MetroFramework.MetroColorStyle>(uninfeDummy.xmlParams.ReadValue(this.Name, "Style", this.metroStyleManager1.Style.ToString()));
-                }
-                catch { }
-
                 ConfiguracaoApp.StartVersoes();
 
                 _menu = new menu();
-                this.Controls.Add(_menu);
+                Controls.Add(_menu);
                 _menu.Dock = DockStyle.Fill;
 
-                switch (NFe.Components.Propriedade.TipoAplicativo)
-                {
-                    default:
-                        this.notifyIcon1.Icon = this.Icon = NFe.UI.Properties.Resources.uninfe_icon;
-                        break;
+                notifyIcon1.Icon = Icon = Properties.Resources.uninfe_icon;
 
-                    case NFe.Components.TipoAplicativo.Nfse:
-                        this.notifyIcon1.Icon = this.Icon = NFe.UI.Properties.Resources.uninfse_icon;
-                        break;
-                }
+                cmAbrir.Text = "Abrir " + Propriedade.NomeAplicacao;
+                cmFechar.Text = "Fechar " + Propriedade.NomeAplicacao;
+                cmSobre.Text = "Sobre o " + Propriedade.NomeAplicacao;
+                cmManual.Text = "Manual do " + Propriedade.NomeAplicacao;
+                cmManual.Enabled = File.Exists(Path.Combine(Propriedade.PastaExecutavel, Propriedade.NomeAplicacao + ".pdf"));
 
-                this.cmAbrir.Text = "Abrir " + NFe.Components.Propriedade.NomeAplicacao;
-                this.cmFechar.Text = "Fechar " + NFe.Components.Propriedade.NomeAplicacao;
-                this.cmSobre.Text = "Sobre o " + NFe.Components.Propriedade.NomeAplicacao;
-                this.cmManual.Text = "Manual do " + NFe.Components.Propriedade.NomeAplicacao;
-                this.cmManual.Enabled = File.Exists(Path.Combine(NFe.Components.Propriedade.PastaExecutavel, NFe.Components.Propriedade.NomeAplicacao + ".pdf"));
-
-                string filenameWS1 = Propriedade.NomeArqXMLMunicipios;
-                string filenameWS2 = Propriedade.NomeArqXMLWebService_NFSe;
-                string filenameWS3 = Propriedade.NomeArqXMLWebService_NFe;
                 string msg = "";
-
-                error = !System.IO.File.Exists(filenameWS1) || !System.IO.File.Exists(filenameWS2) || !System.IO.File.Exists(filenameWS3);
-                msg = "Arquivos '" + filenameWS1 + "', '" + filenameWS2 + "' e '" + filenameWS3 + "' não encontrados";
-
+                Propriedade.VerificaArquivos(out error, out msg);
                 if (error)
                 {
                     MetroFramework.MetroMessageBox.Show(this, msg, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -152,265 +94,6 @@ namespace NFe.UI
                 if (!error)
                     this.updateControleDoServico();
             }
-
-#if DEBUG
-
-#if verifica_wsdl
-
-            Console.WriteLine("----------------------");
-            NFe.Components.Servicos servico = NFe.Components.Servicos.Nulo;
-            NFe.Components.PadroesNFSe padrao = PadroesNFSe.NaoIdentificado;
-
-            Console.WriteLine(NFe.Components.Propriedade.NomeArqXMLWebService);
-
-            if (Propriedade.TipoAplicativo == TipoAplicativo.Nfse)
-            {
-                XElement axml = XElement.Load(NFe.Components.Propriedade.NomeArqXMLWebService);
-                var s = (from p in axml.Descendants(NFe.Components.NFeStrConstants.Estado)
-                            where (string)p.Attribute(NFe.Components.NFeStrConstants.UF) != "XX"
-                            select p);
-                foreach (var item in s)
-                {
-                    NFe.Components.TipoAmbiente taHomologacao = TipoAmbiente.taProducao;
-                    var x = XElement.Parse(item.Element(NFe.Components.NFeStrConstants.LocalProducao).ToString()).Elements();
-                    foreach (var xa in x)
-                    {
-                        if (!string.IsNullOrEmpty(xa.Value))
-                        {
-                            padrao = NFe.Components.EnumHelper.StringToEnum<NFe.Components.PadroesNFSe>(item.Attribute("Padrao").Value);
-
-                            if (padrao == PadroesNFSe.SYSTEMPRO || padrao == PadroesNFSe.IPM || padrao == PadroesNFSe.BETHA)
-                                continue;
-
-                            switch(xa.Name.ToString())
-                            {
-                                case "RecepcionarLoteRps":
-                                    servico = NFe.Components.Servicos.RecepcionarLoteRps;
-                                    break;
-                                case "ConsultarSituacaoLoteRps":
-                                    servico = NFe.Components.Servicos.ConsultarSituacaoLoteRps;
-                                    break;
-                                case "ConsultarNfsePorRps":
-                                    servico = NFe.Components.Servicos.ConsultarNfsePorRps;
-                                    break;
-                                case "ConsultarNfse":
-                                    servico = NFe.Components.Servicos.ConsultarNfse;
-                                    break;
-                                case "ConsultarLoteRps":
-                                    servico = NFe.Components.Servicos.ConsultarLoteRps;
-                                    break;
-                                case "CancelarNfse":
-                                    servico = NFe.Components.Servicos.CancelarNfse;
-                                    break;
-                                case "ConsultarURLNfseSerie":
-                                    servico = Servicos.ConsultarURLNfseSerie;
-                                    break;
-                                case "ConsultarURLNfse":
-                                    servico = Servicos.ConsultarURLNfse;
-                                    break;
-                                default:
-                                    Console.WriteLine("====>(" + xa.Name.ToString()+")");
-                                    break;
-                            }
-                            if (servico == Servicos.Nulo)
-                            {
-                                Console.WriteLine("=========================================="
-                                    + " => " + item.Attribute("ID").Value
-                                                        + "=>" + item.Attribute("Padrao").Value
-                                                        + "=>" + xa.Name
-                                                        + "=>" + xa.Value);
-                            }
-                            else
-                            {
-                                try
-                                {
-                                    NFe.UI.aaaa xxx = new NFe.UI.aaaa();
-                                    var nome = xxx.nome(servico, Convert.ToInt32(item.Attribute("ID").Value), "");
-
-                                    var proxy = ConfiguracaoApp.DefinirWS(servico, 0,
-                                        Convert.ToInt32(item.Attribute("ID").Value),
-                                        (int)taHomologacao,
-                                        (int)NFe.Components.TipoEmissao.teNormal,
-                                        padrao,
-                                        string.Empty);
-
-                                    if (nome != proxy.NomeClasseWS)
-                                        Console.WriteLine("srv:" + servico.ToString()
-                                                    + "\r\nPadrao:"+item.Attribute("Padrao").Value
-                                                    + "\r\nMunic:" + item.Attribute("ID").Value
-                                                    + "\r\nC#:" + nome + " X wsdl:" + proxy.NomeClasseWS +
-                                                    " Tag:" + xa.Name + "\r\n" + proxy.ArquivoWSDL + "\r\n----");
-                                }
-                                catch (Exception ex)
-                                {
-                                    Console.WriteLine("====\r\n" + xa.Value + "\r\n" + ex.Message);
-                                }
-                                //Console.WriteLine(NomeClasseWSNFSe(servico, padrao) + "==>" + proxy.NomeClasseWS);
-                            }
-                        }
-                    }
-                }
-            }
-            else
-            {
-                XElement axml = XElement.Load(NFe.Components.Propriedade.NomeArqXMLWebService);
-                var s = (from p in axml.Descendants(NFe.Components.NFeStrConstants.Estado)
-                            where (string)p.Attribute(NFe.Components.NFeStrConstants.UF) != "XX"
-                            select p);
-                foreach (var item in s)
-                {
-                    //Console.WriteLine(item.Element(NFe.Components.NFeStrConstants.LocalHomologacao).ToString());
-                    var x = XElement.Parse(item.Element(NFe.Components.NFeStrConstants.LocalHomologacao).ToString()).Elements();
-                    foreach (var xa in x)
-                    {
-                        if (!string.IsNullOrEmpty(xa.Value))
-                        {
-                            //Console.WriteLine(xa.Name + " => " + xa.Value);
-                            servico = Servicos.Nulo;
-                            string versao = "3.10";
-                            switch (xa.Name.ToString())
-                            {
-                                case "CTeRecepcaoEvento":
-                                    servico = Servicos.RecepcaoEventoCTe;
-                                    versao = NFe.ConvertTxt.versoes.VersaoXMLCTeEvento;
-                                    break;
-                                case "CTeRecepcao":
-                                    servico = Servicos.EnviarLoteCTe;
-                                    versao = NFe.ConvertTxt.versoes.VersaoXMLCTe;
-                                    break;
-                                case "CTeRetRecepcao":
-                                    servico = Servicos.PedidoSituacaoLoteCTe;
-                                    break;
-                                case "CTeInutilizacao":
-                                    servico = Servicos.InutilizarNumerosCTe;
-                                    versao = NFe.ConvertTxt.versoes.VersaoXMLCTeInut;
-                                    break;
-                                case "CTeConsulta":
-                                    servico = Servicos.PedidoConsultaSituacaoCTe;
-                                    break;
-                                case "CTeStatusServico":
-                                    servico = Servicos.ConsultaStatusServicoCTe;
-                                    versao = NFe.ConvertTxt.versoes.VersaoXMLCTeStatusServico;
-                                    break;
-                                case "CTeConsultaCadastro": break;
-
-                                case "NFeRecepcao":
-                                    servico = Servicos.EnviarLoteNfe; break;
-                                case "NFeRetRecepcao": servico = Servicos.PedidoSituacaoLoteNFe; break;
-                                case "NFeInutilizacao":
-                                    versao = NFe.ConvertTxt.versoes.VersaoXMLInut;
-                                    servico = Servicos.InutilizarNumerosNFe; break;
-                                case "NFeConsulta": servico = Servicos.PedidoConsultaSituacaoNFe; break;
-                                case "NFeStatusServico":
-                                    servico = Servicos.ConsultaStatusServicoNFe;
-                                    versao = NFe.ConvertTxt.versoes.VersaoXMLStatusServico;
-                                    break;
-                                case "NFeConsultaCadastro":
-                                    servico = Servicos.ConsultaCadastroContribuinte;
-                                    versao = NFe.ConvertTxt.versoes.VersaoXMLConsCad;
-                                    break;
-                                case "NFeRecepcaoEvento":
-                                    servico = Servicos.RecepcaoEvento;
-                                    versao = NFe.ConvertTxt.versoes.VersaoXMLEvento;
-                                    break;
-                                case "NFeConsultaNFeDest":
-                                    versao = NFe.ConvertTxt.versoes.VersaoXMLEnvConsultaNFeDest;
-                                    servico = Servicos.ConsultaNFDest;
-                                    break;
-                                case "NFeDownload": servico = Servicos.DownloadNFe; break;
-                                case "NFeManifDest":
-                                    servico = Servicos.EnviarManifDest;
-                                    versao = NFe.ConvertTxt.versoes.VersaoXMLEvento;
-                                    break;
-                                case "NFeAutorizacao": servico = Servicos.EnviarLoteNfeZip2; break;
-                                case "NFeRetAutorizacao": servico = Servicos.PedidoSituacaoLoteNFe2; break;
-
-                                case "MDFeRecepcao": servico = Servicos.EnviarLoteMDFe;
-                                    versao = NFe.ConvertTxt.versoes.VersaoXMLMDFe;
-                                    break;
-                                case "MDFeRetRecepcao":
-                                    servico = Servicos.PedidoSituacaoLoteMDFe;
-                                    versao = NFe.ConvertTxt.versoes.VersaoXMLMDFe;
-                                    break;
-                                case "MDFeConsulta":
-                                    servico = Servicos.PedidoConsultaSituacaoMDFe;
-                                    versao = NFe.ConvertTxt.versoes.VersaoXMLMDFe;
-                                    break;
-                                case "MDFeStatusServico":
-                                    servico = Servicos.ConsultaStatusServicoMDFe;
-                                    versao = NFe.ConvertTxt.versoes.VersaoXMLMDFeStatusServico;
-                                    break;
-                                case "MDFeRecepcaoEvento":
-                                    servico = Servicos.RecepcaoEventoMDFe;
-                                    versao = NFe.ConvertTxt.versoes.VersaoXMLMDFeEvento;
-                                    break;
-
-                                default:
-                                    servico = Servicos.Nulo;
-                                    Console.WriteLine("====>(" + xa.Name.ToString() + ")");
-                                    break;
-                            }
-                            if (servico == Servicos.Nulo) continue;
-
-                            try
-                            {
-                                if (xa.Value.Contains("\\DPEC\\"))
-                                    if (xa.Value.Contains("DEPCSCEConsultaRFB"))
-                                        servico = Servicos.ConsultarDPEC;
-                                    else
-                                        servico = Servicos.EnviarDPEC;
-
-                                NFe.UI.aaaa xxx = new NFe.UI.aaaa();
-                                var nome = xxx.nome(servico, Convert.ToInt16(item.Attribute("ID").Value), versao);
-
-                                foreach (NFe.Components.TipoEmissao temissao in Enum.GetValues(typeof(NFe.Components.TipoEmissao)))
-                                {
-                                    if (temissao == NFe.Components.TipoEmissao.teNone) continue;
-                                    if (temissao != NFe.Components.TipoEmissao.teNormal && xa.Value.Contains("\\DPEC\\")) break;
-                                    if (temissao == TipoEmissao.teDPEC && !xa.Value.Contains("\\DPEC\\")) continue;
-
-                                    var proxy = NFe.Settings.ConfiguracaoApp.DefinirWS(servico, 0,
-                                        Convert.ToInt16(item.Attribute("ID").Value),
-                                        (int)NFe.Components.TipoAmbiente.taHomologacao,
-                                        (int)temissao,
-                                        versao);
-
-                                    if (!nome.Equals(proxy.NomeClasseWS))
-                                        Console.WriteLine(versao + ": srv:" + servico.ToString() + "\r\ntpEmis:" + temissao.ToString() +
-                                                            "\r\nC#:" + nome + " X wsdl:" + proxy.NomeClasseWS +
-                                                            " Tag:" + xa.Name + "\r\n" + proxy.ArquivoWSDL + "\r\n----");
-
-                                    if (xa.Name.ToString().StartsWith("NFe") && versao.Equals("3.10"))
-                                    {
-                                        versao = "2.00";
-                                        var aproxy = NFe.Settings.ConfiguracaoApp.DefinirWS(servico, 0,
-                                            Convert.ToInt16(item.Attribute("ID").Value),
-                                            (int)NFe.Components.TipoAmbiente.taHomologacao,
-                                            (int)temissao,
-                                            versao);
-
-                                        NFe.UI.aaaa axxx = new NFe.UI.aaaa();
-                                        var anome = axxx.nome(servico, Convert.ToInt16(item.Attribute("ID").Value), versao);
-
-                                        if (!anome.Equals(aproxy.NomeClasseWS))
-                                            Console.WriteLine(versao + ": srv:" + servico.ToString() + "\r\ntpEmis:" + temissao.ToString()
-                                                        + "\r\nC#:" + anome + " X wsdl:" + aproxy.NomeClasseWS +
-                                                        " Tag:" + xa.Name + "\r\n" + aproxy.ArquivoWSDL + "\r\n----");
-                                    }
-                                }
-                            }
-                            catch (Exception ex)
-                            {
-                                //Console.WriteLine("====\r\n" + xa.Value + "\r\n" + ex.Message);
-                            }
-                        }
-                    }
-                }
-            }
-            Console.WriteLine("----------------------");
-#endif
-
-#endif
         }
 
         protected override void OnResize(EventArgs e)
@@ -440,9 +123,9 @@ namespace NFe.UI
         {
             PararServicos(false);
 
-            /* 
+            /*
                 * Excluir os arquivos de ".lock"
-                * 
+                *
                 * 05/06/2013
                 * Marcelo
                 */
@@ -470,7 +153,7 @@ namespace NFe.UI
                 e.Cancel = true;
                 ///
                 /// verifica se o processo de manutencao de empresas está ativo
-                /// 
+                ///
                 foreach (var uc in this.Controls)
                 {
                     if (uc.GetType().Equals(typeof(userConfiguracoes)))
@@ -504,58 +187,18 @@ namespace NFe.UI
             {
                 if (e.Control.GetType().Equals(typeof(userConfiguracoes)))
                 {
-                    this.RestartServicos();
+                    RestartServicos();
                 }
 
                 if (e.Control.GetType().Equals(typeof(Formularios.userMunicipios)))
                 {
-                    this.Refresh();
-                    ///
-                    /// reloadWebServicesList carrega as URL's com base no XML de municipios.
-                    if (WebServiceProxy.reloadWebServicesList())
-                        ConfiguracaoApp.loadResouces();
+                    Refresh();
+                    WebServiceProxy.reloadWebServicesList();
                 }
             }
         }
 
         #region Métodos gerais
-
-        /*
-        public MetroFramework.MetroColorStyle uStyle
-        {
-            get { return this.metroStyleManager1.Style; }
-            set
-            {
-                if (!value.Equals(this.metroStyleManager1.Style))
-                {
-                    this.metroStyleManager1.Style = value;
-                    updateSettings();
-                }
-                this.Style = value;
-            }
-        }
-
-        public MetroFramework.MetroThemeStyle uTheme
-        {
-            get { return this.metroStyleManager1.Theme; }
-            set
-            {
-                if (!value.Equals(this.metroStyleManager1.Theme))
-                {
-                    this.metroStyleManager1.Theme = value;
-                    updateSettings();
-                }
-                this.Theme = value;
-            }
-        }
-        */
-
-        void updateSettings()
-        {
-            //uninfeDummy.xmlParams.WriteValue(this.Name, "Theme", this.metroStyleManager1.Theme.ToString());
-            //uninfeDummy.xmlParams.WriteValue(this.Name, "Style", this.metroStyleManager1.Style.ToString());
-            //uninfeDummy.xmlParams.Save();
-        }
 
         private void SaveForm()
         {
@@ -573,6 +216,7 @@ namespace NFe.UI
         }
 
         #region ExecutaServicos()
+
         /// <summary>
         /// Metodo responsável por iniciar os serviços do UniNFe em threads diferentes
         /// </summary>
@@ -587,6 +231,7 @@ namespace NFe.UI
                     case System.ServiceProcess.ServiceControllerStatus.Stopped:
                         ServiceProcess.StartService(srvName, 40000);
                         break;
+
                     case System.ServiceProcess.ServiceControllerStatus.Paused:
                         ServiceProcess.RestartService(srvName, 40000);
                         break;
@@ -599,9 +244,11 @@ namespace NFe.UI
                 ThreadService.Start();
             }
         }
-        #endregion
+
+        #endregion ExecutaServicos()
 
         #region PararServicos()
+
         public void PararServicos(bool fechaServico)
         {
             if (servicoInstaladoErodando)
@@ -616,9 +263,10 @@ namespace NFe.UI
                 ThreadService.Stop();
             }
         }
-        #endregion
 
-        #endregion
+        #endregion PararServicos()
+
+        #endregion Métodos gerais
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -656,7 +304,7 @@ namespace NFe.UI
                     }
                     catch { }
             }
-            // Faz a aplicação aparecer na barra de tarefas.            
+            // Faz a aplicação aparecer na barra de tarefas.
             this.ShowInTaskbar = true;
             this._formloaded = true;
             this._maximized = false;
@@ -724,9 +372,7 @@ namespace NFe.UI
 
         private void cmDANFE_Click(object sender, EventArgs e)
         {
-            if (!MainVisible)
-                uninfeDummy.printDanfe();
-            else
+            if (MainVisible)
                 this._menu.Show(uninfeOpcoes.opDanfe);
         }
 
@@ -758,11 +404,11 @@ namespace NFe.UI
         {
             try
             {
-                NFe.Components.Functions.ExibeDocumentacao();
+                System.Diagnostics.Process.Start(Propriedade.UrlManualUniNFe);
             }
             catch (Exception ex)
             {
-                MetroFramework.MetroMessageBox.Show(this, ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MetroFramework.MetroMessageBox.Show(uninfeDummy.mainForm, ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -776,9 +422,18 @@ namespace NFe.UI
 
         private void cmFechar_Click(object sender, EventArgs e)
         {
-            if (MetroFramework.MetroMessageBox.Show(this,
-                        "Confirma o encerramento do " + NFe.Components.Propriedade.NomeAplicacao + "?",
-                        "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            if (ConfiguracaoApp.ConfirmaSaida)
+            {
+                if (MetroFramework.MetroMessageBox.Show(this,
+                            "Confirma o encerramento do " + NFe.Components.Propriedade.NomeAplicacao + "?",
+                            "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    Propriedade.EncerrarApp = true;
+                    this.notifyIcon1.Visible = false;
+                    this.Close();
+                }
+            }
+            else
             {
                 Propriedade.EncerrarApp = true;
                 this.notifyIcon1.Visible = false;
@@ -829,9 +484,9 @@ namespace NFe.UI
         {
             this.cmValidarXML.Enabled = (NFe.Settings.Empresas.Configuracoes.Count > 0);
 
-            this.cmDANFE.Visible =
-                this.cmSituacaoServicos.Visible =
-                this.cmConsultaCadastro.Visible = (NFe.Settings.Empresas.CountEmpresasNFe > 0);
+            //            this.cmDANFE.Visible =
+            this.cmSituacaoServicos.Visible =
+            this.cmConsultaCadastro.Visible = (NFe.Settings.Empresas.CountEmpresasNFe > 0);
 
             this.cmMunicipios.Visible = Empresas.CountEmpresasNFse > 0;
         }

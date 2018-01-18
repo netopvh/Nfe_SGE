@@ -1,31 +1,11 @@
-﻿using System;
+﻿using NFe.Components;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
 using System.Windows.Forms;
-
-using NFe.Components;
-using NFe.Settings;
 
 namespace NFe.UI
 {
-#if DEBUG
-    public class aaaa : NFe.Service.TaskAbst
-    {
-        public override void Execute()
-        {
-        }
-
-        public string nome(NFe.Components.Servicos servico, int uf, string versao)
-        {
-            this.Servico = servico;
-            return xNomeClasseWS(this.Servico, uf, versao);
-        }
-    }
-#endif
-
     public enum uninfeOpcoes
     {
         opCadastro,
@@ -55,12 +35,14 @@ namespace NFe.UI
                 "- Falha nos servidores do SEFAZ\r\n\r\n" +
                 "Afirmamos que a produtora do software não se responsabiliza por decisões tomadas e/ou execuções realizadas com base nas informações acima.\r\n\r\n";
 
-
         public static DateTime UltimoAcessoConfiguracao { get; set; }
+
         public static Form_Main mainForm { get; set; }
+
         public static uninfeOpcoes2 opServicos { get; set; }
 
         private static NFe.Components.XMLIniFile _xml;
+
         public static XMLIniFile xmlParams
         {
             get
@@ -91,7 +73,7 @@ namespace NFe.UI
         /// <param name="Value"></param>
         /// <param name="juridica"></param>
         /// <returns></returns>
-        public static string FmtCgcCpf(string Value, bool juridica)
+        public static string FmtCnpjCpf(string Value, bool juridica)
         {
             string Result = Value.PadLeft(14, '0');
 
@@ -112,21 +94,28 @@ namespace NFe.UI
         /// <summary>
         /// DatasouceTipoAplicativo
         /// </summary>
+        /// <param name="soConsulta">Inserir somente os serviços que tem consulta status</param>
         /// <returns></returns>
-        public static IList DatasouceTipoAplicativo(bool includeservico)
+        public static IList DatasouceTipoAplicativo(bool soConsulta)
         {
             ArrayList list = new ArrayList();
 
-            if (includeservico)
+            if (!soConsulta)
                 list.Add(new KeyValuePair<int, string>((int)TipoAplicativo.Todos, EnumHelper.GetDescription(TipoAplicativo.Todos)));
 
             list.Add(new KeyValuePair<int, string>((int)TipoAplicativo.Nfe, EnumHelper.GetDescription(TipoAplicativo.Nfe)));
             list.Add(new KeyValuePair<int, string>((int)TipoAplicativo.Cte, EnumHelper.GetDescription(TipoAplicativo.Cte)));
             list.Add(new KeyValuePair<int, string>((int)TipoAplicativo.MDFe, EnumHelper.GetDescription(TipoAplicativo.MDFe)));
             list.Add(new KeyValuePair<int, string>((int)TipoAplicativo.NFCe, EnumHelper.GetDescription(TipoAplicativo.NFCe)));
+            list.Add(new KeyValuePair<int, string>((int)TipoAplicativo.SAT, EnumHelper.GetDescription(TipoAplicativo.SAT)));
 
-            if (includeservico)
+            if (!soConsulta)
+            {
                 list.Add(new KeyValuePair<int, string>((int)TipoAplicativo.Nfse, EnumHelper.GetDescription(TipoAplicativo.Nfse)));
+                list.Add(new KeyValuePair<int, string>((int)TipoAplicativo.EFDReinfeSocial, EnumHelper.GetDescription(TipoAplicativo.EFDReinfeSocial)));
+                list.Add(new KeyValuePair<int, string>((int)TipoAplicativo.EFDReinf, EnumHelper.GetDescription(TipoAplicativo.EFDReinf)));
+                list.Add(new KeyValuePair<int, string>((int)TipoAplicativo.eSocial, EnumHelper.GetDescription(TipoAplicativo.eSocial)));
+            }
 
             return list;
         }
@@ -141,12 +130,12 @@ namespace NFe.UI
                 return;
 
             MetroFramework.MetroThemeStyle uTheme = uninfeDummy.mainForm.metroStyleManager1.Theme;//.uTheme;
-            /* */
-            //if (inverteTheme)
-            //{
-                //uTheme = MetroFramework.MetroThemeStyle.Light;
-            //}
-            //return;
+                                                                                                  /* */
+                                                                                                  //if (inverteTheme)
+                                                                                                  //{
+                                                                                                  //uTheme = MetroFramework.MetroThemeStyle.Light;
+                                                                                                  //}
+                                                                                                  //return;
             if (Xcontrol.GetType().IsSubclassOf(typeof(MetroFramework.Controls.MetroUserControl)) ||
                 Xcontrol.GetType().IsSubclassOf(typeof(MetroFramework.Controls.MetroTabPage)) ||
                 Xcontrol.GetType().IsSubclassOf(typeof(MetroFramework.Controls.MetroTabControl)) ||
@@ -190,71 +179,13 @@ namespace NFe.UI
 
                 if (control is MetroFramework.Interfaces.IMetroControl)
                 {
-                    try {
-                        ((MetroFramework.Interfaces.IMetroControl)control).Theme = mainForm.metroStyleManager1.Theme;
-                        ((MetroFramework.Interfaces.IMetroControl)control).Style = mainForm.metroStyleManager1.Style;
-                        //((MetroFramework.Interfaces.IMetroControl)control).StyleManager = mainForm.metroStyleManager1; 
-                    }
-                    catch { }
-                }
-            }
-        }
-
-        /// <summary>
-        /// printDanfe
-        /// </summary>
-        public static void printDanfe()
-        {
-            using (OpenFileDialog dlg = new OpenFileDialog())
-            {
-                dlg.RestoreDirectory = true;
-                dlg.Filter = "Todos os arquivos|*" + Propriedade.ExtRetorno.ProcNFe +
-                    ";*" + Propriedade.ExtRetorno.ProcCTe +
-                    ";*" + Propriedade.ExtRetorno.ProcMDFe +
-                    ";*_110111_01" + Propriedade.ExtRetorno.ProcEventoNFe +
-                    ";*_110111_01" + Propriedade.ExtRetorno.ProcEventoCTe +
-                    ";*" + Propriedade.ExtRetorno.Den +
-                    ";*" + Propriedade.ExtRetorno.retCancelamento_XML +
-                    ";*" + Propriedade.ExtRetorno.ProcEventoCTe +
-                    ";*" + Propriedade.ExtRetorno.ProcEventoNFe +
-                    ";*" + Propriedade.ExtRetorno.retDPEC_XML +
-                    "|Arquivos da NFe/NFCe (*.*" + Propriedade.ExtRetorno.ProcNFe + ")|*" + Propriedade.ExtRetorno.ProcNFe +
-                    "|Arquivos de cancelamento por evento (*.*_110111_01" + Propriedade.ExtRetorno.ProcEventoNFe + ", *.*_110111_01" + Propriedade.ExtRetorno.ProcEventoCTe + ")|*_110111_01" + Propriedade.ExtRetorno.ProcEventoNFe + ";*_110111_01" + Propriedade.ExtRetorno.ProcEventoCTe +
-                    "|Arquivos de CCe (*.*" + Propriedade.ExtRetorno.ProcEventoNFe + ", *.*" + Propriedade.ExtRetorno.ProcEventoCTe + ")|*" + Propriedade.ExtRetorno.ProcEventoNFe + ";*" + Propriedade.ExtRetorno.ProcEventoCTe +
-                    "|Arquivos de DPEC (*.*" + Propriedade.ExtRetorno.retDPEC_XML + ")|*" + Propriedade.ExtRetorno.retDPEC_XML +
-                    "|Arquivos de CTe (*.*" + Propriedade.ExtRetorno.ProcCTe + ")|*" + Propriedade.ExtRetorno.ProcCTe +
-                    "|Arquivos de MDFe (*.*" + Propriedade.ExtRetorno.ProcMDFe + ")|*" + Propriedade.ExtRetorno.ProcMDFe;
-
-                while (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
                     try
                     {
-                        bool executou = false;
-
-                        for (int i = 0; i < Empresas.Configuracoes.Count; i++)
-                        {
-                            Empresa empresa = Empresas.Configuracoes[i];
-                            if (Path.GetDirectoryName(dlg.FileName).ToLower().StartsWith((empresa.PastaXmlEnviado + "\\" + PastaEnviados.Autorizados.ToString()).ToLower()) ||
-                                Path.GetDirectoryName(dlg.FileName).ToLower().StartsWith((empresa.PastaXmlEnviado + "\\" + PastaEnviados.Denegados.ToString()).ToLower()))
-                            {
-                                if (string.IsNullOrEmpty(empresa.PastaExeUniDanfe))
-                                {
-                                    throw new Exception("Pasta contendo o UniDANFE não definida para a empresa: " + empresa.Nome);
-                                }
-                                NFe.Service.TFunctions.ExecutaUniDanfe(dlg.FileName, DateTime.Today, empresa);
-                                //NFe.Interface.PrintDANFE.printDANFE(dlg.FileName, empresa);
-
-                                executou = true;
-                                break;
-                            }
-                        }
-                        if (!executou)
-                            throw new Exception("Arquivo deve estar na pasta de 'Autorizados/Denegados' da empresa");
+                        ((MetroFramework.Interfaces.IMetroControl)control).Theme = mainForm.metroStyleManager1.Theme;
+                        ((MetroFramework.Interfaces.IMetroControl)control).Style = mainForm.metroStyleManager1.Style;
+                        //((MetroFramework.Interfaces.IMetroControl)control).StyleManager = mainForm.metroStyleManager1;
                     }
-                    catch (Exception ex)
-                    {
-                        MetroFramework.MetroMessageBox.Show(uninfeDummy.mainForm, ex.Message, "");
-                    }
+                    catch { }
                 }
             }
         }

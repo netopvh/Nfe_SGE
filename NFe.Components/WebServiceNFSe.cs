@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Xml;
 using System.Xml.Linq;
-using NFe.Components;
 
 namespace NFe.Components
 {
@@ -17,6 +14,8 @@ namespace NFe.Components
     public class WebServiceNFSe
     {
         private static List<PadroesDataSource> _PadroesDataSource = null;
+        private static List<PadroesDataSource> _PadroesUnicoWSDLDataSource = null;
+
         /// <summary>
         /// lista de padrões usados para preencher o datagrid e pesquisas internas
         /// </summary>
@@ -35,7 +34,32 @@ namespace NFe.Components
             }
         }
 
+        public static List<PadroesDataSource> PadroesNFSeUnicoWSDLDataSource
+        {
+            get
+            {
+                if (_PadroesUnicoWSDLDataSource == null)
+                {
+                    Array arr = Enum.GetValues(typeof(PadroesNFSe));
+                    _PadroesUnicoWSDLDataSource = new List<PadroesDataSource>();
+                    foreach (PadroesNFSe type in arr)
+                        switch (type)
+                        {
+                            case PadroesNFSe.NaoIdentificado:
+                            case PadroesNFSe.GINFES:
+                            case PadroesNFSe.BETHA:
+                            case PadroesNFSe.EQUIPLANO:
+                            case PadroesNFSe.ABASE:
+                                _PadroesUnicoWSDLDataSource.Add(new PadroesDataSource { fromType = type.ToString(), fromDescription = EnumHelper.GetEnumItemDescription(type) });
+                                break;
+                        }
+                }
+                return _PadroesUnicoWSDLDataSource.OrderBy(p => p.fromDescription).ToList();
+            }
+        }
+
         private static List<string> _Padroes = null;
+
         /// <summary>
         /// lista de padrões usados para preencher o datagrid e pesquisas internas
         /// </summary>
@@ -63,13 +87,30 @@ namespace NFe.Components
 
             if (System.IO.File.Exists(Propriedade.NomeArqXMLWebService_NFSe))
             {
-                XElement axml = XElement.Load(Propriedade.NomeArqXMLWebService_NFSe);
+                XElement axml = null;
+
+                try
+                {
+                    axml = XElement.Load(Propriedade.NomeArqXMLWebService_NFSe);
+                }
+                catch (Exception ex)
+                {
+                    Functions.WriteLog("Ocorreu um erro na tentativa de carregamento do arquivo " + Propriedade.NomeArqXMLWebService_NFSe + ".\r\n" +
+                        "Acesse novamente o sistema para que se recupere automaticamente do erro.\r\n\r\n" +
+                        "Erro:\r\n\r\n" + ex.Message, true, true, "");
+
+                    if (System.IO.File.Exists(Propriedade.XMLVersaoWSDLXSD))
+                        System.IO.File.Delete(Propriedade.XMLVersaoWSDLXSD);
+
+                    Environment.Exit(0);
+                }
+
                 ///
                 /// primeiro, pesquisa pelo ID
-                /// 
-                var s = (from p in axml.Descendants(NFe.Components.NFeStrConstants.Estado)
+                ///
+                var s = (from p in axml.Descendants(NFeStrConstants.Estado)
                          where  //(string)p.Attribute(NFe.Components.NFeStrConstants.Padrao) == padrao.ToString() &&
-                                (string)p.Attribute(NFe.Components.TpcnResources.ID.ToString()) == idMunicipio.ToString()
+                                (string)p.Attribute(TpcnResources.ID.ToString()) == idMunicipio.ToString()
                          select p);
                 foreach (var item in s)
                 {
@@ -77,29 +118,39 @@ namespace NFe.Components
                     {
                         ///
                         /// pega o padrao definido no WebService.xml descartando o que constar no UninMunic.xml
-                        /// 
-                        padrao = WebServiceNFSe.GetPadraoFromString(item.Attribute(NFe.Components.NFeStrConstants.Padrao).Value);
+                        ///
+                        padrao = WebServiceNFSe.GetPadraoFromString(item.Attribute(NFeStrConstants.Padrao).Value);
 
-                        return local.Equals(NFe.Components.NFeStrConstants.LocalHomologacao) ?
+                        return local.Equals(NFeStrConstants.LocalHomologacao) ?
                             item.FirstNode.ToString() : item.LastNode.ToString();
-                }
+                    }
                 }
                 ///
                 /// não encontrei, assume o ID='padrao' e UF='XX' e padrao='padrao'
-                /// 
+                ///
                 PadroesNFSe pdr = padrao;
 
-                var xs = (from p in axml.Descendants(NFe.Components.NFeStrConstants.Estado)
-                          where  (string)p.Attribute(NFe.Components.NFeStrConstants.Padrao) == pdr.ToString() &&
+                var xs = (from p in axml.Descendants(NFeStrConstants.Estado)
+                          where (string)p.Attribute(NFeStrConstants.Padrao) == pdr.ToString() &&
                                  (string)p.Attribute(TpcnResources.UF.ToString()) == "XX" &&
-                                 (string)p.Attribute(NFe.Components.TpcnResources.ID.ToString()) == pdr.ToString()
+                                 (string)p.Attribute(TpcnResources.ID.ToString()) == pdr.ToString()
                           select p);
                 foreach (var item in xs)
                 {
                     if (item.Element(local) != null)
-                        return local.Equals(NFe.Components.NFeStrConstants.LocalHomologacao) ?
+                        return local.Equals(NFeStrConstants.LocalHomologacao) ?
                             item.FirstNode.ToString() : item.LastNode.ToString();
                 }
+            }
+            else
+            {
+                Functions.WriteLog("Ocorreu um erro na tentativa de carregamento do arquivo " + Propriedade.NomeArqXMLWebService_NFSe + ".\r\n" +
+                    "Acesse novamente o sistema para que se recupere automaticamente do erro.", true, true, "");
+
+                if (System.IO.File.Exists(Propriedade.XMLVersaoWSDLXSD))
+                    System.IO.File.Delete(Propriedade.XMLVersaoWSDLXSD);
+
+                Environment.Exit(0);
             }
 
             return "";
@@ -107,16 +158,15 @@ namespace NFe.Components
 
         public static string WebServicesHomologacao(ref PadroesNFSe padrao, int idMunicipio = 0)
         {
-            return getURLs(NFe.Components.NFeStrConstants.LocalHomologacao, ref padrao, idMunicipio);
-
+            return getURLs(NFeStrConstants.LocalHomologacao, ref padrao, idMunicipio);
         }
 
         public static string WebServicesProducao(ref NFe.Components.PadroesNFSe padrao, int idMunicipio = 0)
         {
-            return getURLs(NFe.Components.NFeStrConstants.LocalProducao, ref padrao, idMunicipio);
+            return getURLs(NFeStrConstants.LocalProducao, ref padrao, idMunicipio);
         }
 
-        public static NFe.Components.PadroesNFSe GetPadraoFromString(string padrao)
+        public static PadroesNFSe GetPadraoFromString(string padrao)
         {
             try
             {
@@ -183,10 +233,10 @@ namespace NFe.Components
                 var r = (from ss in Propriedade.Municipios orderby ss.Nome select ss);
                 foreach (Municipio item in r)//Propriedade.Municipios)
                 {
-                    elementos.Add(new XElement(NFe.Components.NFeStrConstants.Registro,
-                                    new XAttribute(NFe.Components.TpcnResources.ID.ToString(), item.CodigoMunicipio.ToString()),
-                                    new XAttribute(NFe.Components.NFeStrConstants.Nome, item.Nome.Trim()),
-                                    new XAttribute(NFe.Components.NFeStrConstants.Padrao, item.PadraoStr)));
+                    elementos.Add(new XElement(NFeStrConstants.Registro,
+                                    new XAttribute(TpcnResources.ID.ToString(), item.CodigoMunicipio.ToString()),
+                                    new XAttribute(NFeStrConstants.Nome, item.Nome.Trim()),
+                                    new XAttribute(NFeStrConstants.Padrao, item.PadraoStr)));
                 }
                 xml.Add(elementos);
                 xml.Save(Propriedade.NomeArqXMLMunicipios);
@@ -214,24 +264,24 @@ namespace NFe.Components
                 XElement axml = XElement.Load(Propriedade.NomeArqXMLWebService_NFSe);
                 var s = (from p in axml.Descendants(NFeStrConstants.Estado)
                          where (string)p.Attribute(TpcnResources.UF.ToString()) != "XX"
-                         orderby p.Attribute(NFe.Components.NFeStrConstants.Nome).Value
+                         orderby p.Attribute(NFeStrConstants.Nome).Value
                          select p);
                 foreach (var item in s)
                 {
                     string padrao = PadroesNFSe.NaoIdentificado.ToString();
-                    if (item.Attribute(NFe.Components.NFeStrConstants.Padrao) != null)
-                        padrao = item.Attribute(NFe.Components.NFeStrConstants.Padrao).Value;
+                    if (item.Attribute(NFeStrConstants.Padrao) != null)
+                        padrao = item.Attribute(NFeStrConstants.Padrao).Value;
 
                     if (padrao != PadroesNFSe.NaoIdentificado.ToString())
                     {
-                        string ID = item.Attribute(NFe.Components.TpcnResources.ID.ToString()).Value;
-                        string Nome = item.Attribute(NFe.Components.NFeStrConstants.Nome).Value;
+                        string ID = item.Attribute(TpcnResources.ID.ToString()).Value;
+                        string Nome = item.Attribute(NFeStrConstants.Nome).Value;
                         string UF = item.Attribute(TpcnResources.UF.ToString()).Value;
 
-                        elementos.Add(new XElement(NFe.Components.NFeStrConstants.Registro,
-                                        new XAttribute(NFe.Components.TpcnResources.ID.ToString(), ID),
-                                        new XAttribute(NFe.Components.NFeStrConstants.Nome, Nome.Trim()),
-                                        new XAttribute(NFe.Components.NFeStrConstants.Padrao, padrao)));
+                        elementos.Add(new XElement(NFeStrConstants.Registro,
+                                        new XAttribute(TpcnResources.ID.ToString(), ID),
+                                        new XAttribute(NFeStrConstants.Nome, Nome.Trim()),
+                                        new XAttribute(NFeStrConstants.Padrao, padrao)));
                     }
                 }
                 if (!elementos.IsEmpty)

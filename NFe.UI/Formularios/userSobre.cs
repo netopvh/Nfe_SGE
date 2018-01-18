@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -22,16 +22,13 @@ namespace NFe.UI
         {
             base.UpdateControles();
 
-            switch (NFe.Components.Propriedade.TipoAplicativo)
-            {
-                case NFe.Components.TipoAplicativo.Nfe:
-                    break;
-
-                case NFe.Components.TipoAplicativo.Nfse:
-                    this.pictureBox2.Image = NFe.UI.Properties.Resources.uninfse128;
-                    break;
-            }
             this.textBox_versao.Text = Propriedade.Versao;
+            this.textbox_Compilacao.Text = "4.6.2";
+#if _fw35
+            this.textbox_Compilacao.Text = "3.5";
+#endif
+            this.textBox_versaofw.Text = Environment.Version.ToString();
+
             lblDescricaoAplicacao.Text = Propriedade.DescricaoAplicacao;
             lblNomeAplicacao.Text = Propriedade.NomeAplicacao;
             this.labelTitle.Text = "Sobre o " + Propriedade.NomeAplicacao;
@@ -49,11 +46,19 @@ namespace NFe.UI
             lblEmpresa.Text = ConfiguracaoApp.NomeEmpresa;
             linkLabelSite.Visible = !string.IsNullOrEmpty(ConfiguracaoApp.Site);
             linkLabelSiteProduto.Visible = !string.IsNullOrEmpty(ConfiguracaoApp.SiteProduto);
-            linkLabelEmail.Visible = !string.IsNullOrEmpty(ConfiguracaoApp.Email);
 
             linkLabelSite.Text = ConfiguracaoApp.Site;
             linkLabelSiteProduto.Text = ConfiguracaoApp.SiteProduto;
-            linkLabelEmail.Text = ConfiguracaoApp.Email;
+
+            string elapsedDays = ConfiguracaoApp.ExecutionTime.Elapsed.Days + " dias ininterruptos.";
+
+            if (ConfiguracaoApp.ExecutionTime.Elapsed.Days < 1)
+                elapsedDays = ConfiguracaoApp.ExecutionTime.Elapsed.Hours + " horas ininterruptas.";
+
+            if (ConfiguracaoApp.ExecutionTime.Elapsed.Hours < 1)
+                elapsedDays = "A menos de uma hora.";
+
+            txtElapsedDays.Text = elapsedDays;
         }
 
         private void linkLabelSite_Click(object sender, EventArgs e)
@@ -77,11 +82,11 @@ namespace NFe.UI
         {
             try
             {
-                NFe.Components.Functions.ExibeDocumentacao();
+                System.Diagnostics.Process.Start(Propriedade.UrlManualUniNFe);
             }
             catch (Exception ex)
             {
-                MetroFramework.MetroMessageBox.Show(uninfeDummy.mainForm, ex.Message, "");
+                MetroFramework.MetroMessageBox.Show(uninfeDummy.mainForm, ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -1,16 +1,16 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SgeNFe")]
-[assembly: AssemblyDescription("Monitor da Nota Fiscal Eletrônica")]
+[assembly: AssemblyTitle("UniNFe")]
+[assembly: AssemblyDescription("Monitor de Documentos Fiscais Eletrônicos")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("G & R Sistema")]
-[assembly: AssemblyProduct("SgeNFe")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyCompany("Unimake")]
+[assembly: AssemblyProduct("UniNFe")]
+[assembly: AssemblyCopyright("Copyright © 2008 - Unimake Software")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("bed4b99a-d90f-4c77-b2f3-e732e1fe0337")]
+[assembly: Guid("e107a4ee-6ff6-47c8-aa16-45be938eb0f5")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("4.6.0.*")]
-[assembly: AssemblyFileVersion("4.6.0.0")]
+[assembly: AssemblyVersion("5.1.0.20")]
+[assembly: AssemblyFileVersion("5.1.0.20")]

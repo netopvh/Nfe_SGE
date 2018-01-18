@@ -1,6 +1,8 @@
-C:\Sistemas\SGE\Fontes\SgeIBNFe_v3.10\NFe.Components\bin\Debug\NFe.Components.dll.config
-C:\Sistemas\SGE\Fontes\SgeIBNFe_v3.10\NFe.Components\bin\Debug\NFe.Components.dll
-C:\Sistemas\SGE\Fontes\SgeIBNFe_v3.10\NFe.Components\bin\Debug\NFe.Components.pdb
-C:\Sistemas\SGE\Fontes\SgeIBNFe_v3.10\NFe.Components\obj\Debug\NFe.Components.dll
-C:\Sistemas\SGE\Fontes\SgeIBNFe_v3.10\NFe.Components\obj\Debug\NFe.Components.pdb
-C:\Sistemas\SGE\Fontes\SgeIBNFe_v3.10\NFe.Components\obj\Debug\NFe.Components.csprojResolveAssemblyReference.cache
+C:\TortoiseSVN\trunk\fontes\NFe.Components\bin\Release\NFe.Components.dll.config
+C:\TortoiseSVN\trunk\fontes\NFe.Components\bin\Release\NFe.Components.dll
+C:\TortoiseSVN\trunk\fontes\NFe.Components\bin\Release\NFe.Components.pdb
+C:\TortoiseSVN\trunk\fontes\NFe.Components\bin\Release\Newtonsoft.Json.dll
+C:\TortoiseSVN\trunk\fontes\NFe.Components\bin\Release\Newtonsoft.Json.xml
+C:\TortoiseSVN\trunk\fontes\NFe.Components\obj\Debug\NFe.Components.csprojResolveAssemblyReference.cache
+C:\TortoiseSVN\trunk\fontes\NFe.Components\obj\Debug\NFe.Components.dll
+C:\TortoiseSVN\trunk\fontes\NFe.Components\obj\Debug\NFe.Components.pdb

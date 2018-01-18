@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
 using System.IO;
 using NFe.Components;
-using System.Xml;
 using System.Xml.Linq;
-using System.Windows.Forms;
 
 namespace NFe.Settings
 {
@@ -22,16 +17,25 @@ namespace NFe.Settings
         /// <param name="Erro"></param>
         public void GravarArqErroERP(string Arquivo, string Erro)
         {
-            if (!string.IsNullOrEmpty(Arquivo))
+            if (!string.IsNullOrEmpty(Arquivo) && !string.IsNullOrEmpty(Erro))
             {
                 try
                 {
+                    ///
+                    /// grava o erro na pasta de retorno geral do UniNFe caso a pasta de retorno da empresa nao exista
+                    /// 
+                    string fFolder = Propriedade.PastaGeralRetorno;
+
                     int emp = Empresas.FindEmpresaByThread();
-                    if (!string.IsNullOrEmpty(Empresas.Configuracoes[emp].PastaXmlRetorno))
+                    if (emp >= 0)
+                        if (!string.IsNullOrEmpty(Empresas.Configuracoes[emp].PastaXmlRetorno))
+                            fFolder = Empresas.Configuracoes[emp].PastaXmlRetorno;
+
+                    if (Directory.Exists(fFolder))
                     {
                         //Grava arquivo de ERRO para o ERP
-                        string cArqErro = Empresas.Configuracoes[emp].PastaXmlRetorno + "\\" + Path.GetFileName(Arquivo);
-                        File.WriteAllText(cArqErro, Erro, Encoding.Default);
+                        string cArqErro = Path.Combine(fFolder, Path.GetFileName(Arquivo));
+                        File.WriteAllText(cArqErro, Erro);//, Encoding.Default);
                     }
                 }
                 catch (Exception ex)
@@ -45,6 +49,7 @@ namespace NFe.Settings
         #region WriteLog()
         public static void WriteLog(string msg, bool gravarStackTrace)
         {
+            if (string.IsNullOrEmpty(msg)) return;
 #if DEBUG
             System.Diagnostics.Debug.WriteLine(msg);
 #endif
@@ -60,7 +65,7 @@ namespace NFe.Settings
                     catch { }
                 }
 
-                NFe.Components.Functions.WriteLog(msg, gravarStackTrace, true, emp >= 0 ? Empresas.Configuracoes[emp].CNPJ + "_" + Empresas.Configuracoes[emp].Servico.ToString() : "");
+                Functions.WriteLog(msg, gravarStackTrace, true, emp >= 0 ? Empresas.Configuracoes[emp].CNPJ + "_" + Empresas.Configuracoes[emp].Servico.ToString() : "");
             }
         }
         #endregion
@@ -134,9 +139,10 @@ namespace NFe.Settings
             int emp = Empresas.FindEmpresaByThread();
 
             string strNomePastaEnviado = Empresas.Configuracoes[emp].PastaXmlEnviado + "\\" +
-                                            PastaEnviados.Autorizados.ToString() + "\\" +
-                                            Empresas.Configuracoes[emp].DiretorioSalvarComo.ToString(emissao);
-            return File.Exists(strNomePastaEnviado + "\\" + Functions.ExtrairNomeArq(arquivo, extNFe) + extArqProtNfe);
+                                         PastaEnviados.Autorizados.ToString() + "\\" +
+                                         Empresas.Configuracoes[emp].DiretorioSalvarComo.ToString(emissao);
+
+            return File.Exists(strNomePastaEnviado + Functions.ExtrairNomeArq(arquivo, extNFe) + extArqProtNfe);
         }
         #endregion
 
@@ -147,13 +153,13 @@ namespace NFe.Settings
         /// <param name="Arquivo">Arquivo XML a ser verificado</param>
         /// <param name="Emissao">Data de emissão da NFe</param>
         /// <returns>Se está na pasta de XML´s denegados</returns>
-        public bool EstaDenegada(string Arquivo, DateTime Emissao)
+        public bool EstaDenegada(string Arquivo, DateTime Emissao, string extNFe, string extArqProtNfe)
         {
             int emp = Empresas.FindEmpresaByThread();
             string strNomePastaEnviado = Empresas.Configuracoes[emp].PastaXmlEnviado + "\\" +
                                             PastaEnviados.Denegados.ToString() + "\\" +
                                             Empresas.Configuracoes[emp].DiretorioSalvarComo.ToString(Emissao);
-            return File.Exists(strNomePastaEnviado + "\\" + Functions.ExtrairNomeArq(Arquivo, Propriedade.ExtEnvio.Nfe) + Propriedade.ExtRetorno.Den);
+            return File.Exists(strNomePastaEnviado + Functions.ExtrairNomeArq(Arquivo, extNFe) + extArqProtNfe);
         }
         #endregion
 
@@ -246,17 +252,28 @@ namespace NFe.Settings
                     if (string.IsNullOrEmpty(servico))
                         servico = Propriedade.TipoAplicativo.ToString();
 
-                    if (sonfe && servico.Equals(TipoAplicativo.Nfse.ToString()))
-                        continue;
+                    Empresa emp = new Empresa() { 
+                        Nome = nome, 
+                        CNPJ = cnpj, 
+                        Servico =  (NFe.Components.TipoAplicativo)Enum.Parse(typeof(NFe.Components.TipoAplicativo), servico, true)
+                    };
 
-                    empresa.Add(new ComboElem
+                    if (File.Exists(emp.NomeArquivoConfig))
                     {
-                        Valor = cnpj,
-                        Codigo = codEmp,
-                        Nome = nome + "  <" + servico + ">",
-                        Servico = servico
-                    });
-                    codEmp++;
+                        if (sonfe && servico.Equals(TipoAplicativo.Nfse.ToString()))
+                        {
+                            codEmp++;
+                            continue;
+                        }
+                        empresa.Add(new ComboElem
+                        {
+                            Valor = cnpj,
+                            Codigo = codEmp,
+                            Nome = nome + "  <" + servico + ">",
+                            Servico = servico
+                        });
+                        codEmp++;
+                    }
                 }
             }
             empresa.Sort(new OrdenacaoPorNome());

@@ -51,7 +51,9 @@ namespace NFe.Service
     <servicos>NFeConsultaCadastro,NFeStatusServico,...</servicos>
 </dados>
 #endif
-                    Functions.DeletarArquivo(Path.Combine(Empresas.Configuracoes[emp].PastaXmlRetorno, Path.GetFileName(NomeArquivoXML.Replace(Propriedade.ExtEnvio.EnvWSExiste_XML, Propriedade.ExtRetorno.retWSExiste_XML).Replace(".xml", ".err"))));
+                    Functions.DeletarArquivo(Path.Combine(Empresas.Configuracoes[emp].PastaXmlRetorno, 
+                                Path.GetFileName(NomeArquivoXML.Replace(Propriedade.Extensao(Propriedade.TipoEnvio.EnvWSExiste).EnvioXML,
+                                Propriedade.Extensao(Propriedade.TipoEnvio.EnvWSExiste).RetornoXML).Replace(".xml", ".err"))));
 
                     XmlDocument doc = new XmlDocument();
                     doc.Load(NomeArquivoXML);
@@ -77,7 +79,9 @@ tpAmb|2             --opcional
 tpEmis|1            --opcional: (1)Normal, (2)Contingencia, ...
 servicos|NFeConsultaCadastro,NFeStatusServico,...
 #endif
-                    Functions.DeletarArquivo(Path.Combine(Empresas.Configuracoes[emp].PastaXmlRetorno, Path.GetFileName(NomeArquivoXML.Replace(Propriedade.ExtEnvio.EnvWSExiste_TXT, Propriedade.ExtRetorno.retWSExiste_TXT).Replace(".txt", ".err"))));
+                    Functions.DeletarArquivo(Path.Combine(Empresas.Configuracoes[emp].PastaXmlRetorno, 
+                                Path.GetFileName(NomeArquivoXML.Replace(Propriedade.Extensao(Propriedade.TipoEnvio.EnvWSExiste).EnvioTXT, 
+                                Propriedade.Extensao(Propriedade.TipoEnvio.EnvWSExiste).EnvioTXT).Replace(".txt", ".err"))));
 
                     List<string> cLinhas = Functions.LerArquivo(NomeArquivoXML);
 
@@ -124,9 +128,11 @@ servicos|NFeConsultaCadastro=True|False,NFeStatusServico=True|False,...
 #endif
                 string nomeArquivoRetorno;
                 if (this.vXmlNfeDadosMsgEhXML)
-                    nomeArquivoRetorno = Functions.ExtrairNomeArq(NomeArquivoXML, Propriedade.ExtEnvio.EnvWSExiste_XML) + Propriedade.ExtRetorno.retWSExiste_XML;
+                    nomeArquivoRetorno = Functions.ExtrairNomeArq(NomeArquivoXML, Propriedade.Extensao(Propriedade.TipoEnvio.EnvWSExiste).EnvioXML) + 
+                                            Propriedade.Extensao(Propriedade.TipoEnvio.EnvWSExiste).RetornoXML;
                 else
-                    nomeArquivoRetorno = Functions.ExtrairNomeArq(NomeArquivoXML, Propriedade.ExtEnvio.EnvWSExiste_TXT) + Propriedade.ExtRetorno.retWSExiste_TXT;
+                    nomeArquivoRetorno = Functions.ExtrairNomeArq(NomeArquivoXML, Propriedade.Extensao(Propriedade.TipoEnvio.EnvWSExiste).EnvioTXT) + 
+                                            Propriedade.Extensao(Propriedade.TipoEnvio.EnvWSExiste).RetornoTXT;
                 nomeArquivoRetorno = Path.Combine(Empresas.Configuracoes[emp].PastaXmlRetorno, Path.GetFileName(nomeArquivoRetorno));
                 Functions.DeletarArquivo(nomeArquivoRetorno);
 
@@ -206,37 +212,23 @@ servicos|NFeConsultaCadastro=True|False,NFeStatusServico=True|False,...
                             case "nfeconsulta1":
                             case "nfeconsulta":
                                 srv = Servicos.NFePedidoConsultaSituacao; break;
-                            case "nfeconsultardpec":
-                                srv = Servicos.DPECConsultar; break;
                             case "nfeconsultacadastro":
                                 srv = Servicos.ConsultaCadastroContribuinte; break;
-                            case "nfeconsultanfedest":
-                                srv = Servicos.NFeConsultaNFDest; break;
                             case "nfedownload":
                                 srv = Servicos.NFeDownload; break;
                             case "nfeinutilizacao":
                                 srv = Servicos.NFeInutilizarNumeros; break;
                             case "nfemanifestacao":
                                 srv = Servicos.EventoManifestacaoDest; break;
-                            case "nferetrecepcao":
-                            case "nferecepcao":
-                            case "nfeenviardpec":
-                                srv = Servicos.NFeEnviarLote; break;
                             case "dferecepcao":
                                 srv = Servicos.DFeEnviar; break;
-                            //case "nferegistrodesaida":
-                                //srv = Servicos.RegistroDeSaida; break;
-                            //case "nferegistrodesaidacancelamento":
-                                //srv = Servicos.RegistroDeSaidaCancelamento; break;
                             case "nfestatusservico":
                                 srv = Servicos.NFeConsultaStatusServico; break;
                         }
 
                         if (srv == Servicos.Nulo)
                         {
-                            string aServicos = "NFeConsultarDPEC,NFeEnviarDPEC";
-                            if (Empresas.Configuracoes[emp].Servico == TipoAplicativo.Nfse)
-                                aServicos = "";
+                            string aServicos = "";
 
                             System.Reflection.PropertyInfo[] fieldInfo = typeof(URLws).GetProperties();
                             foreach (System.Reflection.PropertyInfo info in fieldInfo)
@@ -262,7 +254,7 @@ servicos|NFeConsultaCadastro=True|False,NFeStatusServico=True|False,...
                         else
                             try
                             {
-                                WebServiceProxy wsProxy = ConfiguracaoApp.DefinirWS(srv, emp, odados.cUF, odados.tpAmb, odados.tpEmis, string.Empty);
+                                WebServiceProxy wsProxy = ConfiguracaoApp.DefinirWS(srv, emp, odados.cUF, odados.tpAmb, odados.tpEmis, string.Empty, 0);
                                 if (wsProxy != null)
                                     outServicos += aservico + "=True,";
                                 else
@@ -287,17 +279,18 @@ servicos|NFeConsultaCadastro=True|False,NFeStatusServico=True|False,...
                 {
                     outStr.AppendFormat("servicos|{0}", outServicos.Substring(0, outServicos.Length - 1));
                 }
-                System.IO.File.WriteAllText(nomeArquivoRetorno, outStr.ToString(), Encoding.Default);
+                System.IO.File.WriteAllText(nomeArquivoRetorno, outStr.ToString());//, Encoding.Default);
             }
             catch (Exception ex)
             {
                 try
                 {
-                    string ExtRet = (this.vXmlNfeDadosMsgEhXML ? Propriedade.ExtEnvio.EnvWSExiste_XML : Propriedade.ExtEnvio.EnvWSExiste_TXT);
+                    string ExtRet = (this.vXmlNfeDadosMsgEhXML ? Propriedade.Extensao(Propriedade.TipoEnvio.EnvWSExiste).EnvioXML : 
+                                                                 Propriedade.Extensao(Propriedade.TipoEnvio.EnvWSExiste).EnvioTXT);
 
                     //Gravar o arquivo de erro de retorno para o ERP, caso ocorra
                     //retorna um arquivo com o nome NomeArquivoSolicitado-ret-env-ws.err
-                    TFunctions.GravarArqErroServico(NomeArquivoXML, ExtRet, Propriedade.ExtRetorno.retWSExiste_XML.Replace(".xml",".err"), ex);
+                    TFunctions.GravarArqErroServico(NomeArquivoXML, ExtRet, Propriedade.Extensao(Propriedade.TipoEnvio.EnvWSExiste).RetornoXML.Replace(".xml", ".err"), ex);
                 }
                 catch
                 {

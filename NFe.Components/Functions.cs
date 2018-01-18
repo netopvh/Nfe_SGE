@@ -12,7 +12,6 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Reflection;
 using System.Net;
-using System.ComponentModel;
 
 namespace NFe.Components
 {
@@ -58,14 +57,12 @@ namespace NFe.Components
         /// <param name="arquivoDestino">Arquivo de destino (destino do arquivo)</param>
         public static void Move(string arquivoOrigem, string arquivoDestino)
         {
-            if (File.Exists(arquivoDestino))
-                File.Delete(arquivoDestino);
-
             if (!Directory.Exists(Path.GetDirectoryName(arquivoDestino)))
                 Directory.CreateDirectory(Path.GetDirectoryName(arquivoDestino));
+            else if (File.Exists(arquivoDestino))
+                File.Delete(arquivoDestino);
 
-            File.Copy(arquivoOrigem, arquivoDestino);
-            File.Delete(arquivoOrigem);
+            File.Move(arquivoOrigem, arquivoDestino);
         }
         #endregion
 
@@ -108,7 +105,7 @@ namespace NFe.Components
                 var es = Propriedade.Estados.First(s => s.UF.Equals(uf));
                 return es.CodigoMunicipio;
             }
-            catch 
+            catch
             {
                 return 0;
             }
@@ -118,11 +115,13 @@ namespace NFe.Components
         #region PadraoNFe()
         public static PadroesNFSe PadraoNFSe(int municipio)
         {
+            PadroesNFSe result = PadroesNFSe.NaoIdentificado;
+
             foreach (Municipio mun in Propriedade.Municipios)
                 if (mun.CodigoMunicipio == municipio)
-                    return mun.Padrao;
+                    result = mun.Padrao;
 
-            return PadroesNFSe.NaoIdentificado;
+            return result;
         }
         #endregion
 
@@ -240,28 +239,153 @@ namespace NFe.Components
 
         #region ExtrairNomeArq()
         /// <summary>
-        /// Extrai somente o nome do arquivo de uma string; para ser utilizado na situação desejada. Veja os exemplos na documentação do código.
+        /// Extrai o nome do arquivo de uma determinada string. Este não mantem a pasta que ele está localizado, fica somente o nome do arquivo.
         /// </summary>
-        /// <param name="pPastaArq">String contendo o caminho e nome do arquivo que é para ser extraido o nome.</param>
-        /// <param name="pFinalArq">String contendo o final do nome do arquivo até onde é para ser extraído.</param>
-        /// <returns>Retorna somente o nome do arquivo de acordo com os parâmetros passados - veja exemplos.</returns>
+        /// <param name="arquivo">string contendo o caminho e nome do arquivo que é para ser extraído o conteúdo desejado</param>
+        /// <param name="finalArq">string contendo o final do nome do arquivo que é para ser retirado do nome</param>
+        /// <returns>Retorna somente o nome do arquivo de acordo com os parâmetros passado</returns>
         /// <example>
-        /// MessageBox.Show(this.ExtrairNomeArq("C:\\TESTE\\NFE\\ENVIO\\ArqSituacao-ped-sta.xml", "-ped-sta.xml"));
+        /// MessageBox.Show(ExtrairNomeArq("C:\\TESTE\\NFE\\ENVIO\\ArqSituacao-ped-sta.xml", "-ped-sta.xml"));
         /// //Será demonstrado no message a string "ArqSituacao"
         /// 
-        /// MessageBox.Show(this.ExtrairNomeArq("C:\\TESTE\\NFE\\ENVIO\\ArqSituacao-ped-sta.xml", ".xml"));
+        /// MessageBox.Show(ExtrairNomeArq("C:\\TESTE\\NFE\\ENVIO\\ArqSituacao-ped-sta.xml", ".xml"));
         /// //Será demonstrado no message a string "ArqSituacao-ped-sta"
         /// </example>
-        /// <by>Wandrey Mundin Ferreira</by>
-        /// <date>19/06/2008</date>
-        public static string ExtrairNomeArq(string pPastaArq, string pFinalArq)
+        public static string ExtrairNomeArq(string arquivo, string finalArq)
         {
-            FileInfo fi = new FileInfo(pPastaArq);
+            if (string.IsNullOrEmpty(arquivo))
+                return "";
+
+            FileInfo fi = new FileInfo(arquivo);
             string ret = fi.Name;
-            ret = ret.Substring(0, ret.Length - pFinalArq.Length);
+            string retorno = "";
+
+            if (!string.IsNullOrEmpty(finalArq) && finalArq.Length == 4 && finalArq.StartsWith("."))
+                return ret.Substring(0, ret.Length - finalArq.Length);
+
+            ///
+            /// alteracao feita pq um usuario comentou que estava truncando uma parte do nome original do arquivo
+            ///
+            /// se o nome do arquivo for: 123456790-nfe.xml e
+            ///             finalArq for:      -ret-nfe.xml, retornaria: 12345
+            /// ou
+            /// se o nome do arquivo for: 123456790-ret-nfe.xml e
+            ///             finalArq for:              -nfe.xml, retornaria: 123456789-ret
+            ///
+            /*
+                -pro-rec.err
+                -pro-rec.xml
+                -rec.err
+                -rec.xml
+             */
+            ///
+            /// pesquisa primeiro pela lista de retornos, porque geralmente os nomes são maiores que os de envio
+            /// isso evita conflito de nomes como por ex: -cons-cad.xml x -ret-cons-cad.xml
+            /// 
+            foreach (var pS in typeof(Propriedade.ExtRetorno).GetFields(BindingFlags.Public | BindingFlags.Static))
+            {
+                string extensao = pS.GetValue(null).ToString();
+
+                if (ret.EndsWith(extensao, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    retorno = ret.Substring(0, ret.Length - extensao.Length);
+                    break;
+                }
+            }
+
+            if (retorno == "")
+            {
+                foreach (Propriedade.TipoEnvio item in Enum.GetValues(typeof(Propriedade.TipoEnvio)))
+                {
+                    var EXT = Propriedade.Extensao(item);
+
+                    ///
+                    /// pesquisa primeiro pelas extensões de retorno, pois geralmente, elas são maiores que as de envio
+                    /// 
+                    if (!string.IsNullOrEmpty(EXT.RetornoXML))
+                        if (ret.EndsWith(EXT.RetornoXML, StringComparison.InvariantCultureIgnoreCase))
+                            retorno = ret.Substring(0, ret.Length - EXT.RetornoXML.Length);
+
+                    if (!string.IsNullOrEmpty(EXT.RetornoTXT))
+                        if (ret.EndsWith(EXT.RetornoTXT, StringComparison.InvariantCultureIgnoreCase))
+                            retorno = ret.Substring(0, ret.Length - EXT.RetornoTXT.Length);
+
+                    if (ret.EndsWith(EXT.EnvioXML, StringComparison.InvariantCultureIgnoreCase))
+                        retorno = ret.Substring(0, ret.Length - EXT.EnvioXML.Length);
+
+                    if (!string.IsNullOrEmpty(EXT.EnvioTXT))
+                        if (ret.EndsWith(EXT.EnvioTXT, StringComparison.InvariantCultureIgnoreCase))
+                            retorno = ret.Substring(0, ret.Length - EXT.EnvioTXT.Length);
+                }
+            }
+
+            if (retorno == "")
+                if (!string.IsNullOrEmpty(finalArq))
+                    if (ret.EndsWith(finalArq, StringComparison.InvariantCultureIgnoreCase))
+                        retorno = ret.Substring(0, ret.Length - finalArq.Length);
+
+            if (retorno != "")
+            {
+                if (retorno.ToLower().EndsWith("-ped"))
+                    return retorno.Substring(0, retorno.ToLower().IndexOf("-ped"));
+
+                if (retorno.ToLower().EndsWith("-ret"))
+                    return retorno.Substring(0, retorno.ToLower().IndexOf("-ret"));
+
+                if (retorno.ToLower().EndsWith("-con"))
+                    return retorno.Substring(0, retorno.ToLower().IndexOf("-con"));
+
+                if (retorno.ToLower().EndsWith("-env"))
+                    return retorno.Substring(0, retorno.ToLower().IndexOf("-env"));
+
+                return retorno.TrimEnd(new char[] { '-' });
+            }
+
+            return fi.Name;
+        }
+
+        #endregion
+
+        #region ExtraiPastaNomeArq()
+        /// <summary>
+        /// Extrai o nome do arquivo de uma determinada string mantendo a pasta que ele está localizado
+        /// </summary>
+        /// <param name="arquivo">string contendo o caminho e nome do arquivo que é para ser extraído o conteúdo desejado</param>
+        /// <param name="finalArq">string contendo o final do nome do arquivo que é para ser retirado do nome</param>
+        /// <returns>Retorna a pasta e o nome do arquivo de acordo com os parâmetros passado.</returns>
+        /// <example>
+        /// MessageBox.Show(ExtrairPastaNomeArq("C:\\TESTE\\NFE\\ENVIO\\ArqSituacao-ped-sta.xml", "-ped-sta.xml"));
+        /// //Será demonstrado no message a string "C:\\TESTE\\NFE\\ENVIO\\ArqSituacao"
+        /// 
+        /// MessageBox.Show(ExtrairPastaNomeArq("C:\\TESTE\\NFE\\ENVIO\\ArqSituacao-ped-sta.xml", ".xml"));
+        /// //Será demonstrado no message a string "C:\\TESTE\\NFE\\ENVIO\\ArqSituacao-ped-sta"
+        /// </example>
+        public static string ExtraiPastaNomeArq(string arquivo, string finalArq)
+        {
+            FileInfo fi = new FileInfo(arquivo);
+            string ret = fi.FullName;
+            ret = ret.Substring(0, ret.Length - finalArq.Length);
             return ret;
         }
         #endregion
+
+        public static string ExtractExtension(string value)
+        {
+            if (string.IsNullOrEmpty(value)) return "";
+            return (value.IndexOf('.') >= 0 ? Path.ChangeExtension(("X" + value), "").Substring(1).Replace(".", "") : value);
+        }
+
+        public static string GetAttributeXML(string node, string attribute, string file)
+        {
+            string result = "";
+            XmlDocument conteudoXML = new XmlDocument();
+            conteudoXML.Load(file);
+
+            XmlElement elementos = (XmlElement)conteudoXML.GetElementsByTagName(node)[0];
+            result = elementos.GetAttribute(attribute);
+
+            return result;
+        }
 
         #region FileInUse()
         /// <summary>
@@ -270,6 +394,7 @@ namespace NFe.Components
         /// <param name="file">caminho do arquivo</param>
         /// <returns>true se estiver em uso</returns>
         /// <by>http://desenvolvedores.net/marcelo</by>
+        [System.Diagnostics.DebuggerHidden()]
         public static bool FileInUse(string file)
         {
             bool ret = false;
@@ -331,6 +456,7 @@ namespace NFe.Components
                     Retorno = Elemento.GetElementsByTagName(NomeTag)[0].InnerText;  //Wandrey 07/10/2009
                 }
             }
+
             return Retorno;
         }
 
@@ -452,16 +578,7 @@ namespace NFe.Components
         public static ArrayList CarregaUF()
         {
             ArrayList UF = new ArrayList();
-
-            /// danasa 1-2012
-            if (Propriedade.TipoAplicativo == TipoAplicativo.Nfse)
-            {
-                UF = CarregaMunicipios();
-            }
-            else
-            {
-                UF = CarregaEstados();
-            }
+            UF = CarregaEstados();
             return UF;
         }
 
@@ -474,6 +591,30 @@ namespace NFe.Components
             }
             UF.Sort(new OrdenacaoPorNome());
             return UF;
+        }
+        #endregion
+
+        #region ComputeHexadecimal()
+        /// <summary>
+        /// Calcula valor hexadecimal
+        /// Usado para calcular o Link do QRCode da NFCe
+        /// </summary>
+        /// <param name="input">Valor a ser convertido</param>
+        /// <returns></returns>
+        public static string ComputeHexadecimal(string input)
+        {
+            string hexOutput = "";
+            char[] values = input.ToCharArray();
+            foreach (char letter in values)
+            {
+                // Get the integral value of the character.
+                int value = Convert.ToInt32(letter);
+                // Convert the decimal value to a hexadecimal value in string form.
+                hexOutput += String.Format("{0:x}", value);
+            }
+
+            return hexOutput;
+
         }
         #endregion
 
@@ -527,6 +668,7 @@ namespace NFe.Components
         }
         #endregion
 
+        [System.Diagnostics.DebuggerHidden()]
         public static void CopyObjectTo(this object Source, object Destino)
         {
             foreach (var pS in Source.GetType().GetProperties())
@@ -669,26 +811,13 @@ namespace NFe.Components
                 }
                 else
                     if (origem.GetType().IsAssignableFrom(typeof(List<System.String>)))
-                    {
-                        lEncontrou = populateClasse(classe, (origem as List<String>).ToArray());
-                    }
-                    else
-                        throw new Exception("Tipo de dados da origem desconhecido. (" + origem.GetType().ToString() + ")");
+                {
+                    lEncontrou = populateClasse(classe, (origem as List<String>).ToArray());
+                }
+                else
+                    throw new Exception("Tipo de dados da origem desconhecido. (" + origem.GetType().ToString() + ")");
             }
             return lEncontrou;
-        }
-
-        public static void ExibeDocumentacao()
-        {
-            string docname = Path.Combine(Application.StartupPath, NFe.Components.Propriedade.NomeAplicacao + ".pdf");
-            if (System.IO.File.Exists(docname))
-            {
-                System.Diagnostics.Process.Start(docname);
-            }
-            else
-            {
-                throw new Exception("Não foi possível localizar o arquivo de manual do " + NFe.Components.Propriedade.NomeAplicacao + ".");
-            }
         }
 
         public static void GravaTxtXml(object w, string fieldname, string content)
@@ -708,6 +837,8 @@ namespace NFe.Components
         #region WriteLog()
         public static void WriteLog(string msg, bool gravarStackTrace, bool geraLog, string CNPJEmpresa)
         {
+            if (string.IsNullOrEmpty(msg)) return;
+
 #if DEBUG
             System.Diagnostics.Debug.WriteLine(msg);
 #endif
@@ -716,10 +847,9 @@ namespace NFe.Components
                 if (!string.IsNullOrEmpty(CNPJEmpresa))
                     CNPJEmpresa += "_";
 
-                string fileName = Propriedade.PastaLog + 
-                                (Propriedade.TipoAplicativo == TipoAplicativo.Nfse ? "\\uninfse_" : "\\uninfe_") + 
-                                (string.IsNullOrEmpty(CNPJEmpresa) ? "" : CNPJEmpresa) + 
-                                DateTime.Now.ToString("yyyy-MMM-dd") + ".log";
+                string fileName = Propriedade.PastaLog + "\\uninfe_" +
+                    (string.IsNullOrEmpty(CNPJEmpresa) ? "" : CNPJEmpresa) +
+                    DateTime.Now.ToString("yyyy-MMM-dd") + ".log";
 
                 DateTime startTime;
                 DateTime stopTime;
@@ -789,7 +919,7 @@ namespace NFe.Components
             if (!string.IsNullOrEmpty(resultFolder) && Directory.Exists(Path.GetDirectoryName(resultFolder)) && !string.IsNullOrEmpty(file))
             {
                 FileInfo infFile = new FileInfo(file);
-                string extFile = infFile.Name.Replace(".xml", "");
+                string extFile = infFile.Name.Replace(infFile.Extension, "");
                 string extError = extFile + ".err";
 
                 string nomearq = resultFolder + "\\" + extError;
@@ -802,6 +932,17 @@ namespace NFe.Components
             }
             else
                 WriteLog(ex, false, true, "");
+        }
+
+        /// <summary>
+        /// Codificar em base 64 um determinado valor
+        /// </summary>
+        /// <param name="value">Valor a ser codificado</param>
+        /// <returns></returns>
+        public static string Base64Encode(string value)
+        {
+            byte[] encode = Encoding.UTF8.GetBytes(value);
+            return Convert.ToBase64String(encode);
         }
     }
 }

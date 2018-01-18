@@ -33,7 +33,7 @@ namespace NFe.UI.Formularios
 
             this.Text = NFe.Components.Propriedade.NomeAplicacao + " - Nova empresa";
 
-            this.cbServico.DataSource = uninfeDummy.DatasouceTipoAplicativo(true);
+            this.cbServico.DataSource = uninfeDummy.DatasouceTipoAplicativo(false);
             this.cbServico.DisplayMember = "Value";
             this.cbServico.ValueMember = "Key";
             this.cbServico.Enabled = true;
@@ -62,7 +62,7 @@ namespace NFe.UI.Formularios
             this.edtCNPJ.Focus();
 
             string cnpj = NFe.Components.Functions.OnlyNumbers(this.edtCNPJ.Text, ".,-/").ToString().PadLeft(14, '0');
-            this.edtCNPJ.Text = uninfeDummy.FmtCgcCpf(cnpj, true);
+            this.edtCNPJ.Text = uninfeDummy.FmtCnpjCpf(cnpj, true);
 
             if (!NFe.Components.CNPJ.Validate(cnpj) || cnpj.Equals("00000000000000"))
             {
@@ -121,7 +121,7 @@ namespace NFe.UI.Formularios
         private void edtCNPJ_Leave(object sender, EventArgs e)
         {
             string cnpj = NFe.Components.Functions.OnlyNumbers(this.edtCNPJ.Text, ".,-/").ToString().PadLeft(14, '0');
-            this.edtCNPJ.Text = uninfeDummy.FmtCgcCpf(cnpj, true);
+            this.edtCNPJ.Text = uninfeDummy.FmtCnpjCpf(cnpj, true);
         }
     }
 }

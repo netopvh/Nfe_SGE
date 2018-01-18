@@ -15,6 +15,14 @@ namespace NFe.Components.RLZ_INFORMATICA.SantaFeDoSul.p
 {
     public class Rlz_InformaticaP : EmiteNFSeBase
     {
+        public override string NameSpaces
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         WebservicePrefeitura service = new WebservicePrefeitura();
         string XmlString = "";
 
@@ -31,7 +39,8 @@ namespace NFe.Components.RLZ_INFORMATICA.SantaFeDoSul.p
         {
             ReadXML(file);
             string result = service.gravaNotaXML(XmlString);
-            PrepararRetorno(file, base.CreateXML(result), Propriedade.ExtEnvio.EnvLoteRps, Propriedade.ExtRetorno.LoteRps);
+            PrepararRetorno(file, base.CreateXML(result),   Propriedade.Extensao(Propriedade.TipoEnvio.EnvLoteRps).EnvioXML,
+                                                            Propriedade.Extensao(Propriedade.TipoEnvio.EnvLoteRps).RetornoXML);
         }
 
         public override void CancelarNfse(string file)
@@ -53,7 +62,8 @@ namespace NFe.Components.RLZ_INFORMATICA.SantaFeDoSul.p
         {
             ReadXML(file);
             string result = service.listarNotasXML(XmlString);
-            PrepararRetorno(file, base.CreateXML(result), Propriedade.ExtEnvio.PedSitNfse, Propriedade.ExtRetorno.SitNfse);
+            PrepararRetorno(file, base.CreateXML(result),   Propriedade.Extensao(Propriedade.TipoEnvio.PedSitNFSe).EnvioXML, 
+                                                            Propriedade.Extensao(Propriedade.TipoEnvio.PedSitNFSe).RetornoXML);
         }
 
         public override void ConsultarNfsePorRps(string file)

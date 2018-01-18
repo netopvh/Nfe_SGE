@@ -1,0 +1,17 @@
+C:\TortoiseSVN\trunk\fontes\NFe.ConvertCFe\bin\Debug\NFe.SAT.xml
+C:\TortoiseSVN\trunk\fontes\NFe.ConvertCFe\bin\Debug\NFe.SAT.dll
+C:\TortoiseSVN\trunk\fontes\NFe.ConvertCFe\bin\Debug\NFe.SAT.pdb
+C:\TortoiseSVN\trunk\fontes\NFe.ConvertCFe\bin\Debug\NFe.Components.dll
+C:\TortoiseSVN\trunk\fontes\NFe.ConvertCFe\bin\Debug\NFe.Settings.dll
+C:\TortoiseSVN\trunk\fontes\NFe.ConvertCFe\bin\Debug\NFe.Validate.dll
+C:\TortoiseSVN\trunk\fontes\NFe.ConvertCFe\bin\Debug\Unimake.SAT.dll
+C:\TortoiseSVN\trunk\fontes\NFe.ConvertCFe\bin\Debug\Newtonsoft.Json.dll
+C:\TortoiseSVN\trunk\fontes\NFe.ConvertCFe\bin\Debug\NFe.Certificado.dll
+C:\TortoiseSVN\trunk\fontes\NFe.ConvertCFe\bin\Debug\NFe.Components.pdb
+C:\TortoiseSVN\trunk\fontes\NFe.ConvertCFe\bin\Debug\NFe.Settings.pdb
+C:\TortoiseSVN\trunk\fontes\NFe.ConvertCFe\bin\Debug\NFe.Validate.pdb
+C:\TortoiseSVN\trunk\fontes\NFe.ConvertCFe\bin\Debug\Newtonsoft.Json.xml
+C:\TortoiseSVN\trunk\fontes\NFe.ConvertCFe\bin\Debug\NFe.Certificado.pdb
+C:\TortoiseSVN\trunk\fontes\NFe.ConvertCFe\obj\Debug\NFe.SAT.csprojResolveAssemblyReference.cache
+C:\TortoiseSVN\trunk\fontes\NFe.ConvertCFe\obj\Debug\NFe.SAT.dll
+C:\TortoiseSVN\trunk\fontes\NFe.ConvertCFe\obj\Debug\NFe.SAT.pdb

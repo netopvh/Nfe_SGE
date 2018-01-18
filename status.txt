@@ -1,0 +1,2792 @@
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   MetroFramework/MetroFramework.Demo/MetroFramework.Demo.csproj
+	modified:   MetroFramework/MetroFramework.Demo/Properties/Resources.Designer.cs
+	modified:   MetroFramework/MetroFramework.Demo/Properties/Settings.Designer.cs
+	modified:   MetroFramework/MetroFramework.Demo/app.config
+	modified:   MetroFramework/MetroFramework.Demo/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+	modified:   MetroFramework/MetroFramework.Demo/obj/Debug/MetroFramework.Demo.MainForm.resources
+	modified:   MetroFramework/MetroFramework.Demo/obj/Debug/MetroFramework.Demo.Properties.Resources.resources
+	modified:   MetroFramework/MetroFramework.Demo/obj/Debug/MetroFramework.Demo.TaskWindowControl.resources
+	modified:   MetroFramework/MetroFramework.Demo/obj/Debug/MetroFramework.Demo.csproj.FileListAbsolute.txt
+	modified:   MetroFramework/MetroFramework.Demo/obj/Debug/MetroFramework.Demo.csproj.GenerateResource.Cache
+	modified:   MetroFramework/MetroFramework.Demo/obj/Debug/MetroFramework.Demo.csprojResolveAssemblyReference.cache
+	modified:   MetroFramework/MetroFramework.Demo/obj/Debug/MetroFramework.Demo.exe
+	modified:   MetroFramework/MetroFramework.Demo/obj/Debug/MetroFramework.Demo.pdb
+	modified:   MetroFramework/MetroFramework.Design/MetroFramework.Design.csproj
+	modified:   MetroFramework/MetroFramework.Design/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+	modified:   MetroFramework/MetroFramework.Design/obj/Debug/MetroFramework.Design.csproj.FileListAbsolute.txt
+	modified:   MetroFramework/MetroFramework.Design/obj/Debug/MetroFramework.Design.csprojResolveAssemblyReference.cache
+	modified:   MetroFramework/MetroFramework.Design/obj/Debug/MetroFramework.Design.dll
+	modified:   MetroFramework/MetroFramework.Design/obj/Debug/MetroFramework.Design.pdb
+	modified:   MetroFramework/MetroFramework.Fonts/MetroFramework.Fonts.csproj
+	modified:   MetroFramework/MetroFramework.Fonts/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+	modified:   MetroFramework/MetroFramework.Fonts/obj/Debug/MetroFramework.Fonts.csproj.FileListAbsolute.txt
+	modified:   MetroFramework/MetroFramework.Fonts/obj/Debug/MetroFramework.Fonts.csprojResolveAssemblyReference.cache
+	modified:   MetroFramework/MetroFramework.Fonts/obj/Debug/MetroFramework.Fonts.dll
+	modified:   MetroFramework/MetroFramework.Fonts/obj/Debug/MetroFramework.Fonts.pdb
+	modified:   MetroFramework/MetroFramework/Forms/MetroForm.cs
+	modified:   MetroFramework/MetroFramework/MetroFramework.csproj
+	modified:   MetroFramework/MetroFramework/Properties/Resources.Designer.cs
+	modified:   MetroFramework/MetroFramework/Properties/Settings.Designer.cs
+	modified:   MetroFramework/MetroFramework/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+	modified:   MetroFramework/MetroFramework/obj/Debug/MetroFramework.Controls.MetroGrid.resources
+	modified:   MetroFramework/MetroFramework/obj/Debug/MetroFramework.Forms.MetroMessageBox.resources
+	modified:   MetroFramework/MetroFramework/obj/Debug/MetroFramework.Forms.MetroTaskWindow.resources
+	modified:   MetroFramework/MetroFramework/obj/Debug/MetroFramework.MetroMessageBoxControl.resources
+	modified:   MetroFramework/MetroFramework/obj/Debug/MetroFramework.Properties.Resources.resources
+	modified:   MetroFramework/MetroFramework/obj/Debug/MetroFramework.csproj.FileListAbsolute.txt
+	modified:   MetroFramework/MetroFramework/obj/Debug/MetroFramework.csproj.GenerateResource.Cache
+	modified:   MetroFramework/MetroFramework/obj/Debug/MetroFramework.csprojResolveAssemblyReference.cache
+	modified:   MetroFramework/MetroFramework/obj/Debug/MetroFramework.dll
+	modified:   MetroFramework/MetroFramework/obj/Debug/MetroFramework.pdb
+	modified:   NFe.Certificado/AssinaturaDigital.cs
+	modified:   NFe.Certificado/CertificadoDigital.cs
+	modified:   NFe.Certificado/CertificadoProviders.cs
+	modified:   NFe.Certificado/NFe.Certificado.csproj
+	modified:   NFe.Certificado/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+	modified:   NFe.Certificado/obj/Debug/NFe.Certificado.csproj.FileListAbsolute.txt
+	modified:   NFe.Certificado/obj/Debug/NFe.Certificado.csprojResolveAssemblyReference.cache
+	modified:   NFe.Certificado/obj/Debug/NFe.Certificado.dll
+	modified:   NFe.Certificado/obj/Debug/NFe.Certificado.pdb
+	modified:   NFe.Components.Info/Aplicacao.cs
+	modified:   NFe.Components.Info/NFe.Components.Info.csproj
+	modified:   NFe.Components.Info/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+	modified:   NFe.Components.Info/obj/Debug/NFe.Components.Info.csproj.FileListAbsolute.txt
+	modified:   NFe.Components.Info/obj/Debug/NFe.Components.Info.csprojResolveAssemblyReference.cache
+	modified:   NFe.Components.Info/obj/Debug/NFe.Components.Info.dll
+	modified:   NFe.Components.Info/obj/Debug/NFe.Components.Info.pdb
+	modified:   NFe.Components.Wsdl/NFe.Components.Wsdl.csproj
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/AM/HAMNfeRetAutorizacao.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/AM/HAMRecepcaoEvento.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/AN/HANRecepcaoEvento.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/BA/HBARecepcaoEvento.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/BA/HBARecepcaoEvento_C.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/CE/HCERecepcaoEvento.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSCteConsulta.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSCteInutilizacao.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSCteRecepcao.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSCteRecepcaoEvento.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSCteRetRecepcao.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSCteStatusServico.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSNfeRecepcaoEvento.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/MT/HMTCteConsulta.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/MT/HMTCteInutilizacao.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/MT/HMTCteRecepcao.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/MT/HMTCteRetRecepcao.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/MT/HMTCteStatusServico.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/PR/HPRNFeRecepcaoEvento.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/RS/HRSNFeRecepcaoEvento.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/RS/HRSNFeRecepcaoEvento_C.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/SP/HSPNFeRecepcaoEvento.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/SP/HSPNFeRecepcaoEvento_C.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVAN/HSVANRecepcaoEvento.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVAN/HSVANRecepcaoEvento_C.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVRS/HSVRSNFeRecepcaoEvento.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVRS/HSVRSNFeRecepcaoEvento_C.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Producao/BA/PBARecepcaoEvento.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Producao/CE/PCERecepcaoEvento.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Producao/GO/PGORecepcaoEvento.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Producao/MS/PMSCteConsulta.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Producao/MS/PMSCteInutilizacao.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Producao/MS/PMSCteRecepcao.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Producao/MS/PMSCteRecepcaoEvento.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Producao/MS/PMSCteRetRecepcao.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Producao/MS/PMSCteStatusServico.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Producao/PR/PPRNFeRecepcaoEvento.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Producao/PR/PPRNFeRecepcaoEvento_C.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Producao/RS/PRSNfeRecepcaoEvento.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Producao/RS/PRSNfeRecepcaoEvento_C.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Producao/SCVAN/PSVCANNfeRecepcaoEvento.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Producao/SCVRS/PSVCRSNfeRecepcaoEvento.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Producao/SP/PSPNFeRecepcaoEvento.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Producao/SP/PSPNFeRecepcaoEvento_C.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Producao/SVAN/PSVANRecepcaoEvento.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Producao/SVAN/PSVANRecepcaoEvento_C.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Producao/SVRS/PSVRSNFeRecepcaoEvento.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Producao/SVRS/PSVRSNFeRecepcaoEvento_C.wsdl
+	modified:   NFe.Components.Wsdl/NFe/WSDL/Webservice.xml
+	modified:   NFe.Components.Wsdl/NFe/schemas/CCe/tiposBasico_v1.03.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/CCe/xmldsig-core-schema_v1.01.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/CTe/cteModalAereo_v2.00.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/CTe/cteModalAquaviario_v2.00.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/CTe/cteModalFerroviario_v2.00.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/CTe/cteModalRodoviario_v2.00.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/CTe/cteMultiModal_v2.00.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/CTe/cteTiposBasico_v2.00.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/CTe/evCCeCTe_v2.00.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/CTe/evRegMultimodal_v2.00.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/CTe/eventoCTeTiposBasico_v2.00.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/CTe/tiposGeralCTe_v2.00.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/CTe/xmldsig-core-schema_v1.01.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/DFe/xmldsig-core-schema_v1.01.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/EPEC/xmldsig-core-schema_v1.01.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/EventoCanc/xmldsig-core-schema_v1.01.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/EventoManifestaDestinat/e210220_v1.00.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/EventoManifestaDestinat/envConfRecebto_v1.00.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/EventoManifestaDestinat/procConfRecebtoNFe_v1.00.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/EventoManifestaDestinat/retEnvConfRecebto_v1.00.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/EventoManifestaDestinat/xmldsig-core-schema_v1.01.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/MDFe/consMDFeNaoEncTiposBasico_v1.00.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/MDFe/evEncMDFe_v1.00.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/MDFe/evIncCondutorMDFe_v1.00.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/MDFe/eventoMDFeTiposBasico_v1.00.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/MDFe/mdfeModalAquaviario_v1.00.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/MDFe/mdfeModalRodoviario_v1.00.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/MDFe/mdfeTiposBasico_v1.00.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/MDFe/tiposGeralMDFe_v1.00.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/MDFe/xmldsig-core-schema_v1.01.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/NFe/consReciNFe_v2.00.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/NFe/consReciNFe_v3.10.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/NFe/consSitNFe_v2.01.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/NFe/consSitNFe_v3.10.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/NFe/leiauteConsSitNFe_v3.10.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/NFe/leiauteNFe_v3.10.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/NFe/retConsReciNFe_v2.00.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/NFe/retConsReciNFe_v3.10.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/NFe/tiposBasico_v1.03.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/NFe/tiposBasico_v3.10.xsd
+	modified:   NFe.Components.Wsdl/NFe/schemas/NFe/xmldsig-core-schema_v1.01.xsd
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Homologacao/HCampoBomRS.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Homologacao/HCanoasRSCancelarNfse.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Homologacao/HCanoasRSConsultarLoteRps.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Homologacao/HCanoasRSConsultarNfse.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Homologacao/HCanoasRSConsultarNfsePorRps.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Homologacao/HCanoasRSConsultarSituacaoLoteRps.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Homologacao/HCanoasRSRecepcionarLoteRps.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Homologacao/HCaxiasdoSulRS-GIFServicos.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Homologacao/HCuritibaPR-EGoverne.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Homologacao/HFarroupilhaRS-GIFServicos.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Homologacao/HFeiradeSantanaBA_WebISS.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Homologacao/HISSOnLineAracatubaSP.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Homologacao/HJuizdeForaMG.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Homologacao/HLondrinaPR-sigiss.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Homologacao/HMirassolSP.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Homologacao/HPontaGrossaPR-FINTELServices.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Homologacao/HSaoLuizMADSF-LoteRps.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Producao/PCampoBomRS.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Producao/PCanoasRSCancelarNfse.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Producao/PCanoasRSConsultarLoteRps.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Producao/PCanoasRSConsultarNfse.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Producao/PCanoasRSConsultarNfsePorRps.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Producao/PCanoasRSConsultarSituacaoLoteRps.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Producao/PCanoasRSRecepcionarLoteRps.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Producao/PCaxiasdoSulRS-GIFServicos.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Producao/PFarroupilhaRS-GIFServicos.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Producao/PFeiradeSantanaBA_WebISS.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Producao/PIssOnLineAracatubaSP.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Producao/PJuizdeForaMG.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Producao/PLondrinaPR-sigiss.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Producao/PLucasRVMT_WebISS.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Producao/PMirassolSP.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Producao/PSaoLuizMADSF-LoteRps.wsdl
+	modified:   NFe.Components.Wsdl/NFse/WSDL/Webservice.xml
+	modified:   NFe.Components.Wsdl/NFse/schemas/NFSe/ABRASF/nfse.xsd
+	modified:   NFe.Components.Wsdl/NFse/schemas/NFSe/BETHA/TiposNFe_v01.xsd
+	modified:   NFe.Components.Wsdl/NFse/schemas/NFSe/BETHA/nfse_v01.xsd
+	modified:   NFe.Components.Wsdl/NFse/schemas/NFSe/FINTEL/nfse.xsd
+	modified:   NFe.Components.Wsdl/NFse/schemas/NFSe/FIORILLI/nfse_v201.xsd
+	modified:   NFe.Components.Wsdl/NFse/schemas/NFSe/GIF/NFSe-Infisc-v1.xsd
+	modified:   NFe.Components.Wsdl/NFse/schemas/NFSe/PAULISTANA/PedidoCancelamentoNFe_v01.xsd
+	modified:   NFe.Components.Wsdl/NFse/schemas/NFSe/PAULISTANA/PedidoConsultaCNPJ_v01.xsd
+	modified:   NFe.Components.Wsdl/NFse/schemas/NFSe/PAULISTANA/PedidoConsultaLote_v01.xsd
+	modified:   NFe.Components.Wsdl/NFse/schemas/NFSe/PAULISTANA/PedidoConsultaNFePeriodo_v01.xsd
+	modified:   NFe.Components.Wsdl/NFse/schemas/NFSe/PAULISTANA/PedidoConsultaNFe_v01.xsd
+	modified:   NFe.Components.Wsdl/NFse/schemas/NFSe/PAULISTANA/PedidoEnvioLoteRPS_v01.xsd
+	modified:   NFe.Components.Wsdl/NFse/schemas/NFSe/PAULISTANA/PedidoEnvioRPS_v01.xsd
+	modified:   NFe.Components.Wsdl/NFse/schemas/NFSe/PAULISTANA/PedidoInformacoesLote_v01.xsd
+	modified:   NFe.Components.Wsdl/NFse/schemas/NFSe/PAULISTANA/RetornoCancelamentoNFe_v01.xsd
+	modified:   NFe.Components.Wsdl/NFse/schemas/NFSe/PAULISTANA/RetornoConsultaCNPJ_v01.xsd
+	modified:   NFe.Components.Wsdl/NFse/schemas/NFSe/PAULISTANA/RetornoConsulta_v01.xsd
+	modified:   NFe.Components.Wsdl/NFse/schemas/NFSe/PAULISTANA/RetornoEnvioLoteRPS_v01.xsd
+	modified:   NFe.Components.Wsdl/NFse/schemas/NFSe/PAULISTANA/RetornoEnvioRPS_v01.xsd
+	modified:   NFe.Components.Wsdl/NFse/schemas/NFSe/PAULISTANA/TiposNFe_v01.xsd
+	modified:   NFe.Components.Wsdl/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+	modified:   NFe.Components.Wsdl/obj/Debug/NFe.Components.Wsdl.csproj.FileListAbsolute.txt
+	modified:   NFe.Components.Wsdl/obj/Debug/NFe.Components.Wsdl.dll
+	modified:   NFe.Components.Wsdl/obj/Debug/NFe.Components.Wsdl.pdb
+	modified:   NFe.Components/Abstract/EmiteNFSeBase.cs
+	modified:   NFe.Components/Betha/Betha.cs
+	modified:   NFe.Components/CONAM/Conam.cs
+	modified:   NFe.Components/CONAM/ConamBase.cs
+	modified:   NFe.Components/CONAM/VarginhaMG/h/ConamH.cs
+	modified:   NFe.Components/CONAM/VarginhaMG/p/ConamP.cs
+	modified:   NFe.Components/Criptografia.cs
+	modified:   NFe.Components/DelFolder.cs
+	modified:   NFe.Components/EGoverne/CuritibaPR/EGoverneSerialization.cs
+	modified:   NFe.Components/EGoverne/CuritibaPR/h/EGoverneH.cs
+	modified:   NFe.Components/EGoverne/CuritibaPR/p/EGoverneP.cs
+	modified:   NFe.Components/EGoverne/EGoverne.cs
+	modified:   NFe.Components/EGoverne/EGoverneBase.cs
+	modified:   NFe.Components/Enums.cs
+	modified:   NFe.Components/Exceptions/Exceptions.cs
+	modified:   NFe.Components/Fiorilli/CosmoramaSP/p/FiorilliP.cs
+	modified:   NFe.Components/Fiorilli/Fiorilli.cs
+	modified:   NFe.Components/Fiorilli/FiorilliBase.cs
+	modified:   NFe.Components/Fiorilli/TaquaraSP/h/FiorilliH.cs
+	modified:   NFe.Components/Fiorilli/TaquaraSP/p/FiorilliP.cs
+	modified:   NFe.Components/FolderCompare.cs
+	modified:   NFe.Components/Functions.cs
+	modified:   NFe.Components/IPM/IPM.cs
+	modified:   NFe.Components/Interface/IEmiteNF.cs
+	modified:   NFe.Components/Interface/IEmiteNFSe.cs
+	modified:   NFe.Components/Interface/IEmiteNFSeIPM.cs
+	modified:   NFe.Components/MsgErro.cs
+	modified:   NFe.Components/NFe.Components.csproj
+	modified:   NFe.Components/NFe.Components.csproj.user
+	modified:   NFe.Components/NFeStrConstants.cs
+	modified:   NFe.Components/POSTRequest.cs
+	modified:   NFe.Components/Properties/Settings.Designer.cs
+	modified:   NFe.Components/Properties/Settings.settings
+	modified:   NFe.Components/Propriedade.cs
+	modified:   NFe.Components/Proxy.cs
+	modified:   NFe.Components/RLZ_INFORMATICA/Rlz_Informatica.cs
+	modified:   NFe.Components/RLZ_INFORMATICA/SantaFeDoSulSP/h/Rlz_InformaticaH.cs
+	modified:   NFe.Components/RLZ_INFORMATICA/SantaFeDoSulSP/p/Rlz_InformaticaP.cs
+	modified:   NFe.Components/SigCorp/BotucatuSP/p/SigCorpP.cs
+	modified:   NFe.Components/SigCorp/LondrinaPR/h/SigCorpH.cs
+	modified:   NFe.Components/SigCorp/LondrinaPR/p/SigCorpP.cs
+	modified:   NFe.Components/SigCorp/MariliaSP/p/SigCorpP.cs
+	modified:   NFe.Components/SigCorp/SaoGoncaloRJ/p/SigCorpP.cs
+	modified:   NFe.Components/SigCorp/SigCorp.cs
+	modified:   NFe.Components/SigCorp/SigCorpBase.cs
+	modified:   NFe.Components/SigCorp/TremembeSP/p/SigCorpP.cs
+	modified:   NFe.Components/SimplISS/PiracicabaSP/h/SimplISSH.cs
+	modified:   NFe.Components/SimplISS/PiracicabaSP/p/SimplISSP.cs
+	modified:   NFe.Components/SimplISS/SimplISS.cs
+	modified:   NFe.Components/SimplISS/SimplISSBase.cs
+	modified:   NFe.Components/SystemPro/SystemPro.cs
+	modified:   NFe.Components/SystemPro/SystemProBase.cs
+	modified:   NFe.Components/TipoArquivoXML.cs
+	modified:   NFe.Components/Web References/br.com.etransparencia.nfehomologacao.h/Reference.cs
+	modified:   NFe.Components/Web References/br.com.etransparencia.nfehomologacao.h/SDT_ConsultaNotasProtocoloOut.datasource
+	modified:   NFe.Components/Web References/br.com.etransparencia.nfehomologacao.h/SDT_ConsultaProtocoloOut.datasource
+	modified:   NFe.Components/Web References/br.com.etransparencia.nfehomologacao.h/Sdt_ProcessarpsOut.datasource
+	modified:   NFe.Components/Web References/br.com.etransparencia.nfehomologacao.h/Sdt_RetornoCancelaNFE.datasource
+	modified:   NFe.Components/Web References/br.com.rlz.ceiss.santafedosul.p/Nota.datasource
+	modified:   NFe.Components/Web References/br.com.rlz.ceiss.santafedosul.p/Reference.cs
+	modified:   NFe.Components/Web References/br.com.rlz.saturno.santafedosul.h/Nota.datasource
+	modified:   NFe.Components/Web References/br.com.rlz.saturno.santafedosul.h/Reference.cs
+	modified:   NFe.Components/Web References/br.com.sigiss.botucatu.p/Reference.cs
+	modified:   NFe.Components/Web References/br.com.sigiss.botucatu.p/tcDadosNota.datasource
+	modified:   NFe.Components/Web References/br.com.sigiss.botucatu.p/tcEstruturaDescricaoErros.datasource
+	modified:   NFe.Components/Web References/br.com.sigiss.botucatu.p/tcRetornoNota.datasource
+	modified:   NFe.Components/Web References/br.com.sigiss.marilia.p/Reference.cs
+	modified:   NFe.Components/Web References/br.com.sigiss.marilia.p/tcDadosNota.datasource
+	modified:   NFe.Components/Web References/br.com.sigiss.marilia.p/tcEstruturaDescricaoErros.datasource
+	modified:   NFe.Components/Web References/br.com.sigiss.marilia.p/tcRetornoNota.datasource
+	modified:   NFe.Components/Web References/br.com.sigiss.saogoncalo.p/Reference.cs
+	modified:   NFe.Components/Web References/br.com.sigiss.saogoncalo.p/tcDadosNota.datasource
+	modified:   NFe.Components/Web References/br.com.sigiss.saogoncalo.p/tcEstruturaDescricaoErros.datasource
+	modified:   NFe.Components/Web References/br.com.sigiss.saogoncalo.p/tcRetornoNota.datasource
+	modified:   NFe.Components/Web References/br.com.sigiss.tremembe.p/Reference.cs
+	modified:   NFe.Components/Web References/br.com.sigiss.tremembe.p/tcDadosNota.datasource
+	modified:   NFe.Components/Web References/br.com.sigiss.tremembe.p/tcEstruturaDescricaoErros.datasource
+	modified:   NFe.Components/Web References/br.com.sigiss.tremembe.p/tcRetornoNota.datasource
+	modified:   NFe.Components/Web References/br.gov.egoverne.isscuritiba.curitiba.h/CancelarLoteNfseResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.egoverne.isscuritiba.curitiba.h/CancelarLoteRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.egoverne.isscuritiba.curitiba.h/CancelarNfseResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.egoverne.isscuritiba.curitiba.h/ConsultarLoteRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.egoverne.isscuritiba.curitiba.h/ConsultarNfseResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.egoverne.isscuritiba.curitiba.h/ConsultarNfseRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.egoverne.isscuritiba.curitiba.h/ConsultarSituacaoLoteRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.egoverne.isscuritiba.curitiba.h/EnviarLoteRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.egoverne.isscuritiba.curitiba.h/ListaMensagemRetorno.datasource
+	modified:   NFe.Components/Web References/br.gov.egoverne.isscuritiba.curitiba.h/Reference.cs
+	modified:   NFe.Components/Web References/br.gov.egoverne.isscuritiba.curitiba.p/CancelarLoteNfseResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.egoverne.isscuritiba.curitiba.p/CancelarLoteRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.egoverne.isscuritiba.curitiba.p/CancelarNfseResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.egoverne.isscuritiba.curitiba.p/ConsultarLoteRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.egoverne.isscuritiba.curitiba.p/ConsultarNfseResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.egoverne.isscuritiba.curitiba.p/ConsultarNfseRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.egoverne.isscuritiba.curitiba.p/ConsultarSituacaoLoteRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.egoverne.isscuritiba.curitiba.p/EnviarLoteRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.egoverne.isscuritiba.curitiba.p/ListaMensagemRetorno.datasource
+	modified:   NFe.Components/Web References/br.gov.egoverne.isscuritiba.curitiba.p/Reference.cs
+	modified:   NFe.Components/Web References/br.gov.pr.londrina.testeiss.h/Reference.cs
+	modified:   NFe.Components/Web References/br.gov.pr.londrina.testeiss.h/Reference.map
+	modified:   NFe.Components/Web References/br.gov.pr.londrina.testeiss.h/sigiss_ws.wsdl
+	modified:   NFe.Components/Web References/br.gov.pr.londrina.testeiss.h/tcEstruturaDescricaoErros.datasource
+	modified:   NFe.Components/Web References/br.gov.pr.londrina.testeiss.h/tcRetornoNota.datasource
+	modified:   NFe.Components/Web References/br.gov.rs.erechim.nfse.www.h/Reference.cs
+	modified:   NFe.Components/Web References/br.gov.rs.erechim.nfse.www.p/Reference.cs
+	modified:   NFe.Components/Web References/br.gov.sp.piracicaba.sistemas.www.h/CancelarNfseResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.sp.piracicaba.sistemas.www.h/ConsultarLoteRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.sp.piracicaba.sistemas.www.h/ConsultarNfseResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.sp.piracicaba.sistemas.www.h/ConsultarNfseRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.sp.piracicaba.sistemas.www.h/ConsultarSituacaoLoteRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.sp.piracicaba.sistemas.www.h/EnviarLoteRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.sp.piracicaba.sistemas.www.h/GerarNovaNfseResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.sp.piracicaba.sistemas.www.h/Reference.cs
+	modified:   NFe.Components/Web References/br.gov.sp.piracicaba.sistemas.www.p/CancelarNfseResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.sp.piracicaba.sistemas.www.p/ConsultarLoteRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.sp.piracicaba.sistemas.www.p/ConsultarNfseResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.sp.piracicaba.sistemas.www.p/ConsultarNfseRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.sp.piracicaba.sistemas.www.p/ConsultarSituacaoLoteRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.sp.piracicaba.sistemas.www.p/EnviarLoteRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.sp.piracicaba.sistemas.www.p/GerarNovaNfseResposta.datasource
+	modified:   NFe.Components/Web References/br.gov.sp.piracicaba.sistemas.www.p/NfseService.wsdl
+	modified:   NFe.Components/Web References/br.gov.sp.piracicaba.sistemas.www.p/Reference.cs
+	modified:   NFe.Components/Web References/br.gov.sp.piracicaba.sistemas.www.p/Reference.map
+	modified:   NFe.Components/Web References/br.gov.sp.piracicaba.sistemas.www.p/nfseservice.xsd
+	modified:   NFe.Components/Web References/br.gov.sp.piracicaba.sistemas.www.p/nfseservice0.wsdl
+	modified:   NFe.Components/Web References/br.gov.sp.piracicaba.sistemas.www.p/nfseservice0.xsd
+	modified:   NFe.Components/Web References/br.gov.sp.piracicaba.sistemas.www.p/nfseservice1.xsd
+	modified:   NFe.Components/Web References/br.gov.sp.piracicaba.sistemas.www.p/nfseservice2.xsd
+	modified:   NFe.Components/Web References/br.net.cosmorama.fiorilli.p/CancelarNfseResposta.datasource
+	modified:   NFe.Components/Web References/br.net.cosmorama.fiorilli.p/ConsultarLoteRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.net.cosmorama.fiorilli.p/ConsultarNfseFaixaResposta.datasource
+	modified:   NFe.Components/Web References/br.net.cosmorama.fiorilli.p/ConsultarNfseRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.net.cosmorama.fiorilli.p/ConsultarNfseServicoPrestadoResposta.datasource
+	modified:   NFe.Components/Web References/br.net.cosmorama.fiorilli.p/ConsultarNfseServicoTomadoResposta.datasource
+	modified:   NFe.Components/Web References/br.net.cosmorama.fiorilli.p/EnviarLoteRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.net.cosmorama.fiorilli.p/EnviarLoteRpsSincronoResposta.datasource
+	modified:   NFe.Components/Web References/br.net.cosmorama.fiorilli.p/GerarNfseResposta.datasource
+	modified:   NFe.Components/Web References/br.net.cosmorama.fiorilli.p/Reference.cs
+	modified:   NFe.Components/Web References/br.net.cosmorama.fiorilli.p/SubstituirNfseResposta.datasource
+	modified:   NFe.Components/Web References/br.net.taquarituba.fiorilli.h/CancelarNfseResposta.datasource
+	modified:   NFe.Components/Web References/br.net.taquarituba.fiorilli.h/ConsultarLoteRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.net.taquarituba.fiorilli.h/ConsultarNfseFaixaResposta.datasource
+	modified:   NFe.Components/Web References/br.net.taquarituba.fiorilli.h/ConsultarNfseRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.net.taquarituba.fiorilli.h/ConsultarNfseServicoPrestadoResposta.datasource
+	modified:   NFe.Components/Web References/br.net.taquarituba.fiorilli.h/ConsultarNfseServicoTomadoResposta.datasource
+	modified:   NFe.Components/Web References/br.net.taquarituba.fiorilli.h/EnviarLoteRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.net.taquarituba.fiorilli.h/EnviarLoteRpsSincronoResposta.datasource
+	modified:   NFe.Components/Web References/br.net.taquarituba.fiorilli.h/GerarNfseResposta.datasource
+	modified:   NFe.Components/Web References/br.net.taquarituba.fiorilli.h/IssWebWS.wsdl
+	modified:   NFe.Components/Web References/br.net.taquarituba.fiorilli.h/Reference.cs
+	modified:   NFe.Components/Web References/br.net.taquarituba.fiorilli.h/Reference.map
+	modified:   NFe.Components/Web References/br.net.taquarituba.fiorilli.h/SubstituirNfseResposta.datasource
+	modified:   NFe.Components/Web References/br.net.taquarituba.fiorilli.p/CancelarNfseResposta.datasource
+	modified:   NFe.Components/Web References/br.net.taquarituba.fiorilli.p/ConsultarLoteRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.net.taquarituba.fiorilli.p/ConsultarNfseFaixaResposta.datasource
+	modified:   NFe.Components/Web References/br.net.taquarituba.fiorilli.p/ConsultarNfseRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.net.taquarituba.fiorilli.p/ConsultarNfseServicoPrestadoResposta.datasource
+	modified:   NFe.Components/Web References/br.net.taquarituba.fiorilli.p/ConsultarNfseServicoTomadoResposta.datasource
+	modified:   NFe.Components/Web References/br.net.taquarituba.fiorilli.p/EnviarLoteRpsResposta.datasource
+	modified:   NFe.Components/Web References/br.net.taquarituba.fiorilli.p/EnviarLoteRpsSincronoResposta.datasource
+	modified:   NFe.Components/Web References/br.net.taquarituba.fiorilli.p/GerarNfseResposta.datasource
+	modified:   NFe.Components/Web References/br.net.taquarituba.fiorilli.p/IssWebWS.wsdl
+	modified:   NFe.Components/Web References/br.net.taquarituba.fiorilli.p/Reference.cs
+	modified:   NFe.Components/Web References/br.net.taquarituba.fiorilli.p/Reference.map
+	modified:   NFe.Components/Web References/br.net.taquarituba.fiorilli.p/SubstituirNfseResposta.datasource
+	modified:   NFe.Components/WebServiceNFSe.cs
+	modified:   NFe.Components/WebServiceProxy.cs
+	modified:   NFe.Components/XMLIniFile.cs
+	modified:   NFe.Components/app.config
+	modified:   NFe.Components/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+	modified:   NFe.Components/obj/Debug/NFe.Components.csproj.FileListAbsolute.txt
+	modified:   NFe.Components/obj/Debug/NFe.Components.csprojResolveAssemblyReference.cache
+	modified:   NFe.Components/obj/Debug/NFe.Components.dll
+	modified:   NFe.Components/obj/Debug/NFe.Components.pdb
+	modified:   NFe.ConvertTxt/Classes.Arma.cs
+	modified:   NFe.ConvertTxt/Classes.comb_cide.cs
+	modified:   NFe.ConvertTxt/Classes.emit.cs
+	modified:   NFe.ConvertTxt/Classes.enums.cs
+	modified:   NFe.ConvertTxt/Classes.impostos.cs
+	modified:   NFe.ConvertTxt/Classes.infNFe.cs
+	modified:   NFe.ConvertTxt/Classes.med.cs
+	modified:   NFe.ConvertTxt/Classes.nfe.cs
+	modified:   NFe.ConvertTxt/Classes.pag.cs
+	modified:   NFe.ConvertTxt/Classes.prod.cs
+	modified:   NFe.ConvertTxt/ConversaoTXT.cs
+	modified:   NFe.ConvertTxt/NFe.ConvertTxt.csproj
+	modified:   NFe.ConvertTxt/NFeW.cs
+	modified:   NFe.ConvertTxt/Properties/Resources.Designer.cs
+	modified:   NFe.ConvertTxt/nfeRead.cs
+	modified:   NFe.ConvertTxt/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+	modified:   NFe.ConvertTxt/obj/Debug/NFe.ConvertTxt.Properties.Resources.resources
+	modified:   NFe.ConvertTxt/obj/Debug/NFe.ConvertTxt.csproj.FileListAbsolute.txt
+	modified:   NFe.ConvertTxt/obj/Debug/NFe.ConvertTxt.csproj.GenerateResource.Cache
+	modified:   NFe.ConvertTxt/obj/Debug/NFe.ConvertTxt.csprojResolveAssemblyReference.cache
+	modified:   NFe.ConvertTxt/obj/Debug/NFe.ConvertTxt.dll
+	modified:   NFe.ConvertTxt/obj/Debug/NFe.ConvertTxt.pdb
+	modified:   NFe.Service/CTe/TaskAssinarValidarCTe.cs
+	modified:   NFe.Service/CTe/TaskCTeRecepcao.cs
+	modified:   NFe.Service/CTe/TaskConsultaSituacaoCTe.cs
+	modified:   NFe.Service/CTe/TaskConsultaStatusCTe.cs
+	modified:   NFe.Service/CTe/TaskEventosCTe.cs
+	modified:   NFe.Service/CTe/TaskInutilizacaoCTe.cs
+	modified:   NFe.Service/CTe/TaskMontarLoteUmCTe.cs
+	modified:   NFe.Service/CTe/TaskMontarLoteVariosCTe.cs
+	modified:   NFe.Service/CTe/TaskRetRecepcaoCTe.cs
+	modified:   NFe.Service/Classes.cs
+	modified:   NFe.Service/DFe/TaskRecepcaoDFe.cs
+	modified:   NFe.Service/FluxoNfe.cs
+	modified:   NFe.Service/GerarXML.cs
+	modified:   NFe.Service/InvocarObjeto.cs
+	modified:   NFe.Service/LerXML.cs
+	modified:   NFe.Service/MDFe/TaskAssinarValidarMDFe.cs
+	modified:   NFe.Service/MDFe/TaskConsNaoEncMDFe.cs
+	modified:   NFe.Service/MDFe/TaskConsultaSituacaoMDFe.cs
+	modified:   NFe.Service/MDFe/TaskConsultaStatusMDFe.cs
+	modified:   NFe.Service/MDFe/TaskEventosMDFe.cs
+	modified:   NFe.Service/MDFe/TaskMDFeRecepcao.cs
+	modified:   NFe.Service/MDFe/TaskMontarLoteUmMDFe.cs
+	modified:   NFe.Service/MDFe/TaskMontarLoteVariosMDFe.cs
+	modified:   NFe.Service/MDFe/TaskRetRecepcaoMDFe.cs
+	modified:   NFe.Service/NFSe/TaskCancelarNfse.cs
+	modified:   NFe.Service/NFSe/TaskConsultaSituacaoLoteRps.cs
+	modified:   NFe.Service/NFSe/TaskConsultarLoteRps.cs
+	modified:   NFe.Service/NFSe/TaskConsultarNfse.cs
+	modified:   NFe.Service/NFSe/TaskConsultarNfsePNG.cs
+	modified:   NFe.Service/NFSe/TaskConsultarNfsePorRps.cs
+	modified:   NFe.Service/NFSe/TaskConsultarURLNfse.cs
+	modified:   NFe.Service/NFSe/TaskConsultarURLNfseSerie.cs
+	modified:   NFe.Service/NFSe/TaskInutilizarNfse.cs
+	modified:   NFe.Service/NFSe/TaskRecepcionarLoteRps.cs
+	modified:   NFe.Service/NFe.Service.csproj
+	modified:   NFe.Service/NFe.Service.csproj.user
+	modified:   NFe.Service/NFe.Service.suo
+	modified:   NFe.Service/NFe/ConverterTXT.cs
+	modified:   NFe.Service/NFe/TaskAssinarValidarNFe.cs
+	modified:   NFe.Service/NFe/TaskCadastroContribuinte.cs
+	modified:   NFe.Service/NFe/TaskConsultaSituacaoNFe.cs
+	modified:   NFe.Service/NFe/TaskConsultaStatus.cs
+	modified:   NFe.Service/NFe/TaskDownloadNFe.cs
+	modified:   NFe.Service/NFe/TaskEventos.cs
+	modified:   NFe.Service/NFe/TaskGerarXMLPedRec.cs
+	modified:   NFe.Service/NFe/TaskInutilizacao.cs
+	modified:   NFe.Service/NFe/TaskMontarLoteUmaNFe.cs
+	modified:   NFe.Service/NFe/TaskMontarLoteVariasNFe.cs
+	modified:   NFe.Service/NFe/TaskNFeRecepcao.cs
+	modified:   NFe.Service/NFe/TaskRetRecepcao.cs
+	modified:   NFe.Service/NFeEmProcessamento.cs
+	modified:   NFe.Service/Processar.cs
+	modified:   NFe.Service/TFunctions.cs
+	modified:   NFe.Service/TaskAbst.cs
+	modified:   NFe.Service/TaskDanfe.cs
+	modified:   NFe.Service/TaskWSExiste.cs
+	modified:   NFe.Service/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+	modified:   NFe.Service/obj/Debug/NFe.Service.csproj.FileListAbsolute.txt
+	modified:   NFe.Service/obj/Debug/NFe.Service.csprojResolveAssemblyReference.cache
+	modified:   NFe.Service/obj/Debug/NFe.Service.dll
+	modified:   NFe.Service/obj/Debug/NFe.Service.pdb
+	modified:   NFe.Settings/Auxiliar.cs
+	modified:   NFe.Settings/ConfiguracaoApp.cs
+	modified:   NFe.Settings/Empresa.cs
+	modified:   NFe.Settings/Empresas.cs
+	modified:   NFe.Settings/NFe.Settings.csproj
+	modified:   NFe.Settings/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+	modified:   NFe.Settings/obj/Debug/NFe.Settings.csproj.FileListAbsolute.txt
+	modified:   NFe.Settings/obj/Debug/NFe.Settings.csprojResolveAssemblyReference.cache
+	modified:   NFe.Settings/obj/Debug/NFe.Settings.dll
+	modified:   NFe.Settings/obj/Debug/NFe.Settings.pdb
+	modified:   NFe.Threadings/FileSystemWatcher.cs
+	modified:   NFe.Threadings/MonitoraPasta.cs
+	modified:   NFe.Threadings/NFe.Threadings.csproj
+	modified:   NFe.Threadings/ThreadControl.cs
+	modified:   NFe.Threadings/ThreadControlEvents.cs
+	modified:   NFe.Threadings/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+	modified:   NFe.Threadings/obj/Debug/NFe.Threadings.csproj.FileListAbsolute.txt
+	modified:   NFe.Threadings/obj/Debug/NFe.Threadings.csprojResolveAssemblyReference.cache
+	modified:   NFe.Threadings/obj/Debug/NFe.Threadings.dll
+	modified:   NFe.Threadings/obj/Debug/NFe.Threadings.pdb
+	modified:   NFe.UI/Form_Main.Designer.cs
+	modified:   NFe.UI/Form_Main.cs
+	modified:   NFe.UI/Formularios/FormDummy.cs
+	modified:   NFe.UI/Formularios/FormNova.Designer.cs
+	modified:   NFe.UI/Formularios/FormNova.cs
+	modified:   NFe.UI/Formularios/FormNova.resx
+	modified:   NFe.UI/Formularios/FormUpdate.cs
+	modified:   NFe.UI/Formularios/NFSe/userGrid1.cs
+	modified:   NFe.UI/Formularios/UserControl1.Designer.cs
+	modified:   NFe.UI/Formularios/UserControl1.resx
+	modified:   NFe.UI/Formularios/menu.Designer.cs
+	modified:   NFe.UI/Formularios/menu.cs
+	modified:   NFe.UI/Formularios/menu.resx
+	modified:   NFe.UI/Formularios/userCadastro.cs
+	modified:   NFe.UI/Formularios/userCadastroResultDados.cs
+	modified:   NFe.UI/Formularios/userConfiguracao_certificado.Designer.cs
+	modified:   NFe.UI/Formularios/userConfiguracao_certificado.cs
+	modified:   NFe.UI/Formularios/userConfiguracao_diversos.Designer.cs
+	modified:   NFe.UI/Formularios/userConfiguracao_diversos.cs
+	modified:   NFe.UI/Formularios/userConfiguracao_diversos.resx
+	modified:   NFe.UI/Formularios/userConfiguracao_ftp.Designer.cs
+	modified:   NFe.UI/Formularios/userConfiguracao_ftp.cs
+	modified:   NFe.UI/Formularios/userConfiguracao_ftp.resx
+	modified:   NFe.UI/Formularios/userConfiguracao_geral.Designer.cs
+	modified:   NFe.UI/Formularios/userConfiguracao_geral.cs
+	modified:   NFe.UI/Formularios/userConfiguracao_geral.resx
+	modified:   NFe.UI/Formularios/userConfiguracoes.cs
+	modified:   NFe.UI/Formularios/userLogs.cs
+	modified:   NFe.UI/Formularios/userPedidoSituacao.Designer.cs
+	modified:   NFe.UI/Formularios/userPedidoSituacao.cs
+	modified:   NFe.UI/Formularios/userPedidoSituacao.resx
+	modified:   NFe.UI/Formularios/userSobre.Designer.cs
+	modified:   NFe.UI/Formularios/userSobre.cs
+	modified:   NFe.UI/Formularios/userValidaXML.Designer.cs
+	modified:   NFe.UI/Formularios/userValidaXML.cs
+	modified:   NFe.UI/Formularios/userValidaXML.resx
+	modified:   NFe.UI/NFe.UI.csproj
+	modified:   NFe.UI/Properties/Resources.Designer.cs
+	modified:   NFe.UI/Properties/Resources.resx
+	modified:   NFe.UI/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+	modified:   NFe.UI/obj/Debug/MetroFramework.Demo.MainForm.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.FormDummy.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.FormSenha.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.Form_Main.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.Formularios.FormNova.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.Formularios.FormSpinner.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.Formularios.FormUpdate.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.Formularios.FormWait.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.Formularios.NFSe.FormMunicipio.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.Formularios.NFSe.userGrid1.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.Formularios.NFSe.userGrid2.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.Formularios.UserControl2.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.Formularios.userConfiguracao_certificado.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.Formularios.userConfiguracao_danfe.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.Formularios.userConfiguracao_diversos.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.Formularios.userConfiguracao_ftp.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.Formularios.userConfiguracao_geral.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.Formularios.userMunicipios.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.Properties.Resources.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.UserControl1.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.csproj.FileListAbsolute.txt
+	modified:   NFe.UI/obj/Debug/NFe.UI.csproj.GenerateResource.Cache
+	modified:   NFe.UI/obj/Debug/NFe.UI.csprojResolveAssemblyReference.cache
+	modified:   NFe.UI/obj/Debug/NFe.UI.dll
+	modified:   NFe.UI/obj/Debug/NFe.UI.menu.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.pdb
+	modified:   NFe.UI/obj/Debug/NFe.UI.userCadastro.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.userCadastroResult.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.userCadastroResultDados.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.userConfiguracoes.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.userLogs.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.userPedidoSituacao.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.userSobre.resources
+	modified:   NFe.UI/obj/Debug/NFe.UI.userValidaXML.resources
+	modified:   NFe.UI/uninfeDummy.cs
+	modified:   NFe.Validate/NFe.Validate.csproj
+	modified:   NFe.Validate/ValidarXML.cs
+	modified:   NFe.Validate/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+	modified:   NFe.Validate/obj/Debug/NFe.Validate.csproj.FileListAbsolute.txt
+	modified:   NFe.Validate/obj/Debug/NFe.Validate.csprojResolveAssemblyReference.cache
+	modified:   NFe.Validate/obj/Debug/NFe.Validate.dll
+	modified:   NFe.Validate/obj/Debug/NFe.Validate.pdb
+	deleted:    Novo Documento de Texto.txt
+	modified:   UniNFeServico/Program.cs
+	modified:   UniNFeServico/UniNFeService.cs
+	modified:   UniNFeServico/UniNFeServico.csproj
+	modified:   UniNFeServico/obj/Release/DesignTimeResolveAssemblyReferencesInput.cache
+	modified:   UniNFeServico/obj/Release/UniNFeServico.Installer1.resources
+	modified:   UniNFeServico/obj/Release/UniNFeServico.UniNFeService.resources
+	modified:   UniNFeServico/obj/Release/UniNFeServico.csproj.FileListAbsolute.txt
+	modified:   UniNFeServico/obj/Release/UniNFeServico.csproj.GenerateResource.Cache
+	modified:   UniNFeServico/obj/Release/UniNFeServico.csprojResolveAssemblyReference.cache
+	modified:   UniNFeServico/obj/Release/UniNFeServico.exe
+	modified:   UniNFeServico/obj/Release/UniNFeServico.pdb
+	modified:   uninfe.sln
+	modified:   uninfe.suo
+	modified:   uninfe.v12.suo
+	modified:   uninfe/MainForm.Designer.cs
+	modified:   uninfe/MainForm.cs
+	modified:   uninfe/MainForm.resx
+	modified:   uninfe/Program.cs
+	modified:   uninfe/Properties/AssemblyInfo.cs
+	modified:   uninfe/Properties/Resources.Designer.cs
+	modified:   uninfe/Properties/Resources.resx
+	modified:   uninfe/Properties/Settings.Designer.cs
+	modified:   uninfe/UniNfeSobre.xml
+	modified:   uninfe/app.config
+	modified:   uninfe/bin/release/MetroFramework.dll
+	modified:   uninfe/bin/release/MetroFramework.pdb
+	modified:   uninfe/bin/release/NFe.Certificado.dll
+	modified:   uninfe/bin/release/NFe.Certificado.pdb
+	modified:   uninfe/bin/release/NFe.Components.Info.dll
+	modified:   uninfe/bin/release/NFe.Components.Info.pdb
+	modified:   uninfe/bin/release/NFe.Components.Wsdl.dll
+	modified:   uninfe/bin/release/NFe.Components.Wsdl.pdb
+	modified:   uninfe/bin/release/NFe.Components.dll
+	modified:   uninfe/bin/release/NFe.Components.pdb
+	modified:   uninfe/bin/release/NFe.ConvertTxt.dll
+	modified:   uninfe/bin/release/NFe.ConvertTxt.pdb
+	modified:   uninfe/bin/release/NFe.Service.dll
+	modified:   uninfe/bin/release/NFe.Service.pdb
+	modified:   uninfe/bin/release/NFe.Settings.dll
+	modified:   uninfe/bin/release/NFe.Settings.pdb
+	modified:   uninfe/bin/release/NFe.Threadings.dll
+	modified:   uninfe/bin/release/NFe.Threadings.pdb
+	modified:   uninfe/bin/release/NFe.UI.dll
+	modified:   uninfe/bin/release/NFe.UI.pdb
+	modified:   uninfe/bin/release/NFe.Validate.dll
+	modified:   uninfe/bin/release/NFe.Validate.pdb
+	modified:   uninfe/bin/release/UniNFeMunic.xml
+	modified:   uninfe/bin/release/UniNFeMunic.xml.bck
+	modified:   uninfe/bin/release/UniNFeParams.xml
+	modified:   uninfe/bin/release/UniNFeServico.exe
+	modified:   uninfe/bin/release/UniNFeServico.pdb
+	modified:   uninfe/bin/release/UniNfeSobre.xml
+	modified:   uninfe/bin/release/nfe/schemas/CTe/cteModalAereo_v2.00.xsd
+	modified:   uninfe/bin/release/nfe/schemas/CTe/cteModalAquaviario_v2.00.xsd
+	modified:   uninfe/bin/release/nfe/schemas/CTe/cteModalFerroviario_v2.00.xsd
+	modified:   uninfe/bin/release/nfe/schemas/CTe/cteModalRodoviario_v2.00.xsd
+	modified:   uninfe/bin/release/nfe/schemas/CTe/cteMultiModal_v2.00.xsd
+	modified:   uninfe/bin/release/nfe/schemas/CTe/cteTiposBasico_v2.00.xsd
+	modified:   uninfe/bin/release/nfe/schemas/CTe/evCCeCTe_v2.00.xsd
+	modified:   uninfe/bin/release/nfe/schemas/CTe/evRegMultimodal_v2.00.xsd
+	modified:   uninfe/bin/release/nfe/schemas/CTe/eventoCTeTiposBasico_v2.00.xsd
+	modified:   uninfe/bin/release/nfe/schemas/CTe/tiposGeralCTe_v2.00.xsd
+	modified:   uninfe/bin/release/nfe/schemas/MDFe/consMDFeNaoEncTiposBasico_v1.00.xsd
+	modified:   uninfe/bin/release/nfe/schemas/MDFe/evEncMDFe_v1.00.xsd
+	modified:   uninfe/bin/release/nfe/schemas/MDFe/evIncCondutorMDFe_v1.00.xsd
+	modified:   uninfe/bin/release/nfe/schemas/MDFe/eventoMDFeTiposBasico_v1.00.xsd
+	modified:   uninfe/bin/release/nfe/schemas/MDFe/mdfeModalAquaviario_v1.00.xsd
+	modified:   uninfe/bin/release/nfe/schemas/MDFe/mdfeModalRodoviario_v1.00.xsd
+	modified:   uninfe/bin/release/nfe/schemas/MDFe/mdfeTiposBasico_v1.00.xsd
+	modified:   uninfe/bin/release/nfe/schemas/MDFe/tiposGeralMDFe_v1.00.xsd
+	modified:   uninfe/bin/release/nfe/schemas/NFe/leiauteConsSitNFe_v3.10.xsd
+	modified:   uninfe/bin/release/nfe/schemas/NFe/leiauteNFe_v3.10.xsd
+	modified:   uninfe/bin/release/nfe/schemas/NFe/tiposBasico_v1.03.xsd
+	modified:   uninfe/bin/release/nfe/schemas/NFe/tiposBasico_v3.10.xsd
+	modified:   uninfe/bin/release/nfe/schemas/NFe/xmldsig-core-schema_v1.01.xsd
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/AM/HAMNfeRetAutorizacao.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/AM/HAMRecepcaoEvento.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/AN/HANRecepcaoEvento.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/BA/HBARecepcaoEvento.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/BA/HBARecepcaoEvento_C.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/CE/HCERecepcaoEvento.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSCteConsulta.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSCteInutilizacao.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSCteRecepcao.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSCteRecepcaoEvento.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSCteRetRecepcao.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSCteStatusServico.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSNfeRecepcaoEvento.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/MT/HMTCteConsulta.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/MT/HMTCteInutilizacao.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/MT/HMTCteRecepcao.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/MT/HMTCteRetRecepcao.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/MT/HMTCteStatusServico.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/PR/HPRNFeRecepcaoEvento.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/RS/HRSNFeRecepcaoEvento.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/RS/HRSNFeRecepcaoEvento_C.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/SP/HSPNFeRecepcaoEvento.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/SP/HSPNFeRecepcaoEvento_C.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/SVAN/HSVANRecepcaoEvento.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/SVAN/HSVANRecepcaoEvento_C.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/SVRS/HSVRSNFeRecepcaoEvento.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Homologacao/SVRS/HSVRSNFeRecepcaoEvento_C.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Producao/GO/PGORecepcaoEvento.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Producao/MS/PMSCteConsulta.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Producao/MS/PMSCteInutilizacao.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Producao/MS/PMSCteRecepcao.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Producao/MS/PMSCteRecepcaoEvento.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Producao/MS/PMSCteRetRecepcao.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Producao/MS/PMSCteStatusServico.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Producao/PR/PPRNFeRecepcaoEvento.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Producao/PR/PPRNFeRecepcaoEvento_C.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Producao/RS/PRSNfeRecepcaoEvento.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Producao/RS/PRSNfeRecepcaoEvento_C.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Producao/SCVAN/PSVCANNfeRecepcaoEvento.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Producao/SCVRS/PSVCRSNfeRecepcaoEvento.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Producao/SP/PSPNFeRecepcaoEvento.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Producao/SP/PSPNFeRecepcaoEvento_C.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Producao/SVAN/PSVANRecepcaoEvento.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Producao/SVAN/PSVANRecepcaoEvento_C.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Producao/SVRS/PSVRSNFeRecepcaoEvento.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Producao/SVRS/PSVRSNFeRecepcaoEvento_C.wsdl
+	modified:   uninfe/bin/release/nfe/wsdl/Webservice.xml
+	modified:   uninfe/bin/release/nfse/schemas/NFSe/ABRASF/nfse.xsd
+	modified:   uninfe/bin/release/nfse/schemas/NFSe/BETHA/TiposNFe_v01.xsd
+	modified:   uninfe/bin/release/nfse/schemas/NFSe/BETHA/nfse_v01.xsd
+	modified:   uninfe/bin/release/nfse/schemas/NFSe/FINTEL/nfse.xsd
+	modified:   uninfe/bin/release/nfse/schemas/NFSe/FIORILLI/nfse_v201.xsd
+	modified:   uninfe/bin/release/nfse/schemas/NFSe/GIF/NFSe-Infisc-v1.xsd
+	modified:   uninfe/bin/release/nfse/schemas/NFSe/PAULISTANA/PedidoCancelamentoNFe_v01.xsd
+	modified:   uninfe/bin/release/nfse/schemas/NFSe/PAULISTANA/PedidoConsultaCNPJ_v01.xsd
+	modified:   uninfe/bin/release/nfse/schemas/NFSe/PAULISTANA/PedidoConsultaLote_v01.xsd
+	modified:   uninfe/bin/release/nfse/schemas/NFSe/PAULISTANA/PedidoConsultaNFePeriodo_v01.xsd
+	modified:   uninfe/bin/release/nfse/schemas/NFSe/PAULISTANA/PedidoConsultaNFe_v01.xsd
+	modified:   uninfe/bin/release/nfse/schemas/NFSe/PAULISTANA/PedidoEnvioLoteRPS_v01.xsd
+	modified:   uninfe/bin/release/nfse/schemas/NFSe/PAULISTANA/PedidoEnvioRPS_v01.xsd
+	modified:   uninfe/bin/release/nfse/schemas/NFSe/PAULISTANA/PedidoInformacoesLote_v01.xsd
+	modified:   uninfe/bin/release/nfse/schemas/NFSe/PAULISTANA/RetornoCancelamentoNFe_v01.xsd
+	modified:   uninfe/bin/release/nfse/schemas/NFSe/PAULISTANA/RetornoConsultaCNPJ_v01.xsd
+	modified:   uninfe/bin/release/nfse/schemas/NFSe/PAULISTANA/RetornoConsulta_v01.xsd
+	modified:   uninfe/bin/release/nfse/schemas/NFSe/PAULISTANA/RetornoEnvioLoteRPS_v01.xsd
+	modified:   uninfe/bin/release/nfse/schemas/NFSe/PAULISTANA/RetornoEnvioRPS_v01.xsd
+	modified:   uninfe/bin/release/nfse/schemas/NFSe/PAULISTANA/TiposNFe_v01.xsd
+	modified:   uninfe/bin/release/nfse/wsdl/Homologacao/HCampoBomRS.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Homologacao/HCanoasRSCancelarNfse.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Homologacao/HCanoasRSConsultarLoteRps.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Homologacao/HCanoasRSConsultarNfse.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Homologacao/HCanoasRSConsultarNfsePorRps.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Homologacao/HCanoasRSConsultarSituacaoLoteRps.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Homologacao/HCanoasRSRecepcionarLoteRps.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Homologacao/HCaxiasdoSulRS-GIFServicos.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Homologacao/HCuritibaPR-EGoverne.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Homologacao/HFarroupilhaRS-GIFServicos.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Homologacao/HFeiradeSantanaBA_WebISS.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Homologacao/HISSOnLineAracatubaSP.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Homologacao/HJuizdeForaMG.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Homologacao/HLondrinaPR-sigiss.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Homologacao/HMirassolSP.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Homologacao/HPontaGrossaPR-FINTELServices.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Homologacao/HSaoLuizMADSF-LoteRps.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Producao/PCampoBomRS.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Producao/PCanoasRSCancelarNfse.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Producao/PCanoasRSConsultarLoteRps.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Producao/PCanoasRSConsultarNfse.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Producao/PCanoasRSConsultarNfsePorRps.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Producao/PCanoasRSConsultarSituacaoLoteRps.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Producao/PCanoasRSRecepcionarLoteRps.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Producao/PCaxiasdoSulRS-GIFServicos.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Producao/PFarroupilhaRS-GIFServicos.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Producao/PFeiradeSantanaBA_WebISS.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Producao/PIssOnLineAracatubaSP.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Producao/PJuizdeForaMG.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Producao/PLondrinaPR-sigiss.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Producao/PLucasRVMT_WebISS.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Producao/PMirassolSP.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Producao/PSaoLuizMADSF-LoteRps.wsdl
+	modified:   uninfe/bin/release/nfse/wsdl/Webservice.xml
+	modified:   uninfe/bin/release/servico_instalar.bat
+	modified:   uninfe/bin/release/servico_remover.bat
+	modified:   uninfe/bin/release/uninfe.vshost.exe
+	modified:   uninfe/bin/release/uninfe.vshost.exe.config
+	modified:   uninfe/bin/release/uninfe.vshost.exe.manifest
+	modified:   uninfe/obj/Debug/uninfe.Properties.Resources.resources
+	modified:   uninfe/obj/Debug/uninfe.csproj.FileListAbsolute.txt
+	modified:   uninfe/obj/Debug/uninfe.csproj.GenerateResource.Cache
+	modified:   uninfe/obj/Debug/uninfe.exe
+	modified:   uninfe/obj/Debug/uninfe.pdb
+	modified:   uninfe/uninfe.csproj
+	modified:   uninfe/uninfe.csproj.user
+	modified:   uninfe_ws/Properties/Resources.Designer.cs
+	modified:   uninfe_ws/Properties/Settings.Designer.cs
+	modified:   uninfe_ws/UserControl3.cs
+	modified:   uninfe_ws/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+	modified:   uninfe_ws/obj/Debug/NFe.UI.Form_Main.resources
+	modified:   uninfe_ws/obj/Debug/uninfe_ws.Properties.Resources.resources
+	modified:   uninfe_ws/obj/Debug/uninfe_ws.UserControl2.resources
+	modified:   uninfe_ws/obj/Debug/uninfe_ws.UserControl3.resources
+	modified:   uninfe_ws/obj/Debug/uninfe_ws.csproj.FileListAbsolute.txt
+	modified:   uninfe_ws/obj/Debug/uninfe_ws.csproj.GenerateResource.Cache
+	modified:   uninfe_ws/obj/Debug/uninfe_ws.csprojResolveAssemblyReference.cache
+	modified:   uninfe_ws/obj/Debug/uninfe_ws.exe
+	modified:   uninfe_ws/obj/Debug/uninfe_ws.pdb
+	modified:   uninfe_ws/uninfe_ws.csproj
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	MetroFramework/MetroFramework.Demo/bin/Release/
+	MetroFramework/MetroFramework.Demo/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+	MetroFramework/MetroFramework.Demo/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+	MetroFramework/MetroFramework.Demo/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+	MetroFramework/MetroFramework.Design/bin/Release/
+	MetroFramework/MetroFramework.Design/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+	MetroFramework/MetroFramework.Design/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+	MetroFramework/MetroFramework.Design/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+	MetroFramework/MetroFramework.Fonts/bin/Release/
+	MetroFramework/MetroFramework.Fonts/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+	MetroFramework/MetroFramework.Fonts/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+	MetroFramework/MetroFramework.Fonts/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+	MetroFramework/MetroFramework/bin/Release/
+	MetroFramework/MetroFramework/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+	MetroFramework/MetroFramework/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+	MetroFramework/MetroFramework/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+	NFe.Certificado/bin/Release/
+	NFe.Certificado/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+	NFe.Certificado/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+	NFe.Certificado/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+	NFe.Components.Info/bin/
+	NFe.Components.Info/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+	NFe.Components.Info/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+	NFe.Components.Info/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+	NFe.Components.Wsdl/CFe/
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/AM/HAMCadConsultaCadastro.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/AM/HAMNfeAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/AM/HAMNfeAutorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/AM/HAMNfeConsulta.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/AM/HAMNfeConsulta_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/AM/HAMNfeConsulta_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/AM/HAMNfeConsulta_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/AM/HAMNfeInutilizacao.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/AM/HAMNfeInutilizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/AM/HAMNfeInutilizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/AM/HAMNfeInutilizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/AM/HAMNfeRetAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/AM/HAMNfeRetAutorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/AM/HAMNfeStatusServico.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/AM/HAMNfeStatusServico_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/AM/HAMNfeStatusServico_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/AM/HAMNfeStatusServico_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/AM/HAMRecepcaoEvento_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/AM/HAMRecepcaoEvento_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/AN/HANCTeDistribuicaoDFe.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/AN/HANRecepcaoEvento_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/AN/eSocial_ServicoConsultarLoteEventos.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/AN/eSocial_ServicoEnviarLoteEventos.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/BA/HBACadConsultaCadastro.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/BA/HBACadConsultaCadastro_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/BA/HBANfeAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/BA/HBANfeAutorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/BA/HBANfeConsulta.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/BA/HBANfeConsulta_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/BA/HBANfeConsulta_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/BA/HBANfeConsulta_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/BA/HBANfeInutilizacao.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/BA/HBANfeInutilizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/BA/HBANfeInutilizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/BA/HBANfeRetAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/BA/HBANfeRetAutorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/BA/HBANfeStatusServico.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/BA/HBANfeStatusServico_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/BA/HBANfeStatusServico_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/BA/HBANfeStatusServico_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/BA/HBANfeinutilizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/BA/HBARecepcaoEvento_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/BA/HBARecepcaoEvento_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/CE/HCECadConsultaCadastro.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/CE/HCENfeAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/CE/HCENfeAutorizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/CE/HCENfeConsulta.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/CE/HCENfeConsulta_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/CE/HCENfeConsulta_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/CE/HCENfeInutilizacao.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/CE/HCENfeInutilizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/CE/HCENfeInutilizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/CE/HCENfeRetAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/CE/HCENfeRetAutorizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/CE/HCENfeStatusServico.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/CE/HCENfeStatusServico_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/CE/HCENfeStatusServico_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/CE/HCERecepcaoEvento_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/CE/HCERecepcaoEvento_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/GO/HGOCadConsultaCadastro.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/GO/HGOCadConsultaCadastro_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/GO/HGONfeAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/GO/HGONfeConsulta.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/GO/HGONfeConsulta_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/GO/HGONfeInutilizacao.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/GO/HGONfeInutilizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/GO/HGONfeRetAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/GO/HGONfeStatusServico.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/GO/HGONfeStatusServico_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/GO/HGORecepcaoEvento_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MG/HMGCancRegSaida.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MG/HMGCteRecepcaoOS.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MG/HMGNFeCadConsultaCadastro.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MG/HMGNfeAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MG/HMGNfeConsulta.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MG/HMGNfeConsulta_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MG/HMGNfeInutilizacao.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MG/HMGNfeInutilizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MG/HMGNfeRetAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MG/HMGNfeStatusServico.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MG/HMGNfeStatusServico_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MG/HMGRegistrarSaida.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSCteRecepcaoOS.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSNfeAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSNfeAutorizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSNfeAutorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSNfeCadConsultaCadastro.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSNfeConsulta.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSNfeConsulta_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSNfeConsulta_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSNfeConsulta_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSNfeInutilizacao.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSNfeInutilizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSNfeInutilizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSNfeInutilizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSNfeRecepcaoEvento_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSNfeRecepcaoEvento_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSNfeRetAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSNfeRetAutorizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSNfeRetAutorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSNfeStatusServico.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSNfeStatusServico_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSNfeStatusServico_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MS/HMSNfeStatusServico_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MT/HMTCteRecepcaoOS.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MT/HMTNfeAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MT/HMTNfeCadConsultaCadastro.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MT/HMTNfeCadConsultaCadastro_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MT/HMTNfeConsulta.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MT/HMTNfeConsulta_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MT/HMTNfeConsulta_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MT/HMTNfeInutilizacao.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MT/HMTNfeInutilizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MT/HMTNfeInutilizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MT/HMTNfeRecepcaoEvento_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MT/HMTNfeRetAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MT/HMTNfeStatusServico.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MT/HMTNfeStatusServico_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/MT/HMTNfeStatusServico_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PE/HPECadConsultaCadastro.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PE/HPENfeAutorizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PE/HPENfeAutorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PE/HPENfeConsulta.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PE/HPENfeConsulta_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PE/HPENfeConsulta_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PE/HPENfeInutilizacao.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PE/HPENfeInutilizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PE/HPENfeInutilizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PE/HPENfeRetAutorizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PE/HPENfeRetAutorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PE/HPENfeStatusServico.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PE/HPENfeStatusServico_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PE/HPENfeStatusServico_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PE/HPERecepcaoEvento_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PE/HPERecepcaoEvento_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PR/HPRCteRecepcaoOS.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PR/HPRNFeAutorizacao.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PR/HPRNFeAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PR/HPRNFeAutorizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PR/HPRNFeAutorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PR/HPRNFeCadConsultaCadastro.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PR/HPRNFeCadConsultaCadastro_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PR/HPRNFeConsulta.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PR/HPRNFeConsulta_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PR/HPRNFeConsulta_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PR/HPRNFeConsulta_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PR/HPRNFeInutilizacao.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PR/HPRNFeInutilizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PR/HPRNFeInutilizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PR/HPRNFeInutilizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PR/HPRNFeRecepcaoEvento_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PR/HPRNFeRecepcaoEvento_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PR/HPRNFeRetAutorizacao.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PR/HPRNFeRetAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PR/HPRNFeRetAutorizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PR/HPRNFeRetAutorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PR/HPRNFeStatusServico.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PR/HPRNFeStatusServico_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PR/HPRNFeStatusServico_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/PR/HPRNFeStatusServico_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/RS/HRSNFeAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/RS/HRSNFeAutorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/RS/HRSNFeCadConsultaCadastro.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/RS/HRSNFeRecepcaoEvento_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/RS/HRSNFeRecepcaoEvento_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/RS/HRSNFeRetAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/RS/HRSNFeRetAutorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/RS/HRSNfeConsulta.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/RS/HRSNfeConsulta_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/RS/HRSNfeConsulta_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/RS/HRSNfeConsulta_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/RS/HRSNfeInutilizacao.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/RS/HRSNfeInutilizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/RS/HRSNfeStatusServico.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/RS/HRSNfeStatusServico_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/RS/HRSNfeStatusServico_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/RS/HRSNfeStatusServico_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/RS/HRScterecepcaoos.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/RS/HRSnfeinutilizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/RS/HRSnfeinutilizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SCVAN/HSVCANNfeAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SCVAN/HSVCANNfeConsulta.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SCVAN/HSVCANNfeConsulta_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SCVAN/HSVCANNfeRecepcaoEvento_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SCVAN/HSVCANNfeRetAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SCVAN/HSVCANNfeStatusServico.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SCVAN/HSVCANNfeStatusServico_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SCVRS/HSVCRSNFeAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SCVRS/HSVCRSNFeCadConsultaCadastro.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SCVRS/HSVCRSNFeRetAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SCVRS/HSVCRSNfeConsulta.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SCVRS/HSVCRSNfeConsulta_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SCVRS/HSVCRSNfeInutilizacao.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SCVRS/HSVCRSNfeInutilizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SCVRS/HSVCRSNfeRecepcaoEvento_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SCVRS/HSVCRSNfeStatusServico.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SCVRS/HSVCRSNfeStatusServico_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SP/HSPNFeCadConsultaCadastro.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SP/HSPNFeCadConsultaCadastro_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SP/HSPNFeRecepcaoEvento_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SP/HSPNFeRecepcaoEvento_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SP/HSPNfeConsulta.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SP/HSPNfeConsulta_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SP/HSPNfeConsulta_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SP/HSPNfeConsulta_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SP/HSPNfeInutilizacao.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SP/HSPNfeInutilizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SP/HSPNfeInutilizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SP/HSPNfeInutilizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SP/HSPNfeStatusServico.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SP/HSPNfeStatusServico_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SP/HSPNfeStatusServico_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SP/HSPNfeStatusServico_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SP/HSPNfeautorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SP/HSPNfeautorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SP/HSPNferetautorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SP/HSPNferetautorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SP/HSPcteRecepcaoOS.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVAN/HSVANNFeInutilizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVAN/HSVANNFeInutilizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVAN/HSVANNfeAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVAN/HSVANNfeAutorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVAN/HSVANNfeConsulta.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVAN/HSVANNfeConsulta_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVAN/HSVANNfeConsulta_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVAN/HSVANNfeConsulta_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVAN/HSVANNfeInutilizacao.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVAN/HSVANNfeInutilizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVAN/HSVANNfeRetAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVAN/HSVANNfeRetAutorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVAN/HSVANNfeStatusServico.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVAN/HSVANNfeStatusServico_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVAN/HSVANNfeStatusServico_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVAN/HSVANNfeStatusServico_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVAN/HSVANRecepcaoEvento_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVAN/HSVANRecepcaoEvento_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVRS/HSVRSNFeAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVRS/HSVRSNFeAutorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVRS/HSVRSNFeCadConsultaCadastro.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVRS/HSVRSNFeInutilizacao.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVRS/HSVRSNFeInutilizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVRS/HSVRSNFeInutilizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVRS/HSVRSNFeInutilizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVRS/HSVRSNFeRecepcaoEvento_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVRS/HSVRSNFeRecepcaoEvento_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVRS/HSVRSNFeRetAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVRS/HSVRSNFeRetAutorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVRS/HSVRSNfeConsulta.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVRS/HSVRSNfeConsulta_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVRS/HSVRSNfeConsulta_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVRS/HSVRSNfeConsulta_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVRS/HSVRSNfeStatusServico.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVRS/HSVRSNfeStatusServico_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVRS/HSVRSNfeStatusServico_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVRS/HSVRSNfeStatusServico_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Homologacao/SVRS/HSVRScterecepcaoos.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/AN/EFDReinf.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/AN/PANCTeDistribuicaoDFe.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/AN/eSocial_ServicoConsultarLoteEventos.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/AN/eSocial_ServicoEnviarLoteEventos.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/GO/PGOCadConsultaCadastro.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/GO/PGONfeAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/GO/PGONfeConsulta.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/GO/PGONfeConsulta_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/GO/PGONfeInutilizacao.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/GO/PGONfeInutilizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/GO/PGONfeRetAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/GO/PGONfeStatusServico.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/GO/PGONfeStatusServico_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/MG/PMGCteRecepcaoOS.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/MS/PMSCteRecepcaoOS.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/MS/PMSNFeRecepcaoEvento_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/MS/PMSNfeAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/MS/PMSNfeAutorizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/MS/PMSNfeCadConsultaCadastro.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/MS/PMSNfeConsulta.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/MS/PMSNfeConsulta_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/MS/PMSNfeConsulta_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/MS/PMSNfeInutilizacao.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/MS/PMSNfeInutilizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/MS/PMSNfeInutilizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/MS/PMSNfeRetAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/MS/PMSNfeRetAutorizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/MS/PMSNfeStatusServico.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/MS/PMSNfeStatusServico_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/MS/PMSNfeStatusServico_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/MT/PMTCteRecepcaoOS.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PE/PPENfeAutorizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PE/PPENfeConsulta2_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PE/PPENfeInutilizacao2_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PE/PPENfeRetAutorizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PE/PPENfeStatusServico2_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PE/PPERecepcaoEvento_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PR/PPRCteRecepcaoOS.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PR/PPRNFeAutorizacao.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PR/PPRNFeAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PR/PPRNFeAutorizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PR/PPRNFeAutorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PR/PPRNFeCadConsultaCadastro.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PR/PPRNFeConsulta.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PR/PPRNFeConsulta_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PR/PPRNFeConsulta_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PR/PPRNFeConsulta_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PR/PPRNFeInutilizacao.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PR/PPRNFeInutilizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PR/PPRNFeInutilizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PR/PPRNFeInutilizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PR/PPRNFeRetAutorizacao.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PR/PPRNFeRetAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PR/PPRNFeRetAutorizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PR/PPRNFeRetAutorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PR/PPRNFeStatusServico.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PR/PPRNFeStatusServico_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PR/PPRNFeStatusServico_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/PR/PPRNFeStatusServico_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/RS/PRSNFeAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/RS/PRSNFeAutorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/RS/PRSNFeCadConsultaCadastro.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/RS/PRSNFeRetAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/RS/PRSNFeRetAutorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/RS/PRSNfeConsulta.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/RS/PRSNfeConsulta_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/RS/PRSNfeConsulta_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/RS/PRSNfeConsulta_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/RS/PRSNfeInutilizacao.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/RS/PRSNfeInutilizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/RS/PRSNfeInutilizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/RS/PRSNfeStatusServico.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/RS/PRSNfeStatusServico_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/RS/PRSNfeStatusServico_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/RS/PRSNfeStatusServico_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/RS/PRScterecepcaoos.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/RS/PRSnfeinutilizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SCVAN/PSVCANNfeAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SCVAN/PSVCANNfeConsulta.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SCVAN/PSVCANNfeConsulta_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SCVAN/PSVCANNfeRetAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SCVAN/PSVCANNfeStatusServico.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SCVAN/PSVCANNfeStatusServico_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SCVRS/PSCVRSNFeCadConsultaCadastro.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SCVRS/PSCVRSNFeInutilizacao.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SCVRS/PSCVRSNFeInutilizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SCVRS/PSVCRSNFeAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SCVRS/PSVCRSNFeRetAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SCVRS/PSVCRSNfeConsulta.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SCVRS/PSVCRSNfeConsulta_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SCVRS/PSVCRSNfeStatusServico.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SCVRS/PSVCRSNfeStatusServico_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SP/PSPNFeCadConsultaCadastro.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SP/PSPNfeautorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SP/PSPNfeautorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SP/PSPNferetautorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SP/PSPNferetautorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SP/PSPcteRecepcaoOS.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SP/PSPnfeconsulta.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SP/PSPnfeconsulta_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SP/PSPnfeconsulta_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SP/PSPnfeconsulta_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SP/PSPnfeinutilizacao.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SP/PSPnfeinutilizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SP/PSPnfeinutilizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SP/PSPnfeinutilizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SP/PSPnfestatusservico.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SP/PSPnfestatusservico_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SP/PSPnfestatusservico_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SP/PSPnfestatusservico_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVAN/PSVANNFeInutilizacao.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVAN/PSVANNFeInutilizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVAN/PSVANNFeInutilizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVAN/PSVANNFeInutilizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVAN/PSVANNFeStatusServico.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVAN/PSVANNFeStatusServico_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVAN/PSVANNFeStatusServico_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVAN/PSVANNFeStatusServico_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVAN/PSVANNfeAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVAN/PSVANNfeAutorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVAN/PSVANNfeRetAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVAN/PSVANNfeRetAutorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVAN/PSVANnfeconsulta.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVAN/PSVANnfeconsulta_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVAN/PSVANnfeconsulta_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVAN/PSVANnfeconsulta_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVRS/PSVRSNFeAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVRS/PSVRSNFeAutorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVRS/PSVRSNFeCadConsultaCadastro.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVRS/PSVRSNFeInutilizacao.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVRS/PSVRSNFeInutilizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVRS/PSVRSNFeInutilizacao_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVRS/PSVRSNFeInutilizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVRS/PSVRSNFeRetAutorizacao_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVRS/PSVRSNFeRetAutorizacao_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVRS/PSVRSNfeConsulta.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVRS/PSVRSNfeConsulta_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVRS/PSVRSNfeConsulta_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVRS/PSVRSNfeConsulta_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVRS/PSVRSNfeStatusServico.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVRS/PSVRSNfeStatusServico_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVRS/PSVRSNfeStatusServico_C.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVRS/PSVRSNfeStatusServico_C_400.wsdl
+	NFe.Components.Wsdl/NFe/WSDL/Producao/SVRS/PSVRScterecepcaoos.wsdl
+	NFe.Components.Wsdl/NFe/schemas/CTe/cancCTeTiposBasico_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/consReciCTeTiposBasico_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/consReciCTe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/consSitCTeTiposBasico_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/consSitCTe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/consStatServCTe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/consStatServTiposBasico_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/cteModalAereo_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/cteModalAquaviario_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/cteModalDutoviario_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/cteModalFerroviario_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/cteModalRodoviarioOS_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/cteModalRodoviario_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/cteMultiModal_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/cteOS_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/cteTiposBasico_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/cte_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/enviCTe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/evCCeCTe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/evCancCTe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/evEPECCTe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/evGTV_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/evPrestDesacordo_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/evRegMultimodal_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/eventoCTeTiposBasico_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/eventoCTe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/inutCTeTiposBasico_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/inutCTe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/procCTeOS_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/procCTe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/procEventoCTe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/procInutCTe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/retCTeOS_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/retConsReciCTe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/retConsSitCTe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/retConsStatServCTe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/retEnviCTe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/retEventoCTe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/retInutCTe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/CTe/tiposGeralCTe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/DFe/distDFeInt_v1.01.xsd
+	NFe.Components.Wsdl/NFe/schemas/DFe/resEvento_v1.01.xsd
+	NFe.Components.Wsdl/NFe/schemas/DFe/resNFe_v1.01.xsd
+	NFe.Components.Wsdl/NFe/schemas/DFe/retDistDFeInt_v1.01.xsd
+	NFe.Components.Wsdl/NFe/schemas/DFe/tiposDistDFe_v1.01.xsd
+	NFe.Components.Wsdl/NFe/schemas/DFeCTe/
+	NFe.Components.Wsdl/NFe/schemas/EFDReinf/
+	NFe.Components.Wsdl/NFe/schemas/EPEC/eventoEPEC_v0.01.xsd
+	NFe.Components.Wsdl/NFe/schemas/EPEC/retEventoEPEC_v0.01.xsd
+	NFe.Components.Wsdl/NFe/schemas/EPEC/tiposBasico_v3.10.xsd
+	NFe.Components.Wsdl/NFe/schemas/LMC/
+	NFe.Components.Wsdl/NFe/schemas/MDFe/consMDFeNaoEncTiposBasico_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/consMDFeNaoEnc_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/consReciMDFeTiposBasico_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/consReciMDFe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/consSitMDFeTiposBasico_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/consSitMDFe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/consStatServMDFe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/consStatServTiposBasico_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/distMDFe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/enviMDFe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/evCancMDFe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/evEncMDFe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/evIncCondutorMDFe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/eventoMDFeTiposBasico_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/eventoMDFe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/leiauteDistMDFe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/mdfeConsultaDFeTiposBasico_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/mdfeConsultaDFe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/mdfeModalAereo_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/mdfeModalAquaviario_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/mdfeModalFerroviario_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/mdfeModalRodoviario_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/mdfeTiposBasico_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/mdfe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/procEventoMDFe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/procMDFe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/retConsMDFeNaoEnc_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/retConsReciMDFe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/retConsSitMDFe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/retConsStatServMDFe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/retDistMDFe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/retEnviMDFe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/retEventoMDFe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/retMDFeConsultaDFe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/MDFe/tiposGeralMDFe_v3.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/consReciNFe_v4.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/consSitNFe_v4.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/consStatServ_v4.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/e111500_v1.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/e111501_v1.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/e111502_v1.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/e111503_v1.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/e411500_v1.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/e411501_v1.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/e411502_v1.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/e411503_v1.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/envRemIndus_v1.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/enviNFe_v4.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/eventoRemIndus_v1.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/inutNFe_v4.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/leiauteConsSitNFe_v4.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/leiauteConsStatServ_v4.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/leiauteInutNFe_v4.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/leiauteNFe_v4.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/leiauteRemIndus_v1.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/nfe_v4.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/procEventoNFe_v99.99.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/procInutNFe_v4.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/procNFe_v4.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/procRemIndus_v1.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/retConsReciNFe_v4.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/retConsSitNFe_v4.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/retConsStatServ_v4.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/retEnvRemIndus_v1.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/retEnviNFe_v4.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/retInutNFe_v4.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/NFe/tiposBasico_v4.00.xsd
+	NFe.Components.Wsdl/NFe/schemas/eSocial/
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HABASE.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HAlagoinhasBA-FREIRE.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HAracajuSE-WEBISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HArcosMG-WebISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HAssisSP-FIORILLI.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HAvareSP-FIORILLI.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HBalneario-SIMPLISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HBarraPiraiRJ-WebISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HBarretos-SIGCORP.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HBauruSP-BAURU_SP.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HBoituvaSP-cancelarnfse.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HBoituvaSP-consultarnfseporrps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HBoituvaSP-recepcionarloterpssincrono.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HBrumadoBA-WebISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HCacadorSC-PUBLICA.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HCachoeiraSulRS-PRONIN.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HCamacariBA.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HCampoNovoParecis-COPLAN.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HCandeiasBA-WEBISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HCatantuvaSP-PRONIN.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HCianortePR-sigiss_ws.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HCorumbaMS-FIORILLI.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HDivinopolisMG-GOVDigital.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HDoisIrmaos-CancelamentoNFSe.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HDoisIrmaos-ConsultaLoteRPS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HDoisIrmaos-ConsultaNFSePorFaixa.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HDoisIrmaos-ConsultaNFSePorRPS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HDoisIrmaos-ConsultaNFSeServicosPrestados.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HDoisIrmaos-ConsultaNFSeServicosTomadosIntermediados.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HDoisIrmaos-EnvioLoteRPSSincrono.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HEQUIPLANO.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HEstanciaVelhaRS-ConsultaSequenciaLoteNotaRPS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HEusebioCE-Intersol.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HFISSLEXcancelarnfse.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HFISSLEXconsultaloterps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HFISSLEXconsultanfse.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HFISSLEXconsultanfseporrps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HFISSLEXconsultarsituacaoloterps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HFISSLEXrecepcionarloterps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HFormigaMG-WebISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HFortaleza-Ginfes.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HFozDoIguacuLEXSOM.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HGaribaldi-GIF.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HGoianiaGO.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HGovernadorLauroFreitas-METROPOLIS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HGovernadorValarares-ACTCON.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HGuarapuava-PR.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HHorizontinaRS-PRONIN.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HIracaSC-WebIss.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HIratiPR-FINTEL.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HItabiraMG-PRONIN.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HItajubaMG-GOVDIGITAL.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HItaporangaSP-FIORILLI.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HIvoti-CancelamentoNFSe.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HIvoti-ConsultaLoteRPS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HIvoti-ConsultaNFSePorFaixa.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HIvoti-ConsultaNFSePorRPS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HIvoti-ConsultaNFSeServicosPrestados.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HIvoti-EnvioLoteRPSSincrono.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HJaboataoDosGuararapesPE_TINUS_CancelarNfse.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HJaboataoDosGuararapesPE_TINUS_ConsultarLoteRps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HJaboataoDosGuararapesPE_TINUS_ConsultarNfse.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HJaboataoDosGuararapesPE_TINUS_ConsultarNfsePorRps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HJaboataoDosGuararapesPE_TINUS_ConsultarSituacaoLoteRps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HJaboataoDosGuararapesPE_TINUS_RecepcionarLoteRps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HJaciSP-FIORILLI.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HLavrasMG-GOVDIGITAL.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HMacapaAP-FIORILLI.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HMacaraiSP-SIMPLISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HMaringaPR-MARINGA_PR.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HMirassolandiaSP-FIORILLI.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HMogiGuacu-SIGCORP.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HNatalRN.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HNiteroiRJ-WebISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HNovaLimaMG_SuperNova.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HNovaMutumMT-COPLAN.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HOsascoEGOVERNEISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HOsorioRS-DBSELLER.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HPalmasTO-WebISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HParacatuMG-GOVDIGITAL.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HPassoFundoRS-cancelamento.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HPassoFundoRS-consulta.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HPassoFundoRS-remessa.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HPatosDeMinasMG-Consist.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HPatrocinioMG-SIMPLISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HPedroLeopoldoMG.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HPelotasRS_GOVDIGITAL.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HPenapolisSP-MGM.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HPicadaCafe-PRONIN.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HPocosdeCaldasMG-GOVDIGITAL.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HPonteNovaMG-Memory.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HPotirendabaSP-FIORILLI.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HPrataMG-GovDigital.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HPresidentePrudenteSP-SIMPLISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HPrudenteMorais-WebISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HQuatroBarrasPR-ELOTECH.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HRegenteFeijo-PRONIN.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HRioGrandeRS-sigiss.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HRondonopolisMT-cancelarnfse.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HRondonopolisMT-consultarloterps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HRondonopolisMT-consultarnfse.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HRondonopolisMT-consultarnfseporrps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HRondonopolisMT-consultarsituacaoloterps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HRondonopolisMT-recepcionarloterps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HSSebastiaoCai-CancelamentoNFSe.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HSSebastiaoCai-ConsultaLoteRPS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HSSebastiaoCai-ConsultaNFSePorFaixa.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HSSebastiaoCai-ConsultaNFSePorRPS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HSSebastiaoCai-ConsultaNFSeServicosPrestados.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HSSebastiaoCai-EnvioLoteRPSSincrono.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HSalvadorDoSulRS-CancelamentoNFSe.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HSalvadorDoSulRS-ConsultaLoteRPS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HSalvadorDoSulRS-ConsultaNFSePorFaixa.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HSalvadorDoSulRS-ConsultaNFSePorRPS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HSalvadorDoSulRS-ConsultaNFSeServicosPrestados.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HSalvadorDoSulRS-EnvioLoteRPSSincrono.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HSaoJoaoDelReiMG.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HSaoJoseDaLapaMG-GovDigital.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HSaoJoseRibamarMA-PORTALFACIL_ACTCON.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HSaoJosedoRioClaroMT.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HSapucaiadoSulRS-GIF.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HSideropolis-WebIss.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HSistemaISSOnLine4rJuquiaCancelarNfse.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HSistemaISSOnLine4rJuquiaConsultarNfsePorRps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HSistemaISSOnLine4rJuquiaRecepcionarLoteRpsSincrono.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HTangaraSerraMT-WebISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HTaquaritubaSP-Fiorilli.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HThemaGasparSCCancelamento.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HThemaGasparSCConsulta.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HThemaGasparSCRemessa.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HToledoPR-EQUIPLANO.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HUberabaMG-WebISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HVacariRS-PRONIN.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HVarzeaGrandeMT-cancelarnfse.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HVarzeaGrandeMT-consultarloterps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HVarzeaGrandeMT-consultarnfse.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HVarzeaGrandeMT-consultarnfseporrps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HVarzeaGrandeMT-consultarsituacaoloterps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HVarzeaGrandeMT-recepcionarloterps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HVenancioAires-NFSEcancelamento.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HVenancioAires-NFSEconsulta.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HVenancioAires-NFSEremessa.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HVilaVelhaES-VVISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HVilhenaRO-WebISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HViscondeRioBrancoMG-SH3.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HVitoriaES-VVISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Homologacao/HVoltaRedondaRJ-SIMPLISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PABASE.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PAlagoinhasBA-FREIRE.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PAracajuSE-WEBISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PArcosMG-WebISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PAssisSP-FIORILLI.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PAvareSP-FIORILLI.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PBalneario-SIMPLISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PBarraMansaRJ_AssessorPublico.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PBarraPiraiRJ-WebISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PBarretos-SIGCORP.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PBauruSP-BAURU_SP.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PBiriguiSP-WSEntrada.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PBiriguiSP-WSSaida.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PBiriguiSP-WSUtil.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PBoituvaSP-cancelarnfse.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PBoituvaSP-consultarnfseporrps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PBoituvaSP-recepcionarloterpssincrono.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PBrumadoBA-WebISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PCacadorSC-PUBLICA.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PCachoeiraSulRS-PRONIN.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PCamacariBA.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PCampoNovoParecis-COPLAN.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PCandeiasBA-WEBISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PCariacicaES-WSEntrada.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PCariacicaES-WSSaida.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PCariacicaES-WSUtil.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PCatantuvaSP-PRONIN.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PCianortePR-sigiss_ws.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PColatinaES-EL.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PCorumbaMS-FIORILLI.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PCruzAltaRSISSNET.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PDivinopolisMG-GOVDigital.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PDoisIrmaos-CancelamentoNFSe.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PDoisIrmaos-ConsultaLoteRPS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PDoisIrmaos-ConsultaNFSePorFaixa.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PDoisIrmaos-ConsultaNFSePorRPS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PDoisIrmaos-ConsultaNFSeServicosPrestados.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PDoisIrmaos-ConsultaNFSeServicosTomadosIntermediados.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PDoisIrmaos-ConsultaSequenciaLoteNotaRPS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PDoisIrmaos-EnvioLoteRPSSincrono.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PDuquedeCaxiasRJ-TIPLAN.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PEQUIPLANO.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PEmbuDasArtes-SIMPLISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PEstanciaVelhaRS-ConsultaSequenciaLoteNotaRPS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PEusebioCE-Intersol.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PFormigaMG-WebISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PFortaleza-Ginfes.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PFozDoIguacuLEXSOM.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PGaribaldi-GIF.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PGoianiaGO.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PGovernadorValarares-ACTCON.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PGuarapuava-PR.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PHorizontinaRS-PRONIN.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PIconhaES-EL.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PIgarapeMG-sigiss.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PIracaSC-WebIss.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PIratiPR-FINTEL.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PItabiraMG-PRONIN.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PItajubaMG-GOVDIGITAL.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PItaporangaSP-FIORILLI.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PItumbiaraGO-Prodata.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PIvoti-CancelamentoNFSe.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PIvoti-ConsultaLoteRPS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PIvoti-ConsultaNFSePorFaixa.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PIvoti-ConsultaNFSePorRPS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PIvoti-ConsultaNFSeServicosPrestados.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PIvoti-EnvioLoteRPSSincrono.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PJaboataoDosGuararapesPE_TINUS_CancelarNfse.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PJaboataoDosGuararapesPE_TINUS_ConsultarLoteRps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PJaboataoDosGuararapesPE_TINUS_ConsultarNfse.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PJaboataoDosGuararapesPE_TINUS_ConsultarNfsePorRps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PJaboataoDosGuararapesPE_TINUS_ConsultarSituacaoLoteRps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PJaboataoDosGuararapesPE_TINUS_RecepcionarLoteRps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PJaciSP-FIORILLI.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PJaraguaGO-BSITBR.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PLauroFreitas-METROPOLIS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PLavrasMG-GOVDIGITAL.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PMacapaAP-FIORILLI.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PMacaraiSP-SIMPLISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PMaringaPR-MARINGA_PR.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PMirassolandiaSP-FIORILLI.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PMogiGuacu-SIGCORP.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PMogiMirimSPcancelarnfse-FISSLEX.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PMogiMirimSPconsultaloterps-FISSLEX.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PMogiMirimSPconsultanfse-FISSLEX.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PMogiMirimSPconsultanfseporrps-FISSLEX.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PMogiMirimSPconsultarsituacaoloterps-FISSLEX.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PMogiMirimSPrecepcionarloterps-FISSLEX.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PNatalRN.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PNiteroiRJ-WebISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PNovaLimaMG_SuperNova.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PNovaMutumMT-COPLAN.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/POsascoEGOVERNEISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/POsorioRS-DBSELLER.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PPalmasTO-WebISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PParacatuMG-GOVDIGITAL.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PPassoFundoRS-cancelamento.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PPassoFundoRS-consulta.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PPassoFundoRS-remessa.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PPatosDeMinasMG-Consist.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PPatrocinioMG-SIMPLISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PPedroLeopoldoMG.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PPelotasRS_GOVDIGITAL.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PPenapolisSP-MGM.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PPicadaCafe-PRONIN.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PPiraiRJ-TIPLAN.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PPocosdeCaldasMG-GOVDIGITAL.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PPonteNovaMG-Memory.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PPotirendabaSP-FIORILLI.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PPrataMG-GovDigital.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PPresidentePrudenteSP-SIMPLISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PPrudenteMorais-WebISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PQuatroBarrasPR-ELOTECH.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PRecifePE-ABRASF.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PRegenteFeijo-PRONIN.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PRioGrandeRS-sigiss.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PRolandiaPR-PRONIN.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PRondonopolisMT-cancelarnfse.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PRondonopolisMT-consultarloterps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PRondonopolisMT-consultarnfse.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PRondonopolisMT-consultarnfseporrps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PRondonopolisMT-consultarsituacaoloterps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PRondonopolisMT-recepcionarloterps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSSebastiaoCai-CancelamentoNFSe.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSSebastiaoCai-ConsultaLoteRPS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSSebastiaoCai-ConsultaNFSePorFaixa.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSSebastiaoCai-ConsultaNFSePorRPS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSSebastiaoCai-ConsultaNFSeServicosPrestados.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSSebastiaoCai-EnvioLoteRPSSincrono.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSalvadorDoSulRS-CancelamentoNFSe.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSalvadorDoSulRS-ConsultaLoteRPS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSalvadorDoSulRS-ConsultaNFSePorFaixa.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSalvadorDoSulRS-ConsultaNFSePorRPS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSalvadorDoSulRS-ConsultaNFSeServicosPrestados.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSalvadorDoSulRS-EnvioLoteRPSSincrono.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSaoJoaoDelReiMG.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSaoJoseDaLapaMG-GovDigital.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSaoJoseRibamarMA-PORTALFACIL_ACTCON.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSaoJosedoRioClaroMT.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSapucaiadoSulRS-GIF.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSerraES-SMARAPDWSEntrada.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSerraES-SMARAPDWSSaida.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSerraES-SMARAPDWSUtil.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSideropolis-WebIss.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSimoesFilho-EL.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSinopMTcancelarnfse-FISSLEX.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSinopMTconsultaloterps-FISSLEX.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSinopMTconsultanfse-FISSLEX.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSinopMTconsultanfseporrps-FISSLEX.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSinopMTconsultarsituacaoloterps-FISSLEX.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSinopMTrecepcionarloterps-FISSLEX.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSistemaISSOnLine4rJuquiaCancelarNfse.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSistemaISSOnLine4rJuquiaConsultarNfsePorRps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PSistemaISSOnLine4rJuquiaRecepcionarLoteRpsSincrono.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PTangaraSerraMT-WebISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PTaquaritubaSP-Fiorilli.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PThemaGasparSCCancelamento.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PThemaGasparSCConsulta.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PThemaGasparSCRemessa.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PToledoPR-EQUIPLANO.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PUberabaMG-WebISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PVacariRS-PRONIN.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PVarzeaGrandeMT-cancelarnfse.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PVarzeaGrandeMT-consultarloterps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PVarzeaGrandeMT-consultarnfse.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PVarzeaGrandeMT-consultarnfseporrps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PVarzeaGrandeMT-consultarsituacaoloterps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PVarzeaGrandeMT-recepcionarloterps.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PVenancioAires-NFSEcancelamento.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PVenancioAires-NFSEconsulta.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PVenancioAires-NFSEremessa.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PVilaVelhaES-VVISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PVilhenaRO-WebISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PViscondeRioBrancoMG-SH3.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PVitoriaES-VVISS.wsdl
+	NFe.Components.Wsdl/NFse/WSDL/Producao/PVoltaRedondaRJ-SIMPLISS.wsdl
+	NFe.Components.Wsdl/NFse/schemas/NFSe/ABACO/V2/
+	NFe.Components.Wsdl/NFse/schemas/NFSe/ABASE/
+	NFe.Components.Wsdl/NFse/schemas/NFSe/ACTCON/
+	NFe.Components.Wsdl/NFse/schemas/NFSe/BETHA/nfse_v202.xsd
+	NFe.Components.Wsdl/NFse/schemas/NFSe/BETHA/xmldsig-core-schema20020212.xsd
+	NFe.Components.Wsdl/NFse/schemas/NFSe/BSITBR/
+	NFe.Components.Wsdl/NFse/schemas/NFSe/EL/
+	NFe.Components.Wsdl/NFse/schemas/NFSe/ELOTECH/
+	NFe.Components.Wsdl/NFse/schemas/NFSe/EQUIPLANO/
+	NFe.Components.Wsdl/NFse/schemas/NFSe/FINTEL/cfse.xsd
+	NFe.Components.Wsdl/NFse/schemas/NFSe/FISSLEX/
+	NFe.Components.Wsdl/NFse/schemas/NFSe/GIF/NFSe-Infisc-SapucaiaDoSul_RS_v1.xsd
+	NFe.Components.Wsdl/NFse/schemas/NFSe/GINFES_V03/
+	NFe.Components.Wsdl/NFse/schemas/NFSe/GOIANIA/
+	NFe.Components.Wsdl/NFse/schemas/NFSe/GOVDIGITAL/
+	NFe.Components.Wsdl/NFse/schemas/NFSe/INTERSOL/
+	NFe.Components.Wsdl/NFse/schemas/NFSe/ISSONLINE4R/xmldsig-core-schema20020212.xsd
+	NFe.Components.Wsdl/NFse/schemas/NFSe/LEXSOM/
+	NFe.Components.Wsdl/NFse/schemas/NFSe/MARINGA_PR/
+	NFe.Components.Wsdl/NFse/schemas/NFSe/METROPOLIS/
+	NFe.Components.Wsdl/NFse/schemas/NFSe/NATALENSE/
+	NFe.Components.Wsdl/NFse/schemas/NFSe/PAULISTANA/PedidoCancelamentoLote_v01.xsd
+	NFe.Components.Wsdl/NFse/schemas/NFSe/PUBLICA/
+	NFe.Components.Wsdl/NFse/schemas/NFSe/SH3/
+	NFe.Components.Wsdl/NFse/schemas/NFSe/SIGCORP_SIGISS/
+	NFe.Components.Wsdl/NFse/schemas/NFSe/SUPERNOVA/
+	NFe.Components.Wsdl/NFse/schemas/NFSe/TINUS/
+	NFe.Components.Wsdl/app.config
+	NFe.Components.Wsdl/bin/
+	NFe.Components.Wsdl/obj/Debug/NFe.Components.Wsdl.csprojResolveAssemblyReference.cache
+	NFe.Components.Wsdl/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+	NFe.Components.Wsdl/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+	NFe.Components.Wsdl/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+	NFe.Components/BAURU_SP/
+	NFe.Components/Betha/NewVersion/
+	NFe.Components/Consist/
+	NFe.Components/Coplan/
+	NFe.Components/EGoverneISS/
+	NFe.Components/EL/
+	NFe.Components/EloTech/
+	NFe.Components/EstadoURLs.cs
+	NFe.Components/FISSLEX/
+	NFe.Components/Fiorilli/AssisSP/
+	NFe.Components/Fiorilli/AvareSP/
+	NFe.Components/Fiorilli/CorumbaMS/
+	NFe.Components/Fiorilli/ItaporangaSP/
+	NFe.Components/Fiorilli/JaciSP/
+	NFe.Components/Fiorilli/MacapaAP/
+	NFe.Components/Fiorilli/MirassolandiaSP/
+	NFe.Components/Fiorilli/PotirendabaSP/
+	NFe.Components/GovDigital/
+	NFe.Components/Interface/IEmiteNFSeSOFTPLAN.cs
+	NFe.Components/MGM/
+	NFe.Components/Memory/
+	NFe.Components/Metropolis/
+	NFe.Components/Pronin/
+	NFe.Components/Properties/DataSources/
+	NFe.Components/Properties/Settings.cs
+	NFe.Components/QRCode/
+	NFe.Components/SOFTPLAN/
+	NFe.Components/Schemas/
+	NFe.Components/SigCorp/BarretosSP/
+	NFe.Components/SigCorp/BotucatuSP/h/
+	NFe.Components/SigCorp/CianortePR/
+	NFe.Components/SigCorp/IgarapeMG/
+	NFe.Components/SigCorp/MariliaSP/h/
+	NFe.Components/SigCorp/MogiGuacuSP/
+	NFe.Components/SigCorp/RioGrandeRS/
+	NFe.Components/SimplISS/AndiraPR/
+	NFe.Components/SimplISS/BalnearioCamboriu/
+	NFe.Components/SimplISS/EmbuDasArtesSP/
+	NFe.Components/SimplISS/Homologacao/
+	NFe.Components/SimplISS/IguatamaMG/
+	NFe.Components/SimplISS/MacaraiSP/
+	NFe.Components/SimplISS/PatrocinioMG/
+	NFe.Components/SimplISS/PresidentePrudenteSP/
+	NFe.Components/SimplISS/VoltaRedondaRJ/
+	NFe.Components/Tinus/
+	NFe.Components/TraceSOAPMessage.cs
+	NFe.Components/Web References/HCachoeiraSulRS/
+	NFe.Components/Web References/HCampoNovoDoParecisMT/
+	NFe.Components/Web References/HCorumbaMS/
+	NFe.Components/Web References/HItabiraMG/
+	NFe.Components/Web References/HJaboataoDosGuararapesPE_TINUS_CancelarNfse/
+	NFe.Components/Web References/HJaboataoDosGuararapesPE_TINUS_ConsultarLoteRps/
+	NFe.Components/Web References/HJaboataoDosGuararapesPE_TINUS_ConsultarNfse/
+	NFe.Components/Web References/HJaboataoDosGuararapesPE_TINUS_ConsultarNfsePorRps/
+	NFe.Components/Web References/HJaboataoDosGuararapesPE_TINUS_ConsultarSituacaoLoteRps/
+	NFe.Components/Web References/HJaboataoDosGuararapesPE_TINUS_RecepcionarLoteRps/
+	NFe.Components/Web References/HMacapaAP/
+	NFe.Components/Web References/HPotirendabaSP/
+	NFe.Components/Web References/HVacariRS/
+	NFe.Components/Web References/PCachoeiraSulRS/
+	NFe.Components/Web References/PCampoNovoDoParecisMT/
+	NFe.Components/Web References/PCorumbaMS/
+	NFe.Components/Web References/PIconhaES/
+	NFe.Components/Web References/PItabiraMG/
+	NFe.Components/Web References/PJaboataoDosGuararapesPE_TINUS_CancelarNfse/
+	NFe.Components/Web References/PJaboataoDosGuararapesPE_TINUS_ConsultarLoteRps/
+	NFe.Components/Web References/PJaboataoDosGuararapesPE_TINUS_ConsultarNfse/
+	NFe.Components/Web References/PJaboataoDosGuararapesPE_TINUS_ConsultarNfsePorRps/
+	NFe.Components/Web References/PJaboataoDosGuararapesPE_TINUS_ConsultarSituacaoLoteRps/
+	NFe.Components/Web References/PJaboataoDosGuararapesPE_TINUS_RecepcionarLoteRps/
+	NFe.Components/Web References/PJaraguaGO/
+	NFe.Components/Web References/PMacapaAP/
+	NFe.Components/Web References/PMogiMirimSPConsultaLoteRps/
+	NFe.Components/Web References/PMogiMirimSPConsultaNfse/
+	NFe.Components/Web References/PMogiMirimSPConsultaNfsePorRps/
+	NFe.Components/Web References/PMogiMirimSPConsultarSituacaoLoteRps/
+	NFe.Components/Web References/PNovaMutumMT/
+	NFe.Components/Web References/PPotirendabaSP/
+	NFe.Components/Web References/PSaoPauloSP/
+	NFe.Components/Web References/PVacariRS/
+	NFe.Components/Web References/br.com.bauru_sp.baurusp.h/
+	NFe.Components/Web References/br.com.bauru_sp.baurusp.p/
+	NFe.Components/Web References/br.com.betha.egov.h/
+	NFe.Components/Web References/br.com.betha.egov.p/
+	NFe.Components/Web References/br.com.consist.patosdeminas.h/
+	NFe.Components/Web References/br.com.consist.patosdeminas.p/
+	NFe.Components/Web References/br.com.el.colatina.p/
+	NFe.Components/Web References/br.com.elnfse.simoesfilho.p/
+	NFe.Components/Web References/br.com.elotech.quatrobarras.hp/
+	NFe.Components/Web References/br.com.fgmaiss.www.p.penapois.envio/
+	NFe.Components/Web References/br.com.fgmaiss.www.p.penapolis.cancela/
+	NFe.Components/Web References/br.com.fgmaiss.www.p.penapolis.consulta/
+	NFe.Components/Web References/br.com.fgmaiss.www.p.penapolis.consultaxml/
+	NFe.Components/Web References/br.com.fiorilli.avaresp.p/
+	NFe.Components/Web References/br.com.fiorilli.jacisp.p/
+	NFe.Components/Web References/br.com.fiorilli.mirassolandiasp.h/
+	NFe.Components/Web References/br.com.fiorilli.mirassolandiasp.p/
+	NFe.Components/Web References/br.com.fisslex.demo.aws_consultaloterps.h/
+	NFe.Components/Web References/br.com.fisslex.demo.aws_consultanfse.h/
+	NFe.Components/Web References/br.com.fisslex.demo.aws_consultanfseporrps.h/
+	NFe.Components/Web References/br.com.fisslex.demo.aws_consultarsituacaoloterps.h/
+	NFe.Components/Web References/br.com.fisslex.sinop.aws_consultaloterps.p/
+	NFe.Components/Web References/br.com.fisslex.sinop.aws_consultanfse.p/
+	NFe.Components/Web References/br.com.fisslex.sinop.aws_consultanfseporrps.p/
+	NFe.Components/Web References/br.com.fisslex.sinop.aws_consultarsituacaoloterps.p/
+	NFe.Components/Web References/br.com.govdigital.homolog.lavras.h/
+	NFe.Components/Web References/br.com.govdigital.homolog.paracatu.h/
+	NFe.Components/Web References/br.com.govdigital.homolog.pedroleopoldo.h/
+	NFe.Components/Web References/br.com.govdigital.homolog.pelotas.h/
+	NFe.Components/Web References/br.com.govdigital.homolog.pocos.h/
+	NFe.Components/Web References/br.com.govdigital.homolog.prata.h/
+	NFe.Components/Web References/br.com.govdigital.homolog.saojosedalapa.h/
+	NFe.Components/Web References/br.com.govdigital.homolog1/
+	NFe.Components/Web References/br.com.govdigital.ws.lavras.p/
+	NFe.Components/Web References/br.com.govdigital.ws.paracatu.p/
+	NFe.Components/Web References/br.com.govdigital.ws.pedroleopoldo.p/
+	NFe.Components/Web References/br.com.govdigital.ws.pelotas.p/
+	NFe.Components/Web References/br.com.govdigital.ws.pocos.p/
+	NFe.Components/Web References/br.com.govdigital.ws.prata.p/
+	NFe.Components/Web References/br.com.govdigital.ws.saojosedalapa.p/
+	NFe.Components/Web References/br.com.govdigital.ws/
+	NFe.Components/Web References/br.com.memory.pontenovamg.h/
+	NFe.Components/Web References/br.com.memory.pontenovamg.p/
+	NFe.Components/Web References/br.com.metropolisweb.lfhomologacao.h/
+	NFe.Components/Web References/br.com.metropolisweb.lftributos.p/
+	NFe.Components/Web References/br.com.mgmtributacao.www.penapolis.h/
+	NFe.Components/Web References/br.com.nfeosasco.www.p/
+	NFe.Components/Web References/br.com.sigiss.barretos.p/
+	NFe.Components/Web References/br.com.sigiss.botucatu.h/
+	NFe.Components/Web References/br.com.sigiss.cianorte.p/
+	NFe.Components/Web References/br.com.sigiss.igarape.p/
+	NFe.Components/Web References/br.com.sigiss.mogiguacu.p/
+	NFe.Components/Web References/br.com.sigiss.riogrande.p/
+	NFe.Components/Web References/br.com.sigiss.testebarretos/
+	NFe.Components/Web References/br.com.sigiss.testeigarape/
+	NFe.Components/Web References/br.com.sigiss.testemarilia.h/
+	NFe.Components/Web References/br.com.sigiss.testemogiguacu.h/
+	NFe.Components/Web References/br.com.sigiss.testeriogrande.h/
+	NFe.Components/Web References/br.com.simpliss.macaraisp.p/
+	NFe.Components/Web References/br.com.simplissweb.wsandira.p/
+	NFe.Components/Web References/br.com.simplissweb.wsbalneariocamboriu.p/
+	NFe.Components/Web References/br.com.simplissweb.wshomologacao.h/
+	NFe.Components/Web References/br.com.simplissweb.wsiguatama.p/
+	NFe.Components/Web References/br.com.simplissweb.wsitaporanga2.p/
+	NFe.Components/Web References/br.com.simplissweb.wspatrociniomg.p/
+	NFe.Components/Web References/br.com.simplissweb.wsvoltaredonda.p/
+	NFe.Components/Web References/br.gov.pr.curitiba.pilotoisscuritiba.h/
+	NFe.Components/Web References/br.gov.pr.guarapuava.nfse.h/
+	NFe.Components/Web References/br.gov.pr.guarapuava.nfse.p/
+	NFe.Components/Web References/br.gov.pr.londrina.iss/
+	NFe.Components/Web References/br.gov.sp.avare.fiorilli.h/
+	NFe.Components/Web References/br.gov.sp.embudasartes.sistemas.www.p/
+	NFe.Components/Web References/br.gov.sp.presidenteprudente.sistemas.www.h/
+	NFe.Components/Web References/br.gov.sp.presidenteprudente.sistemas.www.p/
+	NFe.Components/Web References/com.dyndnsserver.pmassis2.p/
+	NFe.Components/bin/Release/
+	NFe.Components/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+	NFe.Components/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+	NFe.Components/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+	NFe.Components/packages.config
+	NFe.ConvertCFe/
+	NFe.ConvertTxt/Classes.rastro.cs
+	NFe.ConvertTxt/bin/Release/
+	NFe.ConvertTxt/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+	NFe.ConvertTxt/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+	NFe.ConvertTxt/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+	NFe.Core/
+	NFe.Service/CFSe/
+	NFe.Service/CTe/TaskCTeRecepcaoOS.cs
+	NFe.Service/DFe/TaskRecepcaoDFeCTe.cs
+	NFe.Service/EFDReinf/
+	NFe.Service/LMC/
+	NFe.Service/NFSe/TaskConsultaSequenciaLoteNotaRPS.cs
+	NFe.Service/NFSe/TaskConsultarNfsePDF.cs
+	NFe.Service/NFSe/TaskObterNotaFiscal.cs
+	NFe.Service/TaskLayouts.cs
+	NFe.Service/TaskValidar.cs
+	NFe.Service/bin/Release/
+	NFe.Service/eSocial/
+	NFe.Service/logounimake.png
+	NFe.Service/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+	NFe.Service/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+	NFe.Service/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+	NFe.Service/packages.config
+	NFe.Settings/bin/Release/
+	NFe.Settings/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+	NFe.Settings/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+	NFe.Settings/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+	NFe.Threadings/bin/Release/
+	NFe.Threadings/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+	NFe.Threadings/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+	NFe.Threadings/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+	NFe.UI/Formularios/UserConfiguracaoPastas.Designer.cs
+	NFe.UI/Formularios/UserConfiguracaoPastas.cs
+	NFe.UI/Formularios/UserConfiguracaoPastas.resx
+	NFe.UI/Formularios/userConfiguracao_sat.Designer.cs
+	NFe.UI/Formularios/userConfiguracao_sat.cs
+	NFe.UI/Formularios/userConfiguracao_sat.resx
+	NFe.UI/Resources/Manuals.png
+	NFe.UI/bin/Release/
+	NFe.UI/obj/Debug/NFe.UI.Formularios.UserConfiguracaoPastas.resources
+	NFe.UI/obj/Debug/NFe.UI.Formularios.userConfiguracao_sat.resources
+	NFe.UI/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+	NFe.UI/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+	NFe.UI/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+	NFe.Validate/bin/Release/
+	NFe.Validate/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+	NFe.Validate/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+	NFe.Validate/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+	UniNFeServico/app.config
+	UniNFeServico/bin/
+	UniNFeServico/obj/Release/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+	UniNFeServico/obj/Release/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+	UniNFeServico/obj/Release/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+	build.bat
+	packages/
+	status.txt
+	uninfe/Form1.Designer.cs
+	uninfe/Form1.cs
+	uninfe/Form1.resx
+	uninfe/bin/release/NFe.SAT.dll
+	uninfe/bin/release/NFe.SAT.pdb
+	uninfe/bin/release/NFe.SAT.xml
+	uninfe/bin/release/Newtonsoft.Json.dll
+	uninfe/bin/release/Newtonsoft.Json.xml
+	uninfe/bin/release/UniNFe.exe
+	uninfe/bin/release/UniNFe.exe.config
+	uninfe/bin/release/UniNFe.pdb
+	uninfe/bin/release/UniNFeServico.exe.config
+	uninfe/bin/release/UniNFeServico.vshost.exe
+	uninfe/bin/release/UniNFeServico.vshost.exe.config
+	uninfe/bin/release/UniNFeServico.vshost.exe.manifest
+	uninfe/bin/release/Unimake.SAT.dll
+	uninfe/bin/release/VersaoWSDLXSD.xml
+	uninfe/bin/release/itextsharp.dll
+	uninfe/bin/release/itextsharp.xml
+	uninfe/bin/release/logounimake.png
+	uninfe/bin/release/nfe/schemas/CTe/cancCTeTiposBasico_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/consReciCTeTiposBasico_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/consReciCTe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/consSitCTeTiposBasico_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/consSitCTe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/consStatServCTe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/consStatServTiposBasico_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/cteModalAereo_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/cteModalAquaviario_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/cteModalDutoviario_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/cteModalFerroviario_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/cteModalRodoviarioOS_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/cteModalRodoviario_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/cteMultiModal_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/cteOS_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/cteTiposBasico_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/cte_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/enviCTe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/evCCeCTe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/evCancCTe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/evEPECCTe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/evGTV_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/evPrestDesacordo_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/evRegMultimodal_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/eventoCTeTiposBasico_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/eventoCTe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/inutCTeTiposBasico_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/inutCTe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/procCTeOS_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/procCTe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/procEventoCTe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/procInutCTe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/retCTeOS_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/retConsReciCTe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/retConsSitCTe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/retConsStatServCTe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/retEnviCTe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/retEventoCTe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/retInutCTe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/CTe/tiposGeralCTe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/DFe/distDFeInt_v1.01.xsd
+	uninfe/bin/release/nfe/schemas/DFe/resEvento_v1.01.xsd
+	uninfe/bin/release/nfe/schemas/DFe/resNFe_v1.01.xsd
+	uninfe/bin/release/nfe/schemas/DFe/retDistDFeInt_v1.01.xsd
+	uninfe/bin/release/nfe/schemas/DFe/tiposDistDFe_v1.01.xsd
+	uninfe/bin/release/nfe/schemas/DFeCTe/
+	uninfe/bin/release/nfe/schemas/EFDReinf/
+	uninfe/bin/release/nfe/schemas/EPEC/eventoEPEC_v0.01.xsd
+	uninfe/bin/release/nfe/schemas/EPEC/retEventoEPEC_v0.01.xsd
+	uninfe/bin/release/nfe/schemas/EPEC/tiposBasico_v3.10.xsd
+	uninfe/bin/release/nfe/schemas/LMC/
+	uninfe/bin/release/nfe/schemas/MDFe/consMDFeNaoEncTiposBasico_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/consMDFeNaoEnc_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/consReciMDFeTiposBasico_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/consReciMDFe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/consSitMDFeTiposBasico_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/consSitMDFe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/consStatServMDFe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/consStatServTiposBasico_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/distMDFe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/enviMDFe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/evCancMDFe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/evEncMDFe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/evIncCondutorMDFe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/eventoMDFeTiposBasico_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/eventoMDFe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/leiauteDistMDFe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/mdfeConsultaDFeTiposBasico_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/mdfeConsultaDFe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/mdfeModalAereo_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/mdfeModalAquaviario_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/mdfeModalFerroviario_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/mdfeModalRodoviario_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/mdfeTiposBasico_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/mdfe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/procEventoMDFe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/procMDFe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/retConsMDFeNaoEnc_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/retConsReciMDFe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/retConsSitMDFe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/retConsStatServMDFe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/retDistMDFe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/retEnviMDFe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/retEventoMDFe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/retMDFeConsultaDFe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/MDFe/tiposGeralMDFe_v3.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/consReciNFe_v4.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/consSitNFe_v4.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/consStatServ_v4.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/e111500_v1.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/e111501_v1.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/e111502_v1.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/e111503_v1.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/e411500_v1.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/e411501_v1.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/e411502_v1.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/e411503_v1.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/envRemIndus_v1.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/enviNFe_v4.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/eventoRemIndus_v1.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/inutNFe_v4.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/leiauteConsSitNFe_v4.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/leiauteConsStatServ_v4.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/leiauteInutNFe_v4.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/leiauteNFe_v4.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/leiauteRemIndus_v1.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/nfe_v4.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/procEventoNFe_v99.99.xsd
+	uninfe/bin/release/nfe/schemas/NFe/procInutNFe_v4.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/procNFe_v4.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/procRemIndus_v1.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/retConsReciNFe_v4.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/retConsSitNFe_v4.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/retConsStatServ_v4.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/retEnvRemIndus_v1.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/retEnviNFe_v4.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/retInutNFe_v4.00.xsd
+	uninfe/bin/release/nfe/schemas/NFe/tiposBasico_v4.00.xsd
+	uninfe/bin/release/nfe/schemas/eSocial/
+	uninfe/bin/release/nfe/wsdl/Homologacao/AM/HAMCadConsultaCadastro.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/AM/HAMNfeAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/AM/HAMNfeAutorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/AM/HAMNfeConsulta.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/AM/HAMNfeConsulta_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/AM/HAMNfeConsulta_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/AM/HAMNfeConsulta_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/AM/HAMNfeInutilizacao.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/AM/HAMNfeInutilizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/AM/HAMNfeInutilizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/AM/HAMNfeInutilizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/AM/HAMNfeRetAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/AM/HAMNfeRetAutorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/AM/HAMNfeStatusServico.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/AM/HAMNfeStatusServico_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/AM/HAMNfeStatusServico_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/AM/HAMNfeStatusServico_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/AM/HAMRecepcaoEvento_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/AM/HAMRecepcaoEvento_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/AN/HANCTeDistribuicaoDFe.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/AN/HANRecepcaoEvento_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/AN/eSocial_ServicoConsultarLoteEventos.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/AN/eSocial_ServicoEnviarLoteEventos.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/BA/HBACadConsultaCadastro.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/BA/HBACadConsultaCadastro_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/BA/HBANfeAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/BA/HBANfeAutorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/BA/HBANfeConsulta.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/BA/HBANfeConsulta_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/BA/HBANfeConsulta_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/BA/HBANfeConsulta_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/BA/HBANfeInutilizacao.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/BA/HBANfeInutilizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/BA/HBANfeInutilizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/BA/HBANfeRetAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/BA/HBANfeRetAutorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/BA/HBANfeStatusServico.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/BA/HBANfeStatusServico_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/BA/HBANfeStatusServico_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/BA/HBANfeStatusServico_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/BA/HBANfeinutilizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/BA/HBARecepcaoEvento_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/BA/HBARecepcaoEvento_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/CE/HCECadConsultaCadastro.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/CE/HCENfeAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/CE/HCENfeAutorizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/CE/HCENfeConsulta.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/CE/HCENfeConsulta_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/CE/HCENfeConsulta_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/CE/HCENfeInutilizacao.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/CE/HCENfeInutilizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/CE/HCENfeInutilizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/CE/HCENfeRetAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/CE/HCENfeRetAutorizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/CE/HCENfeStatusServico.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/CE/HCENfeStatusServico_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/CE/HCENfeStatusServico_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/CE/HCERecepcaoEvento_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/CE/HCERecepcaoEvento_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/GO/HGOCadConsultaCadastro.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/GO/HGOCadConsultaCadastro_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/GO/HGONfeAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/GO/HGONfeConsulta.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/GO/HGONfeConsulta_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/GO/HGONfeInutilizacao.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/GO/HGONfeInutilizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/GO/HGONfeRetAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/GO/HGONfeStatusServico.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/GO/HGONfeStatusServico_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/GO/HGORecepcaoEvento_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MG/HMGCancRegSaida.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MG/HMGCteRecepcaoOS.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MG/HMGNFeCadConsultaCadastro.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MG/HMGNfeAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MG/HMGNfeConsulta.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MG/HMGNfeConsulta_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MG/HMGNfeInutilizacao.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MG/HMGNfeInutilizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MG/HMGNfeRetAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MG/HMGNfeStatusServico.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MG/HMGNfeStatusServico_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MG/HMGRegistrarSaida.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSCteRecepcaoOS.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSNfeAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSNfeAutorizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSNfeAutorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSNfeCadConsultaCadastro.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSNfeConsulta.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSNfeConsulta_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSNfeConsulta_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSNfeConsulta_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSNfeInutilizacao.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSNfeInutilizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSNfeInutilizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSNfeInutilizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSNfeRecepcaoEvento_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSNfeRecepcaoEvento_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSNfeRetAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSNfeRetAutorizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSNfeRetAutorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSNfeStatusServico.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSNfeStatusServico_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSNfeStatusServico_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MS/HMSNfeStatusServico_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MT/HMTCteRecepcaoOS.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MT/HMTNfeAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MT/HMTNfeCadConsultaCadastro.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MT/HMTNfeCadConsultaCadastro_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MT/HMTNfeConsulta.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MT/HMTNfeConsulta_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MT/HMTNfeConsulta_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MT/HMTNfeInutilizacao.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MT/HMTNfeInutilizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MT/HMTNfeInutilizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MT/HMTNfeRecepcaoEvento_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MT/HMTNfeRetAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MT/HMTNfeStatusServico.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MT/HMTNfeStatusServico_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/MT/HMTNfeStatusServico_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PE/HPECadConsultaCadastro.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PE/HPENfeAutorizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PE/HPENfeAutorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PE/HPENfeConsulta.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PE/HPENfeConsulta_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PE/HPENfeConsulta_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PE/HPENfeInutilizacao.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PE/HPENfeInutilizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PE/HPENfeInutilizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PE/HPENfeRetAutorizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PE/HPENfeRetAutorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PE/HPENfeStatusServico.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PE/HPENfeStatusServico_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PE/HPENfeStatusServico_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PE/HPERecepcaoEvento_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PE/HPERecepcaoEvento_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PR/HPRCteRecepcaoOS.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PR/HPRNFeAutorizacao.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PR/HPRNFeAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PR/HPRNFeAutorizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PR/HPRNFeAutorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PR/HPRNFeCadConsultaCadastro.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PR/HPRNFeCadConsultaCadastro_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PR/HPRNFeConsulta.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PR/HPRNFeConsulta_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PR/HPRNFeConsulta_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PR/HPRNFeConsulta_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PR/HPRNFeInutilizacao.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PR/HPRNFeInutilizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PR/HPRNFeInutilizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PR/HPRNFeInutilizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PR/HPRNFeRecepcaoEvento_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PR/HPRNFeRecepcaoEvento_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PR/HPRNFeRetAutorizacao.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PR/HPRNFeRetAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PR/HPRNFeRetAutorizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PR/HPRNFeRetAutorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PR/HPRNFeStatusServico.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PR/HPRNFeStatusServico_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PR/HPRNFeStatusServico_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/PR/HPRNFeStatusServico_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/RS/HRSNFeAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/RS/HRSNFeAutorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/RS/HRSNFeCadConsultaCadastro.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/RS/HRSNFeRecepcaoEvento_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/RS/HRSNFeRecepcaoEvento_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/RS/HRSNFeRetAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/RS/HRSNFeRetAutorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/RS/HRSNfeConsulta.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/RS/HRSNfeConsulta_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/RS/HRSNfeConsulta_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/RS/HRSNfeConsulta_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/RS/HRSNfeInutilizacao.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/RS/HRSNfeInutilizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/RS/HRSNfeStatusServico.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/RS/HRSNfeStatusServico_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/RS/HRSNfeStatusServico_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/RS/HRSNfeStatusServico_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/RS/HRScterecepcaoos.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/RS/HRSnfeinutilizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/RS/HRSnfeinutilizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SCVAN/HSVCANNfeAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SCVAN/HSVCANNfeConsulta.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SCVAN/HSVCANNfeConsulta_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SCVAN/HSVCANNfeRecepcaoEvento_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SCVAN/HSVCANNfeRetAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SCVAN/HSVCANNfeStatusServico.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SCVAN/HSVCANNfeStatusServico_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SCVRS/HSVCRSNFeAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SCVRS/HSVCRSNFeCadConsultaCadastro.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SCVRS/HSVCRSNFeRecepcaoEvento_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SCVRS/HSVCRSNFeRetAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SCVRS/HSVCRSNfeConsulta.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SCVRS/HSVCRSNfeConsulta_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SCVRS/HSVCRSNfeInutilizacao.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SCVRS/HSVCRSNfeInutilizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SCVRS/HSVCRSNfeStatusServico.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SCVRS/HSVCRSNfeStatusServico_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SP/HSPNFeCadConsultaCadastro.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SP/HSPNFeCadConsultaCadastro_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SP/HSPNFeRecepcaoEvento_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SP/HSPNFeRecepcaoEvento_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SP/HSPNfeConsulta.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SP/HSPNfeConsulta_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SP/HSPNfeConsulta_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SP/HSPNfeConsulta_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SP/HSPNfeInutilizacao.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SP/HSPNfeInutilizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SP/HSPNfeInutilizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SP/HSPNfeInutilizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SP/HSPNfeStatusServico.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SP/HSPNfeStatusServico_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SP/HSPNfeStatusServico_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SP/HSPNfeStatusServico_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SP/HSPNfeautorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SP/HSPNfeautorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SP/HSPNferetautorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SP/HSPNferetautorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SP/HSPcteRecepcaoOS.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVAN/HSVANNFeInutilizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVAN/HSVANNFeInutilizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVAN/HSVANNfeAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVAN/HSVANNfeAutorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVAN/HSVANNfeConsulta.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVAN/HSVANNfeConsulta_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVAN/HSVANNfeConsulta_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVAN/HSVANNfeConsulta_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVAN/HSVANNfeInutilizacao.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVAN/HSVANNfeInutilizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVAN/HSVANNfeRetAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVAN/HSVANNfeRetAutorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVAN/HSVANNfeStatusServico.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVAN/HSVANNfeStatusServico_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVAN/HSVANNfeStatusServico_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVAN/HSVANNfeStatusServico_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVAN/HSVANRecepcaoEvento_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVAN/HSVANRecepcaoEvento_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVRS/HSVRSNFeAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVRS/HSVRSNFeAutorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVRS/HSVRSNFeCadConsultaCadastro.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVRS/HSVRSNFeInutilizacao.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVRS/HSVRSNFeInutilizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVRS/HSVRSNFeInutilizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVRS/HSVRSNFeInutilizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVRS/HSVRSNFeRecepcaoEvento_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVRS/HSVRSNFeRecepcaoEvento_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVRS/HSVRSNFeRetAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVRS/HSVRSNFeRetAutorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVRS/HSVRSNfeConsulta.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVRS/HSVRSNfeConsulta_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVRS/HSVRSNfeConsulta_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVRS/HSVRSNfeConsulta_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVRS/HSVRSNfeStatusServico.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVRS/HSVRSNfeStatusServico_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVRS/HSVRSNfeStatusServico_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVRS/HSVRSNfeStatusServico_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Homologacao/SVRS/HSVRScterecepcaoos.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/AN/EFDReinf.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/AN/PANCTeDistribuicaoDFe.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/AN/eSocial_ServicoConsultarLoteEventos.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/AN/eSocial_ServicoEnviarLoteEventos.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/GO/PGOCadConsultaCadastro.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/GO/PGONfeAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/GO/PGONfeConsulta.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/GO/PGONfeConsulta_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/GO/PGONfeInutilizacao.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/GO/PGONfeInutilizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/GO/PGONfeRetAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/GO/PGONfeStatusServico.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/GO/PGONfeStatusServico_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/MG/PMGCteRecepcaoOS.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/MS/PMSCteRecepcaoOS.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/MS/PMSNFeRecepcaoEvento_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/MS/PMSNfeAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/MS/PMSNfeAutorizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/MS/PMSNfeCadConsultaCadastro.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/MS/PMSNfeConsulta.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/MS/PMSNfeConsulta_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/MS/PMSNfeConsulta_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/MS/PMSNfeInutilizacao.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/MS/PMSNfeInutilizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/MS/PMSNfeInutilizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/MS/PMSNfeRetAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/MS/PMSNfeRetAutorizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/MS/PMSNfeStatusServico.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/MS/PMSNfeStatusServico_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/MS/PMSNfeStatusServico_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/MT/PMTCteRecepcaoOS.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PE/PPENfeAutorizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PE/PPENfeConsulta2_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PE/PPENfeInutilizacao2_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PE/PPENfeRetAutorizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PE/PPENfeStatusServico2_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PE/PPERecepcaoEvento_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PR/PPRCteRecepcaoOS.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PR/PPRNFeAutorizacao.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PR/PPRNFeAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PR/PPRNFeAutorizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PR/PPRNFeAutorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PR/PPRNFeCadConsultaCadastro.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PR/PPRNFeConsulta.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PR/PPRNFeConsulta_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PR/PPRNFeConsulta_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PR/PPRNFeConsulta_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PR/PPRNFeInutilizacao.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PR/PPRNFeInutilizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PR/PPRNFeInutilizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PR/PPRNFeInutilizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PR/PPRNFeRetAutorizacao.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PR/PPRNFeRetAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PR/PPRNFeRetAutorizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PR/PPRNFeRetAutorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PR/PPRNFeStatusServico.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PR/PPRNFeStatusServico_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PR/PPRNFeStatusServico_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/PR/PPRNFeStatusServico_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/RS/PRSNFeAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/RS/PRSNFeAutorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/RS/PRSNFeCadConsultaCadastro.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/RS/PRSNFeRetAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/RS/PRSNFeRetAutorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/RS/PRSNfeConsulta.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/RS/PRSNfeConsulta_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/RS/PRSNfeConsulta_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/RS/PRSNfeConsulta_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/RS/PRSNfeInutilizacao.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/RS/PRSNfeInutilizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/RS/PRSNfeInutilizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/RS/PRSNfeInutilizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/RS/PRSNfeStatusServico.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/RS/PRSNfeStatusServico_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/RS/PRSNfeStatusServico_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/RS/PRSNfeStatusServico_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/RS/PRScterecepcaoos.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SCVAN/PSVCANNfeAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SCVAN/PSVCANNfeConsulta.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SCVAN/PSVCANNfeConsulta_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SCVAN/PSVCANNfeRetAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SCVAN/PSVCANNfeStatusServico.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SCVAN/PSVCANNfeStatusServico_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SCVRS/PSCVRSNFeCadConsultaCadastro.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SCVRS/PSCVRSNFeInutilizacao.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SCVRS/PSCVRSNFeInutilizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SCVRS/PSVCRSNFeAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SCVRS/PSVCRSNFeRetAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SCVRS/PSVCRSNfeConsulta.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SCVRS/PSVCRSNfeConsulta_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SCVRS/PSVCRSNfeStatusServico.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SCVRS/PSVCRSNfeStatusServico_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SP/PSPNFeCadConsultaCadastro.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SP/PSPNfeautorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SP/PSPNfeautorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SP/PSPNferetautorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SP/PSPNferetautorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SP/PSPcteRecepcaoOS.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SP/PSPnfeconsulta.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SP/PSPnfeconsulta_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SP/PSPnfeconsulta_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SP/PSPnfeconsulta_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SP/PSPnfeinutilizacao.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SP/PSPnfeinutilizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SP/PSPnfeinutilizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SP/PSPnfeinutilizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SP/PSPnfestatusservico.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SP/PSPnfestatusservico_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SP/PSPnfestatusservico_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SP/PSPnfestatusservico_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVAN/PSVANNFeInutilizacao.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVAN/PSVANNFeInutilizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVAN/PSVANNFeInutilizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVAN/PSVANNFeInutilizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVAN/PSVANNFeStatusServico.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVAN/PSVANNFeStatusServico_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVAN/PSVANNFeStatusServico_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVAN/PSVANNFeStatusServico_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVAN/PSVANNfeAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVAN/PSVANNfeAutorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVAN/PSVANNfeRetAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVAN/PSVANNfeRetAutorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVAN/PSVANnfeconsulta.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVAN/PSVANnfeconsulta_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVAN/PSVANnfeconsulta_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVAN/PSVANnfeconsulta_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVRS/PSVRSNFeAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVRS/PSVRSNFeAutorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVRS/PSVRSNFeCadConsultaCadastro.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVRS/PSVRSNFeInutilizacao.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVRS/PSVRSNFeInutilizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVRS/PSVRSNFeInutilizacao_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVRS/PSVRSNFeInutilizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVRS/PSVRSNFeRetAutorizacao_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVRS/PSVRSNFeRetAutorizacao_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVRS/PSVRSNfeConsulta.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVRS/PSVRSNfeConsulta_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVRS/PSVRSNfeConsulta_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVRS/PSVRSNfeConsulta_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVRS/PSVRSNfeStatusServico.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVRS/PSVRSNfeStatusServico_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVRS/PSVRSNfeStatusServico_C.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVRS/PSVRSNfeStatusServico_C_400.wsdl
+	uninfe/bin/release/nfe/wsdl/Producao/SVRS/PSVRScterecepcaoos.wsdl
+	uninfe/bin/release/nfse/schemas/NFSe/ABACO/V2/
+	uninfe/bin/release/nfse/schemas/NFSe/ABASE/
+	uninfe/bin/release/nfse/schemas/NFSe/ACTCON/
+	uninfe/bin/release/nfse/schemas/NFSe/BSITBR/
+	uninfe/bin/release/nfse/schemas/NFSe/EL/
+	uninfe/bin/release/nfse/schemas/NFSe/ELOTECH/
+	uninfe/bin/release/nfse/schemas/NFSe/EQUIPLANO/
+	uninfe/bin/release/nfse/schemas/NFSe/FINTEL/cfse.xsd
+	uninfe/bin/release/nfse/schemas/NFSe/FISSLEX/
+	uninfe/bin/release/nfse/schemas/NFSe/GIF/NFSe-Infisc-SapucaiaDoSul_RS_v1.xsd
+	uninfe/bin/release/nfse/schemas/NFSe/GINFES_V03/
+	uninfe/bin/release/nfse/schemas/NFSe/GOIANIA/
+	uninfe/bin/release/nfse/schemas/NFSe/GOVDIGITAL/
+	uninfe/bin/release/nfse/schemas/NFSe/INTERSOL/
+	uninfe/bin/release/nfse/schemas/NFSe/ISSONLINE4R/xmldsig-core-schema20020212.xsd
+	uninfe/bin/release/nfse/schemas/NFSe/LEXSOM/
+	uninfe/bin/release/nfse/schemas/NFSe/MARINGA_PR/
+	uninfe/bin/release/nfse/schemas/NFSe/METROPOLIS/
+	uninfe/bin/release/nfse/schemas/NFSe/NATALENSE/
+	uninfe/bin/release/nfse/schemas/NFSe/PUBLICA/
+	uninfe/bin/release/nfse/schemas/NFSe/SH3/
+	uninfe/bin/release/nfse/schemas/NFSe/SIGCORP_SIGISS/
+	uninfe/bin/release/nfse/schemas/NFSe/SUPERNOVA/
+	uninfe/bin/release/nfse/schemas/NFSe/TINUS/
+	uninfe/bin/release/nfse/wsdl/Homologacao/HABASE.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HAlagoinhasBA-FREIRE.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HAracajuSE-WEBISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HArcosMG-WebISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HAssisSP-FIORILLI.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HAvareSP-FIORILLI.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HBalneario-SIMPLISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HBarraPiraiRJ-WebISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HBarretos-SIGCORP.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HBauruSP-BAURU_SP.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HBoituvaSP-cancelarnfse.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HBoituvaSP-consultarnfseporrps.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HBoituvaSP-recepcionarloterpssincrono.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HBrumadoBA-WebISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HCacadorSC-PUBLICA.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HCachoeiraSulRS-PRONIN.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HCamacariBA.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HCampoNovoParecis-COPLAN.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HCandeiasBA-WEBISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HCatantuvaSP-PRONIN.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HCianortePR-sigiss_ws.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HCorumbaMS-FIORILLI.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HDivinopolisMG-GOVDigital.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HDoisIrmaos-CancelamentoNFSe.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HDoisIrmaos-ConsultaLoteRPS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HDoisIrmaos-ConsultaNFSePorFaixa.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HDoisIrmaos-ConsultaNFSePorRPS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HDoisIrmaos-ConsultaNFSeServicosPrestados.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HDoisIrmaos-ConsultaNFSeServicosTomadosIntermediados.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HDoisIrmaos-EnvioLoteRPSSincrono.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HEQUIPLANO.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HEstanciaVelhaRS-ConsultaSequenciaLoteNotaRPS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HEusebioCE-Intersol.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HFISSLEXcancelarnfse.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HFISSLEXconsultaloterps.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HFISSLEXconsultanfse.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HFISSLEXconsultanfseporrps.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HFISSLEXconsultarsituacaoloterps.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HFISSLEXrecepcionarloterps.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HFormigaMG-WebISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HFortaleza-Ginfes.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HFozDoIguacuLEXSOM.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HGaribaldi-GIF.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HGoianiaGO.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HGovernadorLauroFreitas-METROPOLIS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HGovernadorValarares-ACTCON.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HGuarapuava-PR.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HHorizontinaRS-PRONIN.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HIracaSC-WebIss.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HIratiPR-FINTEL.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HItabiraMG-PRONIN.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HItajubaMG-GOVDIGITAL.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HItaporangaSP-FIORILLI.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HIvoti-CancelamentoNFSe.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HIvoti-ConsultaLoteRPS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HIvoti-ConsultaNFSePorFaixa.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HIvoti-ConsultaNFSePorRPS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HIvoti-ConsultaNFSeServicosPrestados.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HIvoti-EnvioLoteRPSSincrono.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HJaboataoDosGuararapesPE_TINUS_CancelarNfse.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HJaboataoDosGuararapesPE_TINUS_ConsultarLoteRps.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HJaboataoDosGuararapesPE_TINUS_ConsultarNfse.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HJaboataoDosGuararapesPE_TINUS_ConsultarNfsePorRps.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HJaboataoDosGuararapesPE_TINUS_ConsultarSituacaoLoteRps.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HJaboataoDosGuararapesPE_TINUS_RecepcionarLoteRps.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HJaciSP-FIORILLI.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HLavrasMG-GOVDIGITAL.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HMacapaAP-FIORILLI.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HMacaraiSP-SIMPLISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HMaringaPR-MARINGA_PR.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HMirassolandiaSP-FIORILLI.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HMogiGuacu-SIGCORP.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HNatalRN.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HNiteroiRJ-WebISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HNovaLimaMG_SuperNova.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HNovaMutumMT-COPLAN.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HOsascoEGOVERNEISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HOsorioRS-DBSELLER.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HPalmasTO-WebISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HParacatuMG-GOVDIGITAL.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HPassoFundoRS-cancelamento.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HPassoFundoRS-consulta.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HPassoFundoRS-remessa.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HPatosDeMinasMG-Consist.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HPatrocinioMG-SIMPLISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HPedroLeopoldoMG.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HPelotasRS_GOVDIGITAL.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HPenapolisSP-MGM.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HPicadaCafe-PRONIN.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HPocosdeCaldasMG-GOVDIGITAL.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HPonteNovaMG-Memory.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HPotirendabaSP-FIORILLI.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HPrataMG-GovDigital.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HPresidentePrudenteSP-SIMPLISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HPrudenteMorais-WebISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HQuatroBarrasPR-ELOTECH.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HRegenteFeijo-PRONIN.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HRioGrandeRS-sigiss.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HRondonopolisMT-cancelarnfse.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HRondonopolisMT-consultarloterps.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HRondonopolisMT-consultarnfse.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HRondonopolisMT-consultarnfseporrps.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HRondonopolisMT-consultarsituacaoloterps.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HRondonopolisMT-recepcionarloterps.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HSSebastiaoCai-CancelamentoNFSe.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HSSebastiaoCai-ConsultaLoteRPS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HSSebastiaoCai-ConsultaNFSePorFaixa.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HSSebastiaoCai-ConsultaNFSePorRPS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HSSebastiaoCai-ConsultaNFSeServicosPrestados.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HSSebastiaoCai-EnvioLoteRPSSincrono.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HSalvadorDoSulRS-CancelamentoNFSe.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HSalvadorDoSulRS-ConsultaLoteRPS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HSalvadorDoSulRS-ConsultaNFSePorFaixa.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HSalvadorDoSulRS-ConsultaNFSePorRPS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HSalvadorDoSulRS-ConsultaNFSeServicosPrestados.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HSalvadorDoSulRS-EnvioLoteRPSSincrono.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HSaoJoaoDelReiMG.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HSaoJoseDaLapaMG-GovDigital.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HSaoJoseRibamarMA-PORTALFACIL_ACTCON.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HSaoJosedoRioClaroMT.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HSapucaiadoSulRS-GIF.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HSideropolis-WebIss.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HSistemaISSOnLine4rJuquiaCancelarNfse.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HSistemaISSOnLine4rJuquiaConsultarNfsePorRps.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HSistemaISSOnLine4rJuquiaRecepcionarLoteRpsSincrono.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HTangaraSerraMT-WebISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HTaquaritubaSP-Fiorilli.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HThemaGasparSCCancelamento.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HThemaGasparSCConsulta.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HThemaGasparSCRemessa.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HToledoPR-EQUIPLANO.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HUberabaMG-WebISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HVacariRS-PRONIN.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HVarzeaGrandeMT-cancelarnfse.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HVarzeaGrandeMT-consultarloterps.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HVarzeaGrandeMT-consultarnfse.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HVarzeaGrandeMT-consultarnfseporrps.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HVarzeaGrandeMT-consultarsituacaoloterps.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HVarzeaGrandeMT-recepcionarloterps.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HVenancioAires-NFSEcancelamento.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HVenancioAires-NFSEconsulta.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HVenancioAires-NFSEremessa.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HVilaVelhaES-VVISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HVilhenaRO-WebISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HViscondeRioBrancoMG-SH3.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HVitoriaES-VVISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Homologacao/HVoltaRedondaRJ-SIMPLISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PABASE.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PAlagoinhasBA-FREIRE.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PAracajuSE-WEBISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PArcosMG-WebISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PAssisSP-FIORILLI.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PAvareSP-FIORILLI.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PBalneario-SIMPLISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PBarraMansaRJ_AssessorPublico.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PBarraPiraiRJ-WebISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PBarretos-SIGCORP.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PBauruSP-BAURU_SP.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PBiriguiSP-WSEntrada.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PBiriguiSP-WSSaida.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PBiriguiSP-WSUtil.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PBoituvaSP-cancelarnfse.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PBoituvaSP-consultarnfseporrps.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PBoituvaSP-recepcionarloterpssincrono.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PBrumadoBA-WebISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PCacadorSC-PUBLICA.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PCachoeiraSulRS-PRONIN.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PCamacariBA.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PCampoNovoParecis-COPLAN.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PCandeiasBA-WEBISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PCariacicaES-WSEntrada.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PCariacicaES-WSSaida.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PCariacicaES-WSUtil.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PCatantuvaSP-PRONIN.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PCianortePR-sigiss_ws.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PColatinaES-EL.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PCorumbaMS-FIORILLI.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PCruzAltaRSISSNET.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PDivinopolisMG-GOVDigital.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PDoisIrmaos-CancelamentoNFSe.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PDoisIrmaos-ConsultaLoteRPS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PDoisIrmaos-ConsultaNFSePorFaixa.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PDoisIrmaos-ConsultaNFSePorRPS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PDoisIrmaos-ConsultaNFSeServicosPrestados.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PDoisIrmaos-ConsultaNFSeServicosTomadosIntermediados.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PDoisIrmaos-ConsultaSequenciaLoteNotaRPS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PDoisIrmaos-EnvioLoteRPSSincrono.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PDuquedeCaxiasRJ-TIPLAN.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PEQUIPLANO.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PEmbuDasArtes-SIMPLISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PEstanciaVelhaRS-ConsultaSequenciaLoteNotaRPS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PEusebioCE-Intersol.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PFormigaMG-WebISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PFortaleza-Ginfes.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PFozDoIguacuLEXSOM.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PGaribaldi-GIF.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PGoianiaGO.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PGovernadorValarares-ACTCON.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PGuarapuava-PR.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PHorizontinaRS-PRONIN.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PIconhaES-EL.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PIgarapeMG-sigiss.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PIracaSC-WebIss.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PIratiPR-FINTEL.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PItabiraMG-PRONIN.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PItajubaMG-GOVDIGITAL.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PItaporangaSP-FIORILLI.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PItumbiaraGO-Prodata.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PIvoti-CancelamentoNFSe.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PIvoti-ConsultaLoteRPS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PIvoti-ConsultaNFSePorFaixa.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PIvoti-ConsultaNFSePorRPS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PIvoti-ConsultaNFSeServicosPrestados.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PIvoti-EnvioLoteRPSSincrono.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PJaboataoDosGuararapesPE_TINUS_CancelarNfse.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PJaboataoDosGuararapesPE_TINUS_ConsultarLoteRps.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PJaboataoDosGuararapesPE_TINUS_ConsultarNfse.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PJaboataoDosGuararapesPE_TINUS_ConsultarNfsePorRps.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PJaboataoDosGuararapesPE_TINUS_ConsultarSituacaoLoteRps.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PJaboataoDosGuararapesPE_TINUS_RecepcionarLoteRps.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PJaciSP-FIORILLI.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PJaraguaGO-BSITBR.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PLauroFreitas-METROPOLIS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PLavrasMG-GOVDIGITAL.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PMacapaAP-FIORILLI.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PMacaraiSP-SIMPLISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PMaringaPR-MARINGA_PR.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PMirassolandiaSP-FIORILLI.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PMogiGuacu-SIGCORP.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PMogiMirimSPcancelarnfse-FISSLEX.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PMogiMirimSPconsultaloterps-FISSLEX.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PMogiMirimSPconsultanfse-FISSLEX.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PMogiMirimSPconsultanfseporrps-FISSLEX.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PMogiMirimSPconsultarsituacaoloterps-FISSLEX.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PMogiMirimSPrecepcionarloterps-FISSLEX.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PNatalRN.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PNiteroiRJ-WebISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PNovaLimaMG_SuperNova.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PNovaMutumMT-COPLAN.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/POsascoEGOVERNEISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/POsorioRS-DBSELLER.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PPalmasTO-WebISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PParacatuMG-GOVDIGITAL.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PPassoFundoRS-cancelamento.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PPassoFundoRS-consulta.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PPassoFundoRS-remessa.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PPatosDeMinasMG-Consist.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PPatrocinioMG-SIMPLISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PPedroLeopoldoMG.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PPelotasRS_GOVDIGITAL.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PPenapolisSP-MGM.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PPicadaCafe-PRONIN.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PPiraiRJ-TIPLAN.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PPocosdeCaldasMG-GOVDIGITAL.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PPonteNovaMG-Memory.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PPotirendabaSP-FIORILLI.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PPrataMG-GovDigital.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PPresidentePrudenteSP-SIMPLISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PPrudenteMorais-WebISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PQuatroBarrasPR-ELOTECH.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PRecifePE-ABRASF.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PRegenteFeijo-PRONIN.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PRioGrandeRS-sigiss.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PRolandiaPR-PRONIN.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PRondonopolisMT-cancelarnfse.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PRondonopolisMT-consultarloterps.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PRondonopolisMT-consultarnfse.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PRondonopolisMT-consultarnfseporrps.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PRondonopolisMT-consultarsituacaoloterps.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PRondonopolisMT-recepcionarloterps.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSSebastiaoCai-CancelamentoNFSe.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSSebastiaoCai-ConsultaLoteRPS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSSebastiaoCai-ConsultaNFSePorFaixa.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSSebastiaoCai-ConsultaNFSePorRPS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSSebastiaoCai-ConsultaNFSeServicosPrestados.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSSebastiaoCai-EnvioLoteRPSSincrono.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSalvadorDoSulRS-CancelamentoNFSe.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSalvadorDoSulRS-ConsultaLoteRPS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSalvadorDoSulRS-ConsultaNFSePorFaixa.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSalvadorDoSulRS-ConsultaNFSePorRPS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSalvadorDoSulRS-ConsultaNFSeServicosPrestados.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSalvadorDoSulRS-EnvioLoteRPSSincrono.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSaoJoaoDelReiMG.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSaoJoseDaLapaMG-GovDigital.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSaoJoseRibamarMA-PORTALFACIL_ACTCON.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSaoJosedoRioClaroMT.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSapucaiadoSulRS-GIF.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSerraES-SMARAPDWSEntrada.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSerraES-SMARAPDWSSaida.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSerraES-SMARAPDWSUtil.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSideropolis-WebIss.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSimoesFilho-EL.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSinopMTcancelarnfse-FISSLEX.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSinopMTconsultaloterps-FISSLEX.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSinopMTconsultanfse-FISSLEX.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSinopMTconsultanfseporrps-FISSLEX.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSinopMTconsultarsituacaoloterps-FISSLEX.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSinopMTrecepcionarloterps-FISSLEX.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSistemaISSOnLine4rJuquiaCancelarNfse.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSistemaISSOnLine4rJuquiaConsultarNfsePorRps.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PSistemaISSOnLine4rJuquiaRecepcionarLoteRpsSincrono.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PTangaraSerraMT-WebISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PTaquaritubaSP-Fiorilli.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PThemaGasparSCCancelamento.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PThemaGasparSCConsulta.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PThemaGasparSCRemessa.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PUberabaMG-WebISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PVacariRS-PRONIN.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PVarzeaGrandeMT-cancelarnfse.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PVarzeaGrandeMT-consultarloterps.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PVarzeaGrandeMT-consultarnfse.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PVarzeaGrandeMT-consultarnfseporrps.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PVarzeaGrandeMT-consultarsituacaoloterps.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PVarzeaGrandeMT-recepcionarloterps.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PVenancioAires-NFSEcancelamento.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PVenancioAires-NFSEconsulta.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PVenancioAires-NFSEremessa.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PVilaVelhaES-VVISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PVilhenaRO-WebISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PViscondeRioBrancoMG-SH3.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PVitoriaES-VVISS.wsdl
+	uninfe/bin/release/nfse/wsdl/Producao/PVoltaRedondaRJ-SIMPLISS.wsdl
+	uninfe/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+	uninfe/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+	uninfe/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+	uninfe/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+	uninfe/obj/Debug/UniNFe.csprojResolveAssemblyReference.cache
+	uninfe/packages.config
+	uninfe/uninfeDummy.cs
+	uninfe_ws/app.config
+	uninfe_ws/bin/Release/
+	uninfe_ws/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+	uninfe_ws/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+	uninfe_ws/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+
+no changes added to commit (use "git add" and/or "git commit -a")

@@ -5,9 +5,6 @@ using System.Security.Cryptography.X509Certificates;
 using System.Xml;
 using System.IO;
 using System.Threading;
-using System.Linq;
-using System.Xml.Serialization;
-
 using NFe.Components;
 
 namespace NFe.Settings
@@ -144,51 +141,42 @@ namespace NFe.Settings
         /// <summary>
         /// Define a utilização do certficado instalado no windows ou através de arquivo
         /// </summary>
-        //[NFe.Components.AttributeTipoAplicacao(TipoAplicativo.Nulo)]
         public bool CertificadoInstalado { get; set; }
         /// <summary>
         /// Quando utilizar o certificado através de arquivo será necessário informar o local de armazenamento do certificado digital
         /// </summary>
-        //[NFe.Components.AttributeTipoAplicacao(TipoAplicativo.Nulo)]
         public string CertificadoArquivo { get; set; }
         /// <summary>
         /// Quando utilizar o certificado através de arquivo será necessário informar a senha do certificado
         /// </summary>
-        //[NFe.Components.AttributeTipoAplicacao(TipoAplicativo.Nulo)]
         public string CertificadoSenha { get; set; }
         /// <summary>
         /// Utilizado para certificados A3
         /// </summary>
-        //[NFe.Components.AttributeTipoAplicacao(TipoAplicativo.Nulo)]
         public string CertificadoPIN { get; set; }
         /// <summary>
-        /// Provider utilizado pelo certificado se utilizar a opção para salvar o PIN
+        /// Utiliza
         /// </summary>
-        public string ProviderCertificado { get; set; }
-        /// <summary>
-        /// Type do Provider do Certificado selecionado
-        /// </summary>
-        public string ProviderTypeCertificado { get; set; }
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CertificadoPINCarregado = false;
         /// <summary>
         /// Certificado digital - Subject
         /// </summary>
-        //[NFe.Components.AttributeTipoAplicacao(TipoAplicativo.Nulo)]
         public string Certificado { get; set; }
         /// <summary>
         /// Certificado digital - ThumbPrint
         /// </summary>
-        //[NFe.Components.AttributeTipoAplicacao(TipoAplicativo.Nulo)]
         public string CertificadoDigitalThumbPrint { get; set; }
         /// <summary>
         /// Certificado digital
         /// </summary>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [NFe.Components.AttributeTipoAplicacao(TipoAplicativo.Nulo)]
+        [System.Xml.Serialization.XmlIgnore()]
+        [AttributeTipoAplicacao(TipoAplicativo.Nulo)]
         public X509Certificate2 X509Certificado { get; set; }
         /// <summary>
         /// Gravar o retorno da NFe também em TXT
         /// </summary>
-        [NFe.Components.AttributeTipoAplicacao(TipoAplicativo.Nfe)]
+        [AttributeTipoAplicacao(TipoAplicativo.Nfe)]
         public bool GravarRetornoTXTNFe { get; set; }
         /// <summary>
         /// dias em que se deve manter os arquivos nas pastas retorno e temporario
@@ -246,23 +234,32 @@ namespace NFe.Settings
 
         public bool CriaPastasAutomaticamente { get; set; }
 
-        [NFe.Components.AttributeTipoAplicacao(TipoAplicativo.Nfe)]
+        [AttributeTipoAplicacao(TipoAplicativo.Nfe)]
         public bool GravarEventosNaPastaEnviadosNFe { get; set; }
 
-        [NFe.Components.AttributeTipoAplicacao(TipoAplicativo.Nfe)]
+        [AttributeTipoAplicacao(TipoAplicativo.Nfe)]
         public bool GravarEventosCancelamentoNaPastaEnviadosNFe { get; set; }
 
-        [NFe.Components.AttributeTipoAplicacao(TipoAplicativo.Nfe)]
+        [AttributeTipoAplicacao(TipoAplicativo.Nfe)]
         public bool GravarEventosDeTerceiros { get; set; }
 
-        [NFe.Components.AttributeTipoAplicacao(TipoAplicativo.Nfe)]
+        [AttributeTipoAplicacao(TipoAplicativo.Nfe)]
         public bool CompactarNfe { get; set; }
+
+        [AttributeTipoAplicacao(TipoAplicativo.Nfe | TipoAplicativo.Todos)]
+        public bool ArqNSU { get; set; }
 
         /// <summary>
         /// Enviar NFe utilizando o processo síncrono (true or false)
         /// </summary>
-        [NFe.Components.AttributeTipoAplicacao(TipoAplicativo.Nfe)]
+        [AttributeTipoAplicacao(TipoAplicativo.Nfe)]
         public bool IndSinc { get; set; }
+
+        /// <summary>
+        /// URLs de Serviços da NFe, NFCe, CTe
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public EstadoURLConsultaDFe URLConsultaDFe { get; set; }
         #endregion
 
         #region Propriedades para controle da impressão do DANFE
@@ -305,6 +302,17 @@ namespace NFe.Settings
         public string EmailDanfe { get; set; }
         [NFe.Components.AttributeTipoAplicacao(TipoAplicativo.Nfe)]
         public bool AdicionaEmailDanfe { get; set; }
+        /// <summary>
+        /// Codigo de identificacao do CSC
+        /// </summary>
+        [NFe.Components.AttributeTipoAplicacao(TipoAplicativo.Nfe)]
+        public string IdentificadorCSC { get; set; }
+        /// <summary>
+        /// Codigo CSC/Token
+        /// </summary>
+        [NFe.Components.AttributeTipoAplicacao(TipoAplicativo.Nfe)]
+        public string TokenCSC { get; set; }
+
         #endregion
 
         #region Propriedade para controle do nome da pasta a serem salvos os XML´s enviados
@@ -352,6 +360,7 @@ namespace NFe.Settings
         public string FTPSenha { get; set; }
         public Int32 FTPPorta { get; set; }
         public bool FTPAtivo { get; set; }
+        public bool FTPPassivo { get; set; }
         public bool FTPGravaXMLPastaUnica { get; set; }
         public bool FTPIsAlive
         {
@@ -363,6 +372,81 @@ namespace NFe.Settings
                     !string.IsNullOrEmpty(this.FTPSenha);
             }
         }
+        #endregion
+
+        #region Propriedades de configuração do equipamento SAT
+        /// <summary>
+        /// Maraca do equipamento SAT
+        /// </summary>
+        [AttributeTipoAplicacao(TipoAplicativo.SAT)]
+        public string MarcaSAT { get; set; }
+
+        /// <summary>
+        /// Código de ativação do equipamento SAT
+        /// </summary>
+        [AttributeTipoAplicacao(TipoAplicativo.SAT)]
+        public string CodigoAtivacaoSAT { get; set; }
+
+        [AttributeTipoAplicacao(TipoAplicativo.SAT)]
+        public bool UtilizaConversaoCFe { get; set; }
+
+        [AttributeTipoAplicacao(TipoAplicativo.SAT)]
+        public string CNPJSoftwareHouse { get; set; }
+
+        [AttributeTipoAplicacao(TipoAplicativo.SAT)]
+        public string SignACSAT { get; set; }
+
+        private string numeroCaixa;
+
+        [AttributeTipoAplicacao(TipoAplicativo.SAT)]
+        public string NumeroCaixa
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(numeroCaixa))
+                    numeroCaixa = "001";
+
+                return numeroCaixa;
+            }
+            set
+            {
+                numeroCaixa = value;
+            }
+        }
+
+        RegTribISSQN regTribISSQNSAT;
+
+        [AttributeTipoAplicacao(TipoAplicativo.SAT)]
+        public RegTribISSQN RegTribISSQNSAT
+        {
+            get
+            {
+                if (regTribISSQNSAT == 0)
+                    regTribISSQNSAT = RegTribISSQN.MicroEmpresaMunicipal;
+
+                return regTribISSQNSAT;
+            }
+            set
+            {
+                regTribISSQNSAT = value;
+            }
+        }
+
+        [AttributeTipoAplicacao(TipoAplicativo.SAT)]
+        public IndRatISSQN IndRatISSQNSAT { get; set; }
+
+        /// <summary>
+        /// Código da aplicação que está cadastrada para acessar os serviços REST do município de Florianópolis-SC
+        /// </summary>
+        [AttributeTipoAplicacao(TipoAplicativo.Nfse)]
+        public string ClientID { get; set; }
+
+        /// <summary>
+        /// Código secreto da aplicação que está cadastrada para acessar os serviços REST do município de Florianópolis-SC
+        /// </summary>
+        [AttributeTipoAplicacao(TipoAplicativo.Nfse)]
+        public string ClientSecret { get; set; }
+
         #endregion
 
         #endregion
@@ -395,8 +479,10 @@ namespace NFe.Settings
         }
 
         #region BuscaConfiguracao()
-        public void BuscaConfiguracao()
+        public string BuscaConfiguracao(ref int tipoerro)
         {
+            tipoerro = 0;
+
             if (!Directory.Exists(this.PastaEmpresa))
                 Directory.CreateDirectory(this.PastaEmpresa);
 
@@ -433,6 +519,8 @@ namespace NFe.Settings
 
                     if (!temp.Contains("<UsaCertificado>"))
                         t.UsaCertificado = true;
+                    if (!temp.Contains("<FTPPassivo>"))
+                        t.FTPPassivo = false;
 
                     if (t.UsaCertificado)
                     {
@@ -441,6 +529,9 @@ namespace NFe.Settings
                     }
 
                     t.CertificadoPIN = Criptografia.descriptografaSenha(t.CertificadoPIN);
+                    t.FTPNomeDoServidor = Criptografia.descriptografaSenha(t.FTPNomeDoServidor);
+                    t.FTPNomeDoUsuario = Criptografia.descriptografaSenha(t.FTPNomeDoUsuario);
+                    t.FTPSenha = Criptografia.descriptografaSenha(t.FTPSenha);
 
                     t.Nome = this.Nome;
                     t.CNPJ = this.CNPJ;
@@ -450,17 +541,28 @@ namespace NFe.Settings
 
                     t.CopyObjectTo(this);
 
-                    this.CriarPastasDaEmpresa();
+                    if (t.UnidadeFederativaCodigo == 35)
+                        t.IndSinc = false;
 
-                    this.X509Certificado = this.BuscaConfiguracaoCertificado();
+                    CriarPastasDaEmpresa();
+
+                    X509Certificado = BuscaConfiguracaoCertificado();
                 }
                 catch (Exception ex)
                 {
                     //Não vou mais fazer isso pois estava gerando problemas com Certificados A3 - Renan 18/06/2013
                     //empresa.Certificado = string.Empty;
                     //empresa.CertificadoThumbPrint = string.Empty;
-                    throw new Exception("Ocorreu um erro ao efetuar a leitura das configurações da empresa " + this.Nome.Trim() + ". Por favor entre na tela de configurações desta empresa e reconfigure.\r\n\r\nErro: " + ex.Message);
+                    tipoerro = 2;
+                    return "Ocorreu um erro ao efetuar a leitura das configurações da empresa " +
+                        this.CNPJ + "=" + this.Nome.Trim() + ". Por favor entre na tela de configurações desta empresa e reconfigure.\r\n\r\nErro: " + ex.Message;
                 }
+                return null;
+            }
+            else
+            {
+                tipoerro = 1;
+                return "Arquivo [" + this.NomeArquivoConfig + "] de configuração da empresa [" + this.CNPJ + "=" + this.Nome.Trim() + "] não encontrado";
             }
         }
         #endregion
@@ -470,19 +572,19 @@ namespace NFe.Settings
         {
             X509Certificate2 x509Cert = null;
 
-            if (this.UsaCertificado)
+            if (UsaCertificado)
             {
                 //Certificado instalado no windows
-                if (this.CertificadoInstalado)
+                if (CertificadoInstalado)
                 {
                     X509Store store = new X509Store("MY", StoreLocation.CurrentUser);
                     store.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);
-                    X509Certificate2Collection collection = (X509Certificate2Collection)store.Certificates;
+                    X509Certificate2Collection collection = store.Certificates;
                     X509Certificate2Collection collection1 = null;
-                    if (!string.IsNullOrEmpty(this.CertificadoDigitalThumbPrint))
-                        collection1 = (X509Certificate2Collection)collection.Find(X509FindType.FindByThumbprint, this.CertificadoDigitalThumbPrint, false);
+                    if (!string.IsNullOrEmpty(CertificadoDigitalThumbPrint))
+                        collection1 = collection.Find(X509FindType.FindByThumbprint, CertificadoDigitalThumbPrint, false);
                     else
-                        collection1 = (X509Certificate2Collection)collection.Find(X509FindType.FindBySubjectDistinguishedName, this.Certificado, false);
+                        collection1 = collection.Find(X509FindType.FindBySubjectDistinguishedName, Certificado, false);
 
                     for (int i = 0; i < collection1.Count; i++)
                     {
@@ -500,19 +602,20 @@ namespace NFe.Settings
                 }
                 else //Certificado está sendo acessado direto do arquivo .PFX
                 {
-                    if (string.IsNullOrEmpty(this.CertificadoArquivo))
+                    if (string.IsNullOrEmpty(CertificadoArquivo))
                         throw new Exception("Nome do arquivo referente ao certificado digital não foi informado nas configurações do UniNFe.");
-                    else if (!string.IsNullOrEmpty(this.CertificadoArquivo) && !File.Exists(this.CertificadoArquivo))
-                        throw new Exception(string.Format("Certificado digital \"{0}\" não encontrado.", this.CertificadoArquivo));
+                    else if (!string.IsNullOrEmpty(CertificadoArquivo) && !File.Exists(CertificadoArquivo))
+                        throw new Exception(string.Format("Certificado digital \"{0}\" não encontrado.", CertificadoArquivo));
 
-                    using (FileStream fs = new FileStream(this.CertificadoArquivo, FileMode.Open))
+                    using (FileStream fs = new FileStream(CertificadoArquivo, FileMode.Open, FileAccess.Read))
                     {
                         byte[] buffer = new byte[fs.Length];
                         fs.Read(buffer, 0, buffer.Length);
-                        x509Cert = new X509Certificate2(buffer, this.CertificadoSenha);
+                        x509Cert = new X509Certificate2(buffer, CertificadoSenha);
                     }
                 }
             }
+
             return x509Cert;
         }
         #endregion
@@ -542,7 +645,7 @@ namespace NFe.Settings
                         Empresas.verificaPasta(this, configElemento, NFeStrConstants.PastaXmlRetorno, "Pasta onde serão gravados os arquivos XML´s de retorno dos WebServices", true);
                         Empresas.verificaPasta(this, configElemento, NFeStrConstants.PastaXmlErro, "Pasta para arquivamento temporário dos XML´s que apresentaram erro na tentativa do envio", true);
                         Empresas.verificaPasta(this, configElemento, NFeStrConstants.PastaValidar, "Pasta onde serão gravados os arquivos XML´s a serem somente validados", true);
-                        if (this.Servico != TipoAplicativo.Nfse)//Propriedade.TipoAplicativo != TipoAplicativo.Nfse)
+                        if (this.Servico != TipoAplicativo.Nfse)
                         {
                             Empresas.verificaPasta(this, configElemento, NFeStrConstants.PastaXmlEnviado, "Pasta onde serão gravados os arquivos XML´s enviados", true);
                             Empresas.verificaPasta(this, configElemento, NFeStrConstants.PastaXmlEmLote, "Pasta onde serão gravados os arquivos XML´s de NF-e a serem enviadas em lote para os WebServices", false);
@@ -574,26 +677,26 @@ namespace NFe.Settings
         /// </remarks>
         public void CriarSubPastaEnviado()
         {
-            if (this.Servico != TipoAplicativo.Nfse)//Propriedade.TipoAplicativo != TipoAplicativo.Nfse)
+            if (Servico != TipoAplicativo.Nfse)
             {
-                if (!string.IsNullOrEmpty(this.PastaXmlEnviado))
+                if (!string.IsNullOrEmpty(PastaXmlEnviado))
                 {
                     //Criar a pasta EmProcessamento
-                    if (!Directory.Exists(this.PastaXmlEnviado + "\\" + PastaEnviados.EmProcessamento.ToString()))
+                    if (!Directory.Exists(PastaXmlEnviado + "\\" + PastaEnviados.EmProcessamento.ToString()))
                     {
-                        System.IO.Directory.CreateDirectory(this.PastaXmlEnviado + "\\" + PastaEnviados.EmProcessamento.ToString());
+                        Directory.CreateDirectory(PastaXmlEnviado + "\\" + PastaEnviados.EmProcessamento.ToString());
                     }
 
                     //Criar a Pasta Autorizado
-                    if (!Directory.Exists(this.PastaXmlEnviado + "\\" + PastaEnviados.Autorizados.ToString()))
+                    if (!Directory.Exists(PastaXmlEnviado + "\\" + PastaEnviados.Autorizados.ToString()))
                     {
-                        System.IO.Directory.CreateDirectory(this.PastaXmlEnviado + "\\" + PastaEnviados.Autorizados.ToString());
+                        Directory.CreateDirectory(PastaXmlEnviado + "\\" + PastaEnviados.Autorizados.ToString());
                     }
 
                     //Criar a Pasta Denegado
-                    if (!Directory.Exists(this.PastaXmlEnviado + "\\" + PastaEnviados.Denegados.ToString()))
+                    if (!Directory.Exists(PastaXmlEnviado + "\\" + PastaEnviados.Denegados.ToString()))
                     {
-                        System.IO.Directory.CreateDirectory(this.PastaXmlEnviado + "\\" + PastaEnviados.Denegados.ToString());
+                        Directory.CreateDirectory(PastaXmlEnviado + "\\" + PastaEnviados.Denegados.ToString());
                     }
                 }
             }
@@ -622,11 +725,13 @@ namespace NFe.Settings
 
             if (this.Servico != TipoAplicativo.Nfse)
             {
-                //Criar subpasta Assinado na pasta de envio individual de nfe
-                if (!Directory.Exists(PastaXmlEnvio + Propriedade.NomePastaXMLAssinado))
-                {
-                    System.IO.Directory.CreateDirectory(PastaXmlEnvio + Propriedade.NomePastaXMLAssinado);
-                }
+                if (!string.IsNullOrEmpty(PastaXmlEnvio))
+                    //Criar subpasta Assinado na pasta de envio individual de nfe
+                    if (!Directory.Exists(PastaXmlEnvio + Propriedade.NomePastaXMLAssinado))
+                    {
+                        System.IO.Directory.CreateDirectory(PastaXmlEnvio + Propriedade.NomePastaXMLAssinado);
+                    }
+
                 //Criar pasta de Envio em Lote
                 if (!string.IsNullOrEmpty(PastaXmlEmLote))
                 {
@@ -714,7 +819,8 @@ namespace NFe.Settings
                     Directory.CreateDirectory(PastaValidar.Trim() + "\\Temp");
                 }
             }
-            this.CriarSubPastaEnviado();
+
+            CriarSubPastaEnviado();
         }
         #endregion
 
@@ -738,6 +844,9 @@ namespace NFe.Settings
         #region ExcluiPastas
         public void ExcluiPastas()
         {
+            /*
+            //Não vou mais excluir nenhuma pasta, usuário que exclua manualmente, pois aconteceu de usuários excluirem a empresa para cadastrar 
+            //novamente e perdeu todos os XMLs da empresa. Wandrey 07/06/2016
             if (Directory.Exists(this.PastaEmpresa))
             {
                 ///
@@ -756,6 +865,7 @@ namespace NFe.Settings
                     vazia = false;
                     break;
                 }
+
                 if (vazia)
                 {
                     DeltreeMain.BeginDeleteTree(this.PastaBackup, true);
@@ -769,6 +879,7 @@ namespace NFe.Settings
                     DeltreeMain.BeginDeleteTree(this.PastaEmpresa, true);
                 }
             }
+            */
         }
         #endregion
 
@@ -799,8 +910,6 @@ namespace NFe.Settings
                 empresa.CertificadoDigitalThumbPrint =
                 empresa.CertificadoSenha =
                 empresa.CertificadoPIN =
-                empresa.ProviderCertificado =
-                empresa.ProviderTypeCertificado =
                 empresa.Certificado = string.Empty;
 
             empresa.FTPAtivo = false;
@@ -822,8 +931,7 @@ namespace NFe.Settings
 
             empresa.AmbienteCodigo = (int)NFe.Components.TipoAmbiente.taHomologacao; //2
             empresa.tpEmis = (int)NFe.Components.TipoEmissao.teNormal; //1
-            if (Propriedade.TipoAplicativo == TipoAplicativo.Nfe)
-                empresa.UnidadeFederativaCodigo = 41;
+            empresa.UnidadeFederativaCodigo = 41;
 
             empresa.GravarRetornoTXTNFe =
                 empresa.GravarEventosNaPastaEnviadosNFe =
@@ -857,7 +965,7 @@ namespace NFe.Settings
         }
 
         #region SalvarConfiguracao()
-        public void SalvarConfiguracao(bool validaCertificado, bool validarConfig = true)
+        public void SalvarConfiguracao(bool validaCertificado, bool validarConfig)
         {
             bool empresaNova = false;
             try
@@ -876,7 +984,7 @@ namespace NFe.Settings
 
                 //Criptografar a senha do certificado digital para gravar no XML. Wandrey 23/09/2014
                 if (validarConfig)
-                    new ConfiguracaoApp().ValidarConfig(validaCertificado);
+                    new ConfiguracaoApp().ValidarConfig(validaCertificado, this);
 
                 if (!Directory.Exists(this.PastaEmpresa))
                     Directory.CreateDirectory(this.PastaEmpresa);
@@ -889,7 +997,10 @@ namespace NFe.Settings
                     dados.CertificadoSenha = Criptografia.criptografaSenha(dados.CertificadoSenha);
 
                 dados.CertificadoPIN = Criptografia.criptografaSenha(dados.CertificadoPIN);
-                
+                dados.FTPNomeDoServidor = Criptografia.criptografaSenha(dados.FTPNomeDoServidor);
+                dados.FTPNomeDoUsuario = Criptografia.criptografaSenha(dados.FTPNomeDoUsuario);
+                dados.FTPSenha = Criptografia.criptografaSenha(dados.FTPSenha);
+
                 ObjectXMLSerializer objObjectXMLSerializer = new ObjectXMLSerializer();
                 objObjectXMLSerializer.Save(dados, dados.NomeArquivoConfig);
 
@@ -915,7 +1026,7 @@ namespace NFe.Settings
             //verifique se o arquivo existe e se o FTP da empresa está configurado e ativo
             if (File.Exists(fileName) && this.FTPIsAlive)
             {
-                Thread t = new Thread(new ThreadStart(delegate()
+                Thread t = new Thread(new ThreadStart(delegate ()
                 {
                     string arqDestino = Path.Combine(Path.GetTempPath(), Path.GetFileName(fileName));
                     //Copia o arquivo para a pasta temp
@@ -927,24 +1038,41 @@ namespace NFe.Settings
                     {
                         //conecta ao ftp
                         ftp.Connect();
+                        if (!ftp.IsConnected)
+                            throw new Exception("FTP '" + this.FTPNomeDoServidor + "' não conectado");
+
+                        ftp.PassiveMode = this.FTPPassivo;
+
                         //pega a pasta corrente no ftp
                         string vCorrente = ftp.GetWorkingDirectory();
+
                         //tenta mudar para a pasta de destino
                         if (!ftp.changeDir(folderName))
+                        {
                             //como nao foi possivel mudar de pasta, a cria
                             ftp.makeDir(folderName);
+                            if (!ftp.changeDir(folderName))
+                                throw new Exception("Pasta '" + folderName + "' criada, mas não foi possível acessá-la");
+                        }
                         //volta para a pasta corrente já que na "makeDir" a pasta se torna ativa na ultima pasta criada
                         ftp.ChangeDir(vCorrente);
+
                         //transfere o arquivo da pasta temp
-                        ftp.OpenUpload(arqDestino, folderName + "/" + Path.GetFileName(fileName), false);
-                        while (ftp.DoUpload() > 0)
-                        {
-                            //Thread.Sleep(1);
-                        }
+                        string remote_filename = folderName + "/" + Path.GetFileName(fileName);
+                        ftp.UploadFile(arqDestino, remote_filename, false);
+
+                        if (ftp.GetFileSize(remote_filename) == 0)
+                            throw new Exception("Arquivo '" + remote_filename + "' não encontrado no FTP");
+
+                        Auxiliar.WriteLog("Arquivo '" + fileName + "' enviado ao FTP com o nome '" + remote_filename + "' com sucesso.", false);
                     }
                     catch (Exception ex)
                     {
                         Auxiliar.WriteLog("Ocorreu um erro ao tentar conectar no FTP: " + ex.Message, false);
+                        ///
+                        /// gravado o log de ftp aqui, pq o 'chamador' nao o trataria
+                        /// 
+                        new Auxiliar().GravarArqErroERP(Path.ChangeExtension(fileName, ".ftp"), ex.Message);
                     }
                     finally
                     {

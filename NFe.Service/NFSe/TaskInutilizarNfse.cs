@@ -31,27 +31,35 @@ namespace NFe.Service.NFSe
 
             try
             {
+                Functions.DeletarArquivo(Empresas.Configuracoes[emp].PastaXmlRetorno + "\\" +
+                                         Functions.ExtrairNomeArq(NomeArquivoXML, Propriedade.Extensao(Propriedade.TipoEnvio.PedInuNFSe).EnvioXML) + Propriedade.ExtRetorno.InuNfse_ERR);
+                Functions.DeletarArquivo(Empresas.Configuracoes[emp].PastaXmlErro + "\\" + NomeArquivoXML);
+
                 oDadosInuNfse = new DadosPedSitNfse(emp);
-                //Ler o XML para pegar parâmetros de envio
-                PedInuNFSe(NomeArquivoXML);
 
                 //Criar objetos das classes dos serviços dos webservices do SEFAZ
                 PadroesNFSe padraoNFSe = Functions.PadraoNFSe(oDadosInuNfse.cMunicipio);
-                WebServiceProxy wsProxy = ConfiguracaoApp.DefinirWS(Servico, emp, oDadosInuNfse.cMunicipio, oDadosInuNfse.tpAmb, oDadosInuNfse.tpEmis, padraoNFSe);
+                WebServiceProxy wsProxy = ConfiguracaoApp.DefinirWS(Servico, emp, oDadosInuNfse.cMunicipio, oDadosInuNfse.tpAmb, oDadosInuNfse.tpEmis, padraoNFSe, oDadosInuNfse.cMunicipio);
                 object pedInuNfse = wsProxy.CriarObjeto(wsProxy.NomeClasseWS);
                 string cabecMsg = "";
+
+                System.Net.SecurityProtocolType securityProtocolType = WebServiceProxy.DefinirProtocoloSeguranca(oDadosInuNfse.cMunicipio, oDadosInuNfse.tpAmb, oDadosInuNfse.tpEmis, padraoNFSe, Servico);
 
                 //Assinar o XML
                 AssinaturaDigital ad = new AssinaturaDigital();
                 ad.Assinar(NomeArquivoXML, emp, Convert.ToInt32(oDadosInuNfse.cMunicipio));
 
                 //Invocar o método que envia o XML para o SEFAZ
-                oInvocarObj.InvocarNFSe(wsProxy, pedInuNfse, NomeMetodoWS(Servico, oDadosInuNfse.cMunicipio), cabecMsg, this, "-ped-inunfse", "-inunfse", padraoNFSe, Servico);
+                oInvocarObj.InvocarNFSe(wsProxy, pedInuNfse, NomeMetodoWS(Servico, oDadosInuNfse.cMunicipio), cabecMsg, this,
+                                        Propriedade.Extensao(Propriedade.TipoEnvio.PedInuNFSe).EnvioXML,    //"-ped-inunfse", 
+                                        Propriedade.Extensao(Propriedade.TipoEnvio.PedInuNFSe).RetornoXML,  //"-inunfse", 
+                                        padraoNFSe, Servico, securityProtocolType);
 
                 ///
                 /// grava o arquivo no FTP
                 string filenameFTP = Path.Combine(Empresas.Configuracoes[emp].PastaXmlRetorno,
-                                                Functions.ExtrairNomeArq(NomeArquivoXML, Propriedade.ExtEnvio.PedInuNfse) + Propriedade.ExtRetorno.InuNfse);
+                                                Functions.ExtrairNomeArq(NomeArquivoXML, Propriedade.Extensao(Propriedade.TipoEnvio.PedInuNFSe).EnvioXML) + 
+                                                Propriedade.Extensao(Propriedade.TipoEnvio.PedInuNFSe).RetornoXML);
                 if (File.Exists(filenameFTP))
                     new GerarXML(emp).XmlParaFTP(emp, filenameFTP);
             }
@@ -60,7 +68,7 @@ namespace NFe.Service.NFSe
                 try
                 {
                     //Gravar o arquivo de erro de retorno para o ERP, caso ocorra
-                    TFunctions.GravarArqErroServico(NomeArquivoXML, Propriedade.ExtEnvio.PedNFSePNG, Propriedade.ExtRetorno.NFSePNG_ERR, ex);
+                    TFunctions.GravarArqErroServico(NomeArquivoXML, Propriedade.Extensao(Propriedade.TipoEnvio.PedInuNFSe).EnvioXML, Propriedade.ExtRetorno.InuNfse_ERR, ex);
                 }
                 catch
                 {
@@ -81,17 +89,6 @@ namespace NFe.Service.NFSe
                     //Wandrey 31/08/2011
                 }
             }
-        }
-        #endregion
-
-        #region PedNFSePNG()
-        /// <summary>
-        /// Fazer a leitura do conteúdo do XML de consulta nfse por numero e disponibiliza conteúdo em um objeto para analise
-        /// </summary>
-        /// <param name="arquivoXML">Arquivo XML que é para efetuar a leitura</param>
-        private void PedInuNFSe(string arquivoXML)
-        {
-            //int emp = Empresas.FindEmpresaByThread();
         }
         #endregion
     }
